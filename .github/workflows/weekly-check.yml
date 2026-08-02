@@ -1,0 +1,57 @@
+name: Weekly blog check
+
+# Every Monday morning: re-download the blog's images (picking up new or
+# changed ones), republish the site if anything changed, and open/update
+# a GitHub issue if the blog has posts that aren't on the map yet.
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Refresh bundled images
+        run: node bundle.js
+      - name: Commit and republish if images changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add images images.json
+          if git diff --cached --quiet; then
+            echo "No image changes"
+          else
+            git commit -m "Weekly image refresh from WordPress"
+            git push
+            git push --force origin HEAD:gh-pages
+          fi
+      - name: Look for new dispatches
+        run: node check-new-posts.js > /tmp/new-posts.md
+      - name: Report new dispatches in an issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s /tmp/new-posts.md ]; then
+            title="New dispatches on the blog"
+            existing=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number' || true)
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --body-file /tmp/new-posts.md
+            else
+              gh issue create --title "$title" --body-file /tmp/new-posts.md
+            fi
+          else
+            echo "Nothing new to report."
+          fi

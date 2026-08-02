@@ -316,7 +316,7 @@ const TRAIL = [
 {id:"bangor",n:"Bangor",r:"Wales",s:"visited",lat:53.227,lng:-4.129,d:"2016-09-25",u:"https://edwardleartrail.wordpress.com/2016/09/25/there-was-an-old-person-of-bangor/",game:true,lim:"There was an Old Person of Bangor,\nWhose face was distorted with anger;\nHe tore off his boots,\nAnd subsisted on roots,\nThat borascible person of Bangor."},
 {id:"dee",n:"the Dee",r:"Wales",s:"visited",lat:53.14,lng:-2.88,d:"2016-09-17",u:"https://edwardleartrail.wordpress.com/2016/09/17/there-was-an-old-man-of-the-dee/",game:true,lim:"There was an Old Man of the Dee,\nWho was sadly annoyed by a flea;\nWhen he said, \"I will scratch it,\"\nThey gave him a hatchet,\nWhich grieved that Old Man of the Dee."},
 {id:"deeside",n:"Dee-side",r:"Wales",s:"visited",lat:53.19,lng:-3.03,d:"2016-09-18",u:"https://edwardleartrail.wordpress.com/2016/09/18/there-was-an-old-man-of-dee-side/",game:true,lim:"There was an old man of Dee-side\nWhose hat was exceedingly wide,\nBut he said, \"Do not fail, if it happen to hail,\nTo come under my hat at Dee-side!\""},
-{id:"llanfairpwllgwyngyll",n:"Llanfairpwllgwyngyll",r:"Wales",s:"visited",lat:53.2216,lng:-4.2105,d:"2016-09-20",u:"https://edwardleartrail.wordpress.com/2016/09/20/there-was-a-young-lady-of-llanfair%c2%adpwllgwyngyll%c2%adgogery%c2%adchwyrn%c2%addrobwll%c2%adllan%c2%adtysilio%c2%adgogo%c2%adgoch/",game:false,lim:null},
+{id:"llanfairpwllgwyngyll",n:"Llanfairpwllgwyngyll",r:"Wales",s:"visited",lat:53.2216,lng:-4.2105,d:"2016-09-20",u:"https://edwardleartrail.wordpress.com/2016/09/20/there-was-a-young-lady-of-llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch/",game:false,lim:null},
 {id:"mold",n:"Mold",r:"Wales",s:"visited",lat:53.166,lng:-3.144,d:"2016-09-19",u:"https://edwardleartrail.wordpress.com/2016/09/19/there-was-an-old-person-of-mold/",game:true,lim:"There was an Old Person of Mold,\nWho shrank from sensations of cold;\nSo he purchased some muffs,\nSome furs and some fluffs,\nAnd wrapped himself from the cold."},
 {id:"wales",n:"Wales",r:"Wales",s:"visited",lat:52.935,lng:-3.057,d:"2016-09-24",u:"https://edwardleartrail.wordpress.com/2016/09/25/there-was-a-young-lady-of-wales/",game:true,lim:"There was a Young Lady of Wales,\nWho caught a large fish without scales;\nWhen she lifted her hook,\nShe exclaimed, \"Only look!\"\nThat ecstatic Young Lady of Wales."},
 // ===== OVERSEAS — VISITED =====
@@ -605,6 +605,13 @@ let mainMap;
       .addTo(mainMap);
   });
   dots.forEach(d => d.addTo(mainMap));
+  // popups are positioned when opened, but their images finish loading a
+  // moment later and grow the popup off the top edge — re-lay-out on load
+  mainMap.on('popupopen', e => {
+    e.popup.getElement().querySelectorAll('img').forEach(img => {
+      if (!img.complete) img.addEventListener('load', () => e.popup.update(), { once: true });
+    });
+  });
   const legend = L.control({ position:'bottomleft' });
   legend.onAdd = function(){
     const div = L.DomUtil.create('div','legend');
