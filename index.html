@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Edward Lear Trail — Explorer Series, Sheet 164</title>
+<meta name="description" content="Eleven years, two people, every place Edward Lear ever rhymed about. The complete interactive survey.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<style>
+:root{
+  --paper:#FAFAF7; --ink:#23231F; --magenta:#D63384; --green:#2E7D4F;
+  --orange:#D98E4A; --gridblue:#9DB8D2; --grey:#8D8D86; --white:#FFFFFF;
+  --disp:'Barlow Condensed',Arial,sans-serif; --body:'Source Sans 3',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+body{
+  background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.55;
+  background-image:linear-gradient(rgba(157,184,210,.22) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(157,184,210,.22) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--magenta);outline-offset:2px}
+
+/* ---------- header ---------- */
+header{border-bottom:3px solid var(--ink);background:var(--paper)}
+.masthead{max-width:1080px;margin:0 auto;padding:22px 18px 16px}
+.series{display:inline-block;background:var(--magenta);color:#fff;font-family:var(--disp);
+  font-weight:700;font-size:clamp(15px,2.5vw,19px);letter-spacing:.06em;text-transform:uppercase;padding:6px 14px}
+h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:1;
+  font-size:clamp(38px,8vw,68px);letter-spacing:.01em;margin-top:12px}
+.strap{font-family:var(--disp);font-weight:500;color:var(--green);font-size:clamp(16px,3vw,21px);
+  letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.surveyors{font-size:14px;color:#57564F;margin-top:6px;font-style:italic}
+
+/* ---------- tabs ---------- */
+nav{max-width:1080px;margin:18px auto 0;padding:0 18px;display:flex;gap:8px;flex-wrap:wrap}
+.tab{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:.05em;text-transform:uppercase;
+  background:#fff;border:2px solid var(--ink);padding:8px 18px;cursor:pointer;color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--magenta);border-color:var(--magenta);color:#fff}
+.tab:hover{background:var(--ink);color:#fff}
+.tab[aria-selected="true"]:hover{background:var(--magenta)}
+main{max-width:1080px;margin:0 auto;padding:20px 18px 70px}
+section[hidden]{display:none}
+
+/* ---------- birthday card ---------- */
+.birthday{background:#fff;border:2px solid var(--ink);position:relative;padding:18px 20px;margin-bottom:20px}
+.birthday::after{content:"";position:absolute;inset:5px;border:1px dashed var(--orange);pointer-events:none}
+.birthday .hand{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:15px;
+  letter-spacing:.14em;color:var(--magenta)}
+.birthday p{margin-top:6px;font-size:16px}
+
+/* ---------- map ---------- */
+.mapwrap{border:2px solid var(--ink);background:#fff}
+#map{height:min(72vh,640px);min-height:420px}
+.mapnote{font-size:13px;color:#57564F;margin-top:8px}
+.mapnote code{background:#EFEFE9;padding:1px 5px;border-radius:3px}
+.leaflet-container{font-family:var(--body)}
+.leaflet-popup-content-wrapper{border-radius:0;border:2px solid var(--ink);box-shadow:4px 4px 0 rgba(35,35,31,.18)}
+.leaflet-popup-content{margin:14px 16px;line-height:1.45;min-width:220px}
+.leaflet-popup-tip{border:1px solid var(--ink)}
+.pop h4{font-family:var(--disp);font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.pop .chip{display:inline-block;background:var(--green);color:#fff;font-family:var(--disp);font-weight:600;
+  font-size:13px;letter-spacing:.1em;padding:2px 9px;margin:5px 0 8px;text-transform:uppercase}
+.pop .chip.grey{background:var(--grey)} .pop .chip.orange{background:var(--orange)} .pop .chip.mag{background:var(--magenta)}
+.pop .verse{font-style:italic;font-size:14.5px;border-left:3px solid var(--gridblue);padding-left:10px;margin:8px 0;white-space:pre-line}
+.pop img{width:100%;max-height:170px;object-fit:contain;border:1px solid #D8D8D0;margin:6px 0;background:#fff}
+.pop .note{font-size:13px;color:#57564F;margin:6px 0}
+.pop .read{font-weight:600}
+.legend{background:#fff;border:2px solid var(--ink);padding:10px 14px;font-size:13.5px;line-height:2}
+.legend h5{font-family:var(--disp);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.legend .dot{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:7px;vertical-align:-1px;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--ink)}
+
+/* ---------- generic cards & sections ---------- */
+h2{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(26px,5vw,38px);margin:8px 0 4px}
+.eyebrow{display:inline-block;background:var(--green);color:#fff;font-family:var(--disp);font-weight:600;
+  font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px}
+.lede{max-width:640px;color:#57564F;margin-bottom:18px}
+.card{background:#fff;border:2px solid var(--ink);padding:18px 20px}
+
+/* ---------- game ---------- */
+.gamegrid{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:18px;margin-top:14px}
+@media (max-width:820px){.gamegrid{grid-template-columns:1fr}}
+.qcard .roundno{font-family:var(--disp);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta);font-size:14px}
+.qcard .verse{font-style:italic;font-size:17.5px;margin:10px 0;white-space:pre-line;border-left:3px solid var(--gridblue);padding-left:12px}
+.qcard .redact{background:var(--ink);color:var(--ink);border-radius:2px;padding:0 4px;user-select:none}
+.btn{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:.07em;text-transform:uppercase;
+  background:var(--green);color:#fff;border:2px solid var(--ink);padding:9px 20px;cursor:pointer}
+.btn:hover{background:var(--ink)}
+.btn[disabled]{background:var(--grey);cursor:not-allowed}
+.btn.alt{background:#fff;color:var(--ink)}
+.btn.alt:hover{background:var(--ink);color:#fff}
+#gamemap{height:min(60vh,480px);min-height:340px}
+.result{margin-top:12px;border-top:2px solid var(--ink);padding-top:10px}
+.result .pts{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--green)}
+.result .quip{font-style:italic;color:#57564F}
+.scorebar{display:flex;gap:6px;margin:10px 0 2px;flex-wrap:wrap}
+.scorebar i{width:22px;height:8px;background:#E4E4DC;border:1px solid var(--ink)}
+.scorebar i.done{background:var(--green)}
+.finale{text-align:center;padding:26px 18px}
+.finale .total{font-family:var(--disp);font-weight:700;font-size:64px;color:var(--magenta)}
+.finale .rank{font-family:var(--disp);font-weight:700;font-size:26px;text-transform:uppercase;margin-top:4px}
+.finale p{color:#57564F;max-width:460px;margin:10px auto}
+
+/* ---------- annual report ---------- */
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:14px}
+.stat{background:#fff;border:2px solid var(--ink);padding:14px 16px}
+.stat b{font-family:var(--disp);font-weight:700;font-size:36px;display:block;line-height:1.05}
+.stat.green b{color:var(--green)} .stat.mag b{color:var(--magenta)} .stat.orange b{color:var(--orange)}
+.stat span{font-size:13.5px;color:#57564F}
+.chart{margin-top:22px}
+.chart .row{display:flex;align-items:center;gap:10px;margin:5px 0}
+.chart .yr{font-family:var(--disp);font-weight:600;width:44px;text-align:right;font-size:15px}
+.chart .bar{height:20px;background:var(--green);border:1.5px solid var(--ink);min-width:2px}
+.chart .n{font-size:13px;color:#57564F}
+.smallprint{font-size:13px;color:#57564F;margin-top:22px;border-top:2px solid var(--ink);padding-top:12px}
+.smallprint li{margin:4px 0 4px 18px}
+
+/* ---------- margins ---------- */
+.margingrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px}
+.mcard h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:21px}
+.mcard .sub{font-size:13.5px;color:#57564F;margin:2px 0 10px}
+.mcard ul{list-style:none}
+.mcard li{margin:7px 0;padding-left:14px;position:relative;font-size:14.5px}
+.mcard li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--green);border-radius:50%}
+.mcard.ghost li::before{background:var(--grey)}
+.mcard .verse{font-style:italic;font-size:14px;white-space:pre-line;color:#3B3A34;margin:4px 0 12px;border-left:3px solid var(--gridblue);padding-left:10px}
+.mcard .vname{font-family:var(--disp);font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:.04em}
+
+footer{border-top:3px solid var(--ink);background:#fff}
+.footin{max-width:1080px;margin:0 auto;padding:18px;font-size:13px;color:#57564F}
+.footin a{color:var(--green)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <span class="series">Explorer Series · Sheet 164 · Scale 1:Nonsense</span>
+    <h1>The Edward Lear Trail</h1>
+    <div class="strap">Tring → Wick · 2015–2026 · All routes complete</div>
+    <div class="surveyors">Surveyed on foot, by car, and occasionally by proxy, by Rik &amp; Debbie Edwards of Chorleywood.</div>
+  </div>
+  <nav role="tablist" aria-label="Site sections">
+    <button class="tab" role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map">The Map</button>
+    <button class="tab" role="tab" id="tab-game" aria-selected="false" aria-controls="panel-game">The Examination</button>
+    <button class="tab" role="tab" id="tab-report" aria-selected="false" aria-controls="panel-report">The Annual Report</button>
+    <button class="tab" role="tab" id="tab-margins" aria-selected="false" aria-controls="panel-margins">The Margins</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ================= MAP ================= -->
+<section id="panel-map" role="tabpanel" aria-labelledby="tab-map">
+  <div class="birthday" id="birthday">
+    <span class="hand">A note from the cartographer's daughter</span>
+    <p id="birthday-text">[BIRTHDAY MESSAGE GOES HERE — Rachel writes this]</p>
+  </div>
+  <div class="mapwrap"><div id="map" aria-label="Map of every Edward Lear limerick location"></div></div>
+  <p class="mapnote" id="keynote"></p>
+</section>
+
+<!-- ================= GAME ================= -->
+<section id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
+  <span class="eyebrow">Ordnance Survey of Nonsense · Practical Paper</span>
+  <h2>The Cartographical Examination</h2>
+  <p class="lede">Ten limericks, names redacted. Read the verse, then place your pin where you believe the Trail went. Marks are awarded for proximity and withheld for hubris. Some questions are brutally unfair; this is tradition.</p>
+  <div id="gamestart" class="card" style="text-align:center;padding:30px">
+    <button class="btn" id="beginbtn">Begin the examination</button>
+  </div>
+  <div class="gamegrid" id="gamearea" hidden>
+    <div class="card qcard">
+      <div class="scorebar" id="scorebar"></div>
+      <div class="roundno" id="roundno"></div>
+      <div class="verse" id="verse"></div>
+      <button class="btn" id="guessbtn" disabled>Drop your pin first</button>
+      <div class="result" id="result" hidden></div>
+    </div>
+    <div class="mapwrap"><div id="gamemap" aria-label="Guessing map — click to place your pin"></div></div>
+  </div>
+  <div class="card finale" id="finale" hidden></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section id="panel-report" role="tabpanel" aria-labelledby="tab-report" hidden>
+  <span class="eyebrow">For the attention of all 95 subscribers</span>
+  <h2>The Annual Report, 2015–2026</h2>
+  <p class="lede">Compiled to the exacting standards of the Trail's own <em>Progress Report and Analytics</em> (2019). All figures audited by nobody.</p>
+  <div class="statgrid" id="stats"></div>
+  <div class="chart card" id="chart" style="margin-top:18px">
+    <h3 style="font-family:var(--disp);text-transform:uppercase;font-size:20px">Dispatches per annum</h3>
+    <div id="chartrows"></div>
+  </div>
+  <div class="smallprint">
+    <strong>Notes to the accounts.</strong>
+    <ul id="notes"></ul>
+  </div>
+</section>
+
+<!-- ================= MARGINS ================= -->
+<section id="panel-margins" role="tabpanel" aria-labelledby="tab-margins" hidden>
+  <span class="eyebrow">Beyond the sheet edge</span>
+  <h2>The Margins of the Map</h2>
+  <p class="lede">Matters the grid cannot contain: verses written from the sofa in 2020, scholarly apparatus, and the places Lear simply made up.</p>
+  <div class="margingrid" id="margins"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footin">
+    Based on <a href="https://edwardleartrail.wordpress.com">The Edward Lear Trail</a> by Rik &amp; Debbie Edwards — 164 dispatches, 2015–2026.
+    Limericks by Edward Lear (1812–1888), who started all this. Site by Rachel, with a computer. ·
+    Map data © OpenStreetMap contributors; OS layers © Crown copyright where enabled.
+  </div>
+</footer>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script>
+/* ======== CONFIG — add keys here when hosting (see README) ======== */
+const CONFIG = {
+  OS_KEY: "",        // OS Data Hub → OS Maps API key (free): real Ordnance Survey basemap for Great Britain
+  MAPTILER_KEY: ""   // MapTiler Cloud key (free): National Library of Scotland historic OS sheets, 1885–1900
+};
+</script>
+<script>
+// The Edward Lear Trail — location data
+// status: "visited" | "longdistance" | "unvisited" | "technicality"
+// lim: verbatim Lear text (PG #982 / #13648) or null (posthumous — scan shown instead)
+// game: eligible for the guessing game (verified text + pinnable)
+// date: dispatch (publish) date unless visit date known
+const TRAIL = [
+// ===== ENGLAND =====
+{id:"anerley",n:"Anerley",r:"England",s:"visited",lat:51.4123,lng:-0.0654,d:"2016-11-26",u:"https://edwardleartrail.wordpress.com/2016/11/26/there-was-an-old-person-of-anerley/",game:true,lim:"There was an Old Person of Anerley,\nWhose conduct was strange and unmannerly;\nHe rushed down the Strand,\nWith a Pig in each hand,\nBut returned in the evening to Anerley.",note:"Two pigs were purchased. Neither was carried down the Strand. The Trail regrets this."},
+{id:"barnes",n:"Barnes",r:"England",s:"visited",lat:51.4707,lng:-0.2423,d:"2016-04-26",u:"https://edwardleartrail.wordpress.com/2016/04/26/there-was-an-old-person-of-barnes/",game:true,lim:"There was an old person of Barnes,\nWhose garments were covered with darns;\nBut they said, \"Without doubt, you will soon wear them out,\nYou luminous person of Barnes!\""},
+{id:"basing",n:"Basing",r:"England",s:"visited",lat:51.2699,lng:-1.0464,d:"2015-08-23",u:"https://edwardleartrail.wordpress.com/2015/08/23/there-was-an-old-person-of-basing/",game:true,lim:"There was an Old Person of Basing,\nWhose presence of mind was amazing;\nHe purchased a steed,\nWhich he rode at full speed,\nAnd escaped from the people of Basing."},
+{id:"blackheath",n:"Blackheath",r:"England",s:"visited",lat:51.4657,lng:0.009,d:"2016-09-07",u:"https://edwardleartrail.wordpress.com/2016/09/07/there-was-an-old-man-of-blackheath/",game:true,lim:"There was an old man of Blackheath,\nWhose head was adorned with a wreath\nOf lobsters and spice, pickled onions and mice,\nThat uncommon old man of Blackheath."},
+{id:"blythe",n:"Blythe",r:"England",s:"visited",lat:55.1268,lng:-1.5085,d:"2017-05-18",u:"https://edwardleartrail.wordpress.com/2017/05/18/there-was-an-old-person-of-blythe/",game:true,lim:"There was an old person of Blythe,\nWho cut up his meat with a scythe;\nWhen they said, \"Well! I never!\" he cried, \"Scythes for ever!\"\nThat lively old person of Blythe."},
+{id:"bow",n:"Bow",r:"England",s:"visited",lat:51.5273,lng:-0.0208,d:"2017-09-04",u:"https://edwardleartrail.wordpress.com/2017/09/04/there-was-an-old-person-of-bow/",game:true,lim:"There was an old person of Bow,\nWhom nobody happened to know;\nSo they gave him some soap, and said coldly, \"We hope\nYou will go back directly to Bow!\""},
+{id:"bradley",n:"Bradley",r:"England",s:"visited",lat:52.763,lng:-2.173,d:"2021-05-21",u:"https://edwardleartrail.wordpress.com/2021/05/21/there-was-an-old-person-of-bradley/",game:false,lim:null,note:"Bradley, Staffordshire — identified beyond doubt by careful scholarly analysis of Lear's drawing. Fire irons: one set, £10 (marked down from £6)."},
+{id:"bray",n:"Bray",r:"England",s:"visited",lat:51.5079,lng:-0.7011,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-an-old-person-of-bray/",game:true,lim:"There was an old person of Bray,\nWho sang through the whole of the day\nTo his ducks and his pigs, whom he fed upon figs,\nThat valuable person of Bray.",note:"Also claimed by Bray, Co. Wicklow."},
+{id:"brigg",n:"Brigg",r:"England",s:"visited",lat:53.5525,lng:-0.4877,d:"2016-04-01",u:"https://edwardleartrail.wordpress.com/2016/04/01/there-was-an-old-person-of-brigg/",game:true,lim:"There was an old person of Brigg,\nWho purchased no end of a wig;\nSo that only his nose, and the end of his toes,\nCould be seen when he walked about Brigg."},
+{id:"brill",n:"Brill",r:"England",s:"visited",lat:51.8225,lng:-1.0526,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-an-old-person-of-brill/",game:true,lim:"There was an old person of Brill,\nWho purchased a shirt with a frill;\nBut they said, \"Don't you wish, you mayn't look like a fish,\nYou obsequious old person of Brill?\""},
+{id:"bromley",n:"Bromley",r:"England",s:"visited",lat:51.4059,lng:0.0143,d:"2016-11-27",u:"https://edwardleartrail.wordpress.com/2016/11/27/there-was-an-old-person-of-bromley/",game:true,lim:"There was an old person of Bromley,\nWhose ways were not cheerful or comely;\nHe sate in the dust, eating spiders and crust,\nThat unpleasing old person of Bromley."},
+{id:"bude",n:"Bude",r:"England",s:"visited",lat:50.829,lng:-4.545,d:"2017-09-10",u:"https://edwardleartrail.wordpress.com/2017/09/10/there-was-an-old-person-of-bude/",game:true,lim:"There was an old person of Bude,\nWhose deportment was vicious and crude;\nHe wore a large ruff of pale straw-colored stuff,\nWhich perplexed all the people of Bude."},
+{id:"burton",n:"Burton",r:"England",s:"visited",lat:52.809,lng:-1.635,d:"2017-04-07",u:"https://edwardleartrail.wordpress.com/2017/04/10/there-was-an-old-person-of-burton/",game:true,lim:"There was an old Person of Burton,\nWhose answers were rather uncertain;\nWhen they said, \"How d'ye do?\" he replied, \"Who are you?\"\nThat distressing old person of Burton.",note:"Burton upon Trent. Tasting tokens spent on Pepsi. The shame endures."},
+{id:"carlisle",n:"Carlisle",r:"England",s:"visited",lat:54.8925,lng:-2.9329,d:"2021-07-11",u:"https://edwardleartrail.wordpress.com/2021/07/11/there-was-an-old-man-of-carlisle/",game:false,lim:null},
+{id:"cheadle",n:"Cheadle",r:"England",s:"visited",lat:53.3947,lng:-2.214,d:"2018-05-11",u:"https://edwardleartrail.wordpress.com/2018/05/11/there-was-an-old-person-of-cheadle/",game:true,lim:"There was an Old Person of Cheadle,\nWas put in the stocks by the beadle;\nFor stealing some pigs,\nSome coats, and some wigs,\nThat horrible Person of Cheadle."},
+{id:"cheam",n:"Cheam",r:"England",s:"visited",lat:51.36,lng:-0.216,d:"2021-08-11",u:"https://edwardleartrail.wordpress.com/2021/08/11/there-was-an-old-person-of-cheam/",game:false,lim:null},
+{id:"chertsey",n:"Chertsey",r:"England",s:"visited",lat:51.3902,lng:-0.5074,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-an-old-lady-of-chertsey/",game:true,lim:"There was an Old Lady of Chertsey,\nWho made a remarkable curtsey;\nShe twirled round and round,\nTill she sunk underground,\nWhich distressed all the people of Chertsey."},
+{id:"chester",n:"Chester",r:"England",s:"visited",lat:53.1905,lng:-2.8919,d:"2016-09-17",u:"https://edwardleartrail.wordpress.com/2016/09/17/there-was-an-old-person-of-chester/",game:true,lim:"There was an old Person of Chester,\nWhom several small children did pester;\nThey threw some large stones,\nWhich broke most of his bones,\nAnd displeased that old person of Chester."},
+{id:"coast",n:"the Coast",r:"England",s:"visited",lat:50.6085,lng:-1.9575,d:"2016-06-08",u:"https://edwardleartrail.wordpress.com/2016/06/10/there-was-an-old-man-of-the-coast/",game:true,lim:"There was an Old Man of the Coast,\nWho placidly sat on a post;\nBut when it was cold,\nHe relinquished his hold,\nAnd called for some hot buttered toast.",note:"With 11,073 miles of coastline to choose from, the Trail felt pretty sure Lear meant Swanage."},
+{id:"compton",n:"Compton",r:"England",s:"visited",lat:51.5195,lng:-1.26,d:"2020-08-03",u:"https://edwardleartrail.wordpress.com/2020/08/04/there-was-an-old-sailor-of-compton/",game:false,lim:null,note:"Compton, Berkshire — 62 miles from the nearest sea, so a Sailor with a serious commute. Visited on Rik's birthday."},
+{id:"cromer",n:"Cromer",r:"England",s:"visited",lat:52.931,lng:1.302,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-an-old-person-of-cromer/",game:true,lim:"There was an Old Person of Cromer,\nWho stood on one leg to read Homer;\nWhen he found he grew stiff,\nHe jumped over the cliff,\nWhich concluded that Person of Cromer."},
+{id:"crowle",n:"Crowle",r:"England",s:"visited",lat:53.608,lng:-0.832,d:"2016-04-01",u:"https://edwardleartrail.wordpress.com/2016/04/01/there-was-an-old-person-of-crowle/",game:true,lim:"There was an old person of Crowle,\nWho lived in the nest of an owl;\nWhen they screamed in the nest, he screamed out with the rest,\nThat depressing old person of Crowle."},
+{id:"deal",n:"Deal",r:"England",s:"visited",lat:51.2226,lng:1.4006,d:"2015-11-04",u:"https://edwardleartrail.wordpress.com/2015/11/04/there-was-an-old-person-of-deal/",game:true,lim:"There was an old person of Deal,\nWho in walking used only his heel;\nWhen they said, \"Tell us why?\" he made no reply,\nThat mysterious old person of Deal."},
+{id:"dean",n:"Dean",r:"England",s:"visited",lat:51.777,lng:-2.61,d:"2019-07-10",u:"https://edwardleartrail.wordpress.com/2019/07/10/there-was-an-old-person-of-dean/",game:true,lim:"There was an old person of Dean\nWho dined on one pea, and one bean;\nFor he said, \"More than that, would make me too fat,\"\nThat cautious old person of Dean.",note:"The Forest of Dean — pin at Puzzlewood."},
+{id:"diss",n:"Diss",r:"England",s:"visited",lat:52.379,lng:1.108,d:"2021-10-20",u:"https://edwardleartrail.wordpress.com/2021/10/20/there-was-an-old-person-of-diss/",game:false,lim:null},
+{id:"dorking",n:"Dorking",r:"England",s:"visited",lat:51.2325,lng:-0.3306,d:"2016-10-04",u:"https://edwardleartrail.wordpress.com/2016/10/04/there-was-a-young-lady-of-dorking/",game:true,lim:"There was a young Lady of Dorking,\nWho bought a large bonnet for walking;\nBut its colour and size,\nSo bedazzled her eyes,\nThat she very soon went back to Dorking."},
+{id:"dover",n:"Dover",r:"England",s:"visited",lat:51.1279,lng:1.3134,d:"2015-11-04",u:"https://edwardleartrail.wordpress.com/2015/11/04/there-was-an-old-person-of-dover/",game:true,lim:"There was an old person of Dover,\nWho rushed through a field of blue Clover;\nBut some very large bees,\nStung his nose and his knees,\nSo he very soon went back to Dover."},
+{id:"downe",n:"Down(e)",r:"England",s:"visited",lat:51.332,lng:0.052,d:"2023-03-30",u:"https://edwardleartrail.wordpress.com/2023/03/30/there-was-an-old-person-of-downe/",game:true,lim:"There was an old person of Down,\nWhose face was adorned with a frown;\nWhen he opened the door, for one minute or more,\nHe alarmed all the people of Down.",note:"Downe, Kent — also claimed by County Down."},
+{id:"dutton",n:"Dutton",r:"England",s:"visited",lat:53.286,lng:-2.622,d:"2016-09-16",u:"https://edwardleartrail.wordpress.com/2016/09/16/there-was-an-old-person-of-dutton/",game:true,lim:"There was an old person of Dutton,\nWhose head was so small as a button;\nSo to make it look big,\nHe purchased a wig,\nAnd rapidly rushed about Dutton."},
+{id:"ealing",n:"Ealing",r:"England",s:"visited",lat:51.513,lng:-0.3089,d:"2016-01-28",u:"https://edwardleartrail.wordpress.com/2016/01/28/there-was-an-old-person-of-ealing/",game:true,lim:"There was an old person of Ealing,\nWho was wholly devoid of good feeling;\nHe drove a small gig, with three Owls and a Pig,\nWhich distressed all the people of Ealing."},
+{id:"east",n:"the East",r:"England",s:"visited",lat:52.481,lng:1.7626,d:"2021-10-20",u:"https://edwardleartrail.wordpress.com/2021/10/21/there-was-an-old-man-of-the-east/",game:true,lim:"There was an Old Man of the East,\nWho gave all his children a feast;\nBut they all ate so much,\nAnd their conduct was such,\nThat it killed that Old Man of the East.",note:"Lowestoft Ness — the most easterly point of the British mainland. Part of the Trail's cardinal-points programme."},
+{id:"ewell",n:"Ewell",r:"England",s:"visited",lat:51.35,lng:-0.249,d:"2017-03-07",u:"https://edwardleartrail.wordpress.com/2017/03/07/there-was-an-old-person-of-ewell/",game:true,lim:"There was an Old Person of Ewell,\nWho chiefly subsisted on gruel;\nBut to make it more nice,\nHe inserted some mice,\nWhich refreshed that Old Person of Ewell."},
+{id:"filey",n:"Filey",r:"England",s:"visited",lat:54.209,lng:-0.289,d:"2017-04-11",u:"https://edwardleartrail.wordpress.com/2017/04/11/there-was-an-old-person-of-filey/",game:true,lim:"There was an old person of Filey,\nOf whom his acquaintance spoke highly;\nHe danced perfectly well, to the sound of a bell,\nAnd delighted the people of Filey."},
+{id:"firle",n:"Firle",r:"England",s:"visited",lat:50.842,lng:0.087,d:"2017-07-22",u:"https://edwardleartrail.wordpress.com/2017/07/22/there-was-a-young-lady-of-firle/",game:true,lim:"There was a young lady of Firle,\nWhose hair was addicted to curl;\nIt curled up a tree, and all over the sea,\nThat expansive young lady of Firle."},
+{id:"grange",n:"Grange",r:"England",s:"visited",lat:54.1946,lng:-2.911,d:"2017-06-13",u:"https://edwardleartrail.wordpress.com/2017/06/14/there-was-an-old-person-of-grange/",game:true,lim:"There was an old person of Grange,\nWhose manners were scroobious and strange;\nHe sailed to St. Blubb in a waterproof tub,\nThat aquatic old person of Grange.",note:"Grange-over-Sands. St. Blubb remains unlocated; canonisation unconfirmed."},
+{id:"greenwich",n:"Greenwich",r:"England",s:"visited",lat:51.4826,lng:-0.0077,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-a-young-lady-of-greenwich/",game:true,lim:"There was a young lady of Greenwich,\nWhose garments were border'd with Spinach;\nBut a large spotty Calf bit her shawl quite in half,\nWhich alarmed that young lady of Greenwich."},
+{id:"harrow",n:"Harrow",r:"England",s:"visited",lat:51.5788,lng:-0.3373,d:"2019-10-31",u:"https://edwardleartrail.wordpress.com/2019/10/31/there-was-an-old-person-of-harrow/",game:false,lim:null},
+{id:"harwich",n:"Harwich",r:"England",s:"visited",lat:51.943,lng:1.287,d:"2021-10-24",u:"https://edwardleartrail.wordpress.com/2021/10/24/there-was-a-young-lady-of-harwich/",game:false,lim:null},
+{id:"hove",n:"Hove",r:"England",s:"visited",lat:50.8279,lng:-0.1687,d:"2017-07-21",u:"https://edwardleartrail.wordpress.com/2017/07/21/there-was-an-old-person-of-hove/",game:true,lim:"There was an old person of Hove,\nWho frequented the depths of a grove;\nWhere he studied his books, with the wrens and the rooks,\nThat tranquil old person of Hove."},
+{id:"hull",n:"Hull",r:"England",s:"visited",lat:53.7444,lng:-0.3325,d:"2017-04-12",u:"https://edwardleartrail.wordpress.com/2017/04/12/there-was-a-young-lady-of-hull/",game:true,lim:"There was a Young Lady of Hull,\nWho was chased by a virulent Bull;\nBut she seized on a spade,\nAnd called out—\"Who's afraid!\"\nWhich distracted that virulent Bull."},
+{id:"humber",n:"the Humber",r:"England",s:"visited",lat:53.707,lng:-0.45,d:"2016-04-01",u:"https://edwardleartrail.wordpress.com/2016/04/01/there-was-an-old-man-on-the-humber/",game:true,lim:"There was an old man on the Humber,\nWho dined on a cake of Burnt Umber;\nWhen he said, \"It's enough!\" they only said, \"Stuff!\nYou amazing old man on the Humber!\""},
+{id:"hurst",n:"Hurst",r:"England",s:"visited",lat:51.4534,lng:-0.856,d:"2016-12-04",u:"https://edwardleartrail.wordpress.com/2016/12/05/there-was-an-old-person-of-hurst/",game:true,lim:"There was an Old Person of Hurst,\nWho drank when he was not athirst;\nWhen they said, \"You'll grow fatter,\"\nHe answered, \"What matter?\"\nThat globular Person of Hurst.",note:"Hurst, Berkshire. The re-enactment gained considerably in globularity."},
+{id:"hyde",n:"Hyde",r:"England",s:"visited",lat:53.4474,lng:-2.082,d:"2018-09-18",u:"https://edwardleartrail.wordpress.com/2018/09/18/there-was-an-old-person-of-hyde/",game:true,lim:"There was an old person of Hyde,\nWho walked by the shore with his bride,\nTill a Crab who came near fill'd their bosoms with fear,\nAnd they said, \"Would we'd never left Hyde!\"",note:"Hyde, Greater Manchester. The re-enactment crab was lost in the post."},
+{id:"junction",n:"at a Junction",r:"England",s:"visited",lat:51.4645,lng:-0.1705,d:"2016-04-26",u:"https://edwardleartrail.wordpress.com/2016/04/26/there-was-an-old-man-at-a-junction/",game:true,lim:"There was an Old Man at a Junction,\nWhose feelings were wrung with compunction\nWhen they said, \"The Train's gone!\" he exclaimed, \"How forlorn!\"\nBut remained on the rails of the Junction.",note:"Clapham Junction, obviously. Sorry, Watford."},
+{id:"kew",n:"Kew",r:"England",s:"visited",lat:51.4787,lng:-0.2956,d:"2016-08-30",u:"https://edwardleartrail.wordpress.com/2016/08/30/there-was-a-young-person-of-kew/",game:true,lim:"There was a young person of Kew,\nWhose virtues and vices were few;\nBut with blamable haste she devoured some hot paste,\nWhich destroyed that young person of Kew."},
+{id:"leeds",n:"Leeds",r:"England",s:"visited",lat:53.7997,lng:-1.5492,d:"2016-04-01",u:"https://edwardleartrail.wordpress.com/2016/04/01/there-was-an-old-person-of-leeds/",game:true,lim:"There was an Old Person of Leeds,\nWhose head was infested with beads;\nShe sat on a stool,\nAnd ate gooseberry fool,\nWhich agreed with that person of Leeds.",note:"Two limericks, one Leeds."},
+{id:"lodore",n:"Lodore",r:"England",s:"visited",lat:54.561,lng:-3.142,d:"2021-07-06",u:"https://edwardleartrail.wordpress.com/2021/07/06/there-was-an-old-man-of-lodore/",game:false,lim:null,note:"Lodore Falls, Derwentwater."},
+{id:"looe",n:"Looe",r:"England",s:"visited",lat:50.355,lng:-4.454,d:"2017-09-16",u:"https://edwardleartrail.wordpress.com/2017/09/16/there-was-an-old-person-of-looe/",game:true,lim:"There was an old person of Loo,\nWho said, \"What on earth shall I do?\"\nWhen they said, \"Go away!\" she continued to stay,\nThat vexatious old person of Loo."},
+{id:"minety",n:"Minety",r:"England",s:"visited",lat:51.627,lng:-1.977,d:"2016-08-10",u:"https://edwardleartrail.wordpress.com/2016/08/10/there-was-an-old-person-of-minety/",game:true,lim:"There was an old person of Minety,\nWho purchased five hundred and ninety\nLarge apples and pears, which he threw unawares\nAt the heads of the people of Minety."},
+{id:"pett",n:"Pett",r:"England",s:"visited",lat:50.889,lng:0.678,d:"2015-11-06",u:"https://edwardleartrail.wordpress.com/2015/11/06/there-was-an-old-person-of-pett/",game:true,lim:"There was an old person of Pett,\nWho was partly consumed by regret;\nHe sate in a cart, and ate cold apple tart,\nWhich relieved that old person of Pett."},
+{id:"pinner",n:"Pinner",r:"England",s:"visited",lat:51.5932,lng:-0.3894,d:"2015-08-15",u:"https://edwardleartrail.wordpress.com/2015/08/15/there-was-an-old-person-of-pinner/",game:true,lim:"There was an old person of Pinner,\nAs thin as a lath, if not thinner;\nThey dressed him in white, and roll'd him up tight,\nThat elastic old person of Pinner."},
+{id:"poole",n:"Poole",r:"England",s:"visited",lat:50.715,lng:-1.987,d:"2016-06-12",u:"https://edwardleartrail.wordpress.com/2016/06/12/there-was-a-young-lady-of-poole/",game:true,lim:"There was a Young Lady of Poole,\nWhose soup was excessively cool;\nSo she put it to boil,\nBy the aid of some oil,\nThat ingenious Young Lady of Poole."},
+{id:"putney",n:"Putney",r:"England",s:"visited",lat:51.461,lng:-0.216,d:"2016-04-26",u:"https://edwardleartrail.wordpress.com/2016/04/26/there-was-an-old-person-of-putney/",game:true,lim:"There was an old person of Putney,\nWhose food was roast spiders and chutney,\nWhich he took with his tea, within sight of the sea,\nThat romantic old person of Putney."},
+{id:"ryde",n:"Ryde",r:"England",s:"visited",lat:50.73,lng:-1.162,d:"2020-08-11",u:"https://edwardleartrail.wordpress.com/2020/08/11/there-was-a-young-lady-of-ryde/",game:true,lim:"There was a Young Lady of Ryde,\nWhose shoe-strings were seldom untied;\nShe purchased some clogs,\nAnd some small spotty dogs,\nAnd frequently walked about Ryde."},
+{id:"rye",n:"Rye",r:"England",s:"visited",lat:50.95,lng:0.733,d:"2015-11-04",u:"https://edwardleartrail.wordpress.com/2015/11/04/there-was-an-old-person-of-rye/",game:true,lim:"There was an old person of Rye,\nWho went up to town on a fly;\nBut they said, \"If you cough, you are safe to fall off!\nYou abstemious old person of Rye!\""},
+{id:"sark",n:"Sark",r:"England",s:"visited",lat:49.433,lng:-2.362,d:"2024-06-18",u:"https://edwardleartrail.wordpress.com/2024/06/18/there-was-an-old-person-of-sark/",game:true,lim:"There was an old person of Sark,\nWho made an unpleasant remark;\nBut they said, \"Don't you see what a brute you must be,\nYou obnoxious old person of Sark!\""},
+{id:"sheen",n:"Sheen",r:"England",s:"visited",lat:51.464,lng:-0.268,d:"2016-04-26",u:"https://edwardleartrail.wordpress.com/2016/04/26/there-was-an-old-person-of-sheen/",game:true,lim:"There was an old person of Sheen,\nWhose expression was calm and serene;\nHe sate in the water, and drank bottled porter,\nThat placid old person of Sheen.",note:"Two limericks, one Sheen."},
+{id:"shields",n:"Shields",r:"England",s:"visited",lat:55.009,lng:-1.448,d:"2017-05-16",u:"https://edwardleartrail.wordpress.com/2017/05/16/there-was-an-old-person-of-shields/",game:true,lim:"There was an old person of Shields,\nWho frequented the vallies and fields;\nAll the mice and the cats, and the snakes and the rats,\nFollowed after that person of Shields.",note:"North Shields. A second Shields limerick was discovered later — Lear kept them coming."},
+{id:"shoreham",n:"Shoreham",r:"England",s:"visited",lat:50.834,lng:-0.273,d:"2017-07-20",u:"https://edwardleartrail.wordpress.com/2017/07/20/there-was-an-old-person-of-shoreham/",game:true,lim:"There was an old person of Shoreham,\nWhose habits were marked by decorum;\nHe bought an Umbrella, and sate in the cellar,\nWhich pleased all the people of Shoreham."},
+{id:"slough",n:"Slough",r:"England",s:"visited",lat:51.5105,lng:-0.595,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-an-old-person-of-slough/",game:true,lim:"There was an old person of Slough,\nWho danced at the end of a bough;\nBut they said, \"If you sneeze, you might damage the trees,\nYou imprudent old person of Slough.\""},
+{id:"south",n:"the South",r:"England",s:"visited",lat:49.9591,lng:-5.2068,d:"2017-09-16",u:"https://edwardleartrail.wordpress.com/2017/09/16/there-was-an-old-man-of-the-south/",game:true,lim:"There was an Old Man of the South,\nWho had an immoderate mouth;\nBut in swallowing a dish,\nThat was quite full of fish,\nHe was choked, that Old Man of the South.",note:"Lizard Point — the most southerly point of the British mainland."},
+{id:"spithead",n:"Spithead",r:"England",s:"visited",lat:50.778,lng:-1.087,d:"2018-11-10",u:"https://edwardleartrail.wordpress.com/2018/11/10/there-was-an-old-man-of-spithead/",game:true,lim:"There was an old man of Spithead,\nWho opened the window, and said,—\n\"Fil-jomble, fil-jumble, fil-rumble-come-tumble!\"\nThat doubtful old man of Spithead."},
+{id:"station",n:"at a Station",r:"England",s:"visited",lat:51.4861,lng:-0.1229,d:"2018-11-13",u:"https://edwardleartrail.wordpress.com/2018/11/13/there-was-an-old-man-at-a-station/",game:true,lim:"There was an old man at a Station,\nWho made a promiscuous oration;\nBut they said, \"Take some snuff!—You have talk'd quite enough,\nYou afflicting old man at a Station!\"",note:"The elegant platform of Vauxhall station."},
+{id:"stratton",n:"Stratton",r:"England",s:"visited",lat:51.155,lng:-1.245,d:"2020-08-15",u:"https://edwardleartrail.wordpress.com/2020/08/15/there-was-a-great-person-of-stratton/",game:false,lim:null,note:"Stratton Park."},
+{id:"stroud",n:"Stroud",r:"England",s:"visited",lat:51.745,lng:-2.217,d:"2016-08-09",u:"https://edwardleartrail.wordpress.com/2016/08/09/there-was-an-old-person-of-stroud/",game:true,lim:"There was an old person of Stroud,\nWho was horribly jammed in a crowd;\nSome she slew with a kick, some she scrunched with a stick,\nThat impulsive old person of Stroud."},
+{id:"thames",n:"Ems / the Thames",r:"England",s:"visited",lat:51.501,lng:-0.119,d:"2022-08-19",u:"https://edwardleartrail.wordpress.com/2022/08/19/there-was-an-old-person-of-ems/",game:true,lim:"There was an Old Person of Ems,\nWho casually fell in the Thames;\nAnd when he was found,\nThey said he was drowned,\nThat unlucky Old Person of Ems.",note:"The action takes place in the Thames; Domat/Ems in Switzerland was covered by a long-distance contributor."},
+{id:"thamesditton",n:"Thames Ditton",r:"England",s:"visited",lat:51.389,lng:-0.331,d:"2017-03-07",u:"https://edwardleartrail.wordpress.com/2017/03/07/there-was-an-old-man-of-thames-ditton/",game:true,lim:"There was an old man of Thames Ditton,\nWho called out for something to sit on;\nBut they brought him a hat, and said, \"Sit upon that,\nYou abruptious old man of Thames Ditton!\""},
+{id:"threebridges",n:"Three Bridges",r:"England",s:"visited",lat:51.117,lng:-0.161,d:"2017-07-20",u:"https://edwardleartrail.wordpress.com/2017/07/20/there-was-an-old-man-of-three-bridges/",game:true,lim:"There was an old man of Three Bridges,\nWhose mind was distracted by midges,\nHe sate on a wheel, eating underdone veal,\nWhich relieved that old man of Three Bridges."},
+{id:"tring",n:"Tring",r:"England",s:"visited",lat:51.796,lng:-0.659,d:"2015-02-14",u:"https://edwardleartrail.wordpress.com/2015/08/15/there-was-an-old-person-of-tring/",game:true,lim:"There was an Old Person of Tring,\nWho embellished his nose with a ring;\nHe gazed at the moon,\nEvery evening in June,\nThat ecstatic Old Person of Tring.",note:"Where it all began: 14 February 2015. Rik — the old romantic — drove Debbie to Tring, and the Trail was on the road."},
+{id:"twickenham",n:"Twickenham",r:"England",s:"visited",lat:51.446,lng:-0.331,d:"2020-01-19",u:"https://edwardleartrail.wordpress.com/2020/01/19/there-was-an-old-person-of-twickenham/",game:false,lim:null},
+{id:"ware",n:"Ware",r:"England",s:"visited",lat:51.81,lng:-0.029,d:"2015-08-16",u:"https://edwardleartrail.wordpress.com/2015/08/16/there-was-an-old-person-of-ware/",game:true,lim:"There was an old person of Ware,\nWho rode on the back of a bear;\nWhen they ask'd, \"Does it trot?\" he said, \"Certainly not!\nHe's a Moppsikon Floppsikon bear!\""},
+{id:"waterloo",n:"Waterloo Station",r:"England",s:"visited",lat:51.5031,lng:-0.1132,d:"2022-08-26",u:"https://edwardleartrail.wordpress.com/2022/08/26/there-was-an-old-man-with-a-book/",game:false,lim:null,note:"The Old Man with a Book, re-enacted at Waterloo."},
+{id:"weedon",n:"Weedon",r:"England",s:"visited",lat:52.229,lng:-1.081,d:"2016-09-15",u:"https://edwardleartrail.wordpress.com/2016/09/15/there-was-a-young-lady-of-sweden/",game:true,lim:"There was a Young Lady of Sweden,\nWho went by the slow train to Weedon;\nWhen they cried, \"Weedon Station!\"\nShe made no observation,\nBut thought she should go back to Sweden.",note:"One limerick, two countries. Sweden is thereby considered dealt with."},
+{id:"welling",n:"Welling",r:"England",s:"visited",lat:51.462,lng:0.107,d:"2016-09-07",u:"https://edwardleartrail.wordpress.com/2016/09/07/there-was-a-young-lady-of-welling/",game:true,lim:"There was a Young Lady of Welling,\nWhose praise all the world was a-telling;\nShe played on the harp,\nAnd caught several carp,\nThat accomplished Young Lady of Welling."},
+{id:"whitehaven",n:"Whitehaven",r:"England",s:"visited",lat:54.548,lng:-3.585,d:"2016-04-16",u:"https://edwardleartrail.wordpress.com/2016/04/16/there-was-an-old-man-of-whitehaven/",game:true,lim:"There was an Old Man of Whitehaven,\nWho danced a quadrille with a Raven;\nBut they said—\"It's absurd,\nTo encourage this bird!\"\nSo they smashed that Old Man of Whitehaven."},
+{id:"wilts",n:"Wilts",r:"England",s:"visited",lat:51.017,lng:-2.075,d:"2016-06-07",u:"https://edwardleartrail.wordpress.com/2016/06/10/there-was-an-old-person-of-wilts/",game:true,lim:"There was an old person of Wilts,\nWho constantly walked upon stilts;\nHe wreathed them with lilies and daffy-down-dillies,\nThat elegant person of Wilts.",note:"Photographed at the county border. Re-enactment declined on stilts-and-safety grounds."},
+{id:"winchelsea",n:"Winchelsea",r:"England",s:"visited",lat:50.925,lng:0.708,d:"2015-11-06",u:"https://edwardleartrail.wordpress.com/2015/11/06/there-was-an-old-lady-of-winchelsea/",game:true,lim:"There was an old Lady of Winchelsea,\nWho said, \"If you needle or pin shall see\nOn the floor of my room, sweep it up with the broom!\"\nThat exhaustive old Lady of Winchelsea!"},
+{id:"woking",n:"Woking",r:"England",s:"visited",lat:51.319,lng:-0.559,d:"2016-06-10",u:"https://edwardleartrail.wordpress.com/2016/06/10/there-was-an-old-person-of-woking/",game:true,lim:"There was an old person of Woking,\nWhose mind was perverse and provoking;\nHe sate on a rail, with his head in a pail,\nThat illusive old person of Woking."},
+{id:"wrekin",n:"the Wrekin",r:"England",s:"visited",lat:52.669,lng:-2.548,d:"2015-11-06",u:"https://edwardleartrail.wordpress.com/2015/11/06/there-was-an-old-man-of-the-wrekin/",game:true,lim:"There was an Old Man of the Wrekin,\nWhose shoes made a horrible creaking;\nBut they said, \"Tell us whether,\nYour shoes are of leather,\nOr of what, you Old Man of the Wrekin?\""},
+// ===== REPUBLIC OF IRELAND =====
+{id:"bantry",n:"Bantry",r:"Ireland",s:"visited",lat:51.681,lng:-9.455,d:"2019-05-18",u:"https://edwardleartrail.wordpress.com/2019/05/18/there-was-a-young-person-of-bantry/",game:true,lim:"There was a young person of Bantry,\nWho frequently slept in the pantry;\nWhen disturbed by the mice, she appeased them with rice,\nThat judicious young person of Bantry."},
+{id:"bree",n:"Bree",r:"Ireland",s:"visited",lat:52.434,lng:-6.573,d:"2019-05-14",u:"https://edwardleartrail.wordpress.com/2019/05/14/there-was-an-old-person-of-bree/",game:true,lim:"There was an old person of Bree,\nWho frequented the depths of the sea;\nShe nurs'd the small fishes, and washed all the dishes,\nAnd swam back again into Bree."},
+{id:"clare",n:"Clare",r:"Ireland",s:"visited",lat:52.8436,lng:-8.9863,d:"2019-05-21",u:"https://edwardleartrail.wordpress.com/2019/05/22/there-was-a-young-lady-of-clare/",game:true,lim:"There was a Young Lady of Clare,\nWho was sadly pursued by a bear;\nWhen she found she was tired,\nShe abruptly expired,\nThat unfortunate Lady of Clare.",note:"County Clare — a particularly aggressive bear was encountered in Ennis, with disastrous results."},
+{id:"dargle",n:"the Dargle",r:"Ireland",s:"visited",lat:53.19,lng:-6.16,d:"2019-05-22",u:"https://edwardleartrail.wordpress.com/2019/05/22/there-was-an-old-man-of-the-dargle/",game:true,lim:"There was an old man of the Dargle\nWho purchased six barrels of Gargle;\nFor he said, \"I'll sit still, and will roll them down hill,\nFor the fish in the depths of the Dargle.\""},
+{id:"dundalk",n:"Dundalk",r:"Ireland",s:"visited",lat:54.003,lng:-6.405,d:"2024-05-21",u:"https://edwardleartrail.wordpress.com/2024/05/21/there-was-an-old-person-of-dundalk/",game:true,lim:"There was an old person of Dundalk,\nWho tried to teach fishes to walk;\nWhen they tumbled down dead, he grew weary, and said,\n\"I had better go back to Dundalk!\""},
+{id:"kildare",n:"Kildare",r:"Ireland",s:"visited",lat:53.158,lng:-6.91,d:"2024-05-19",u:"https://edwardleartrail.wordpress.com/2024/05/19/there-was-an-old-man-of-kildare/",game:false,lim:null},
+{id:"kilkenny",n:"Kilkenny",r:"Ireland",s:"visited",lat:52.654,lng:-7.245,d:"2019-05-16",u:"https://edwardleartrail.wordpress.com/2019/05/16/there-was-an-old-man-of-kilkenny/",game:true,lim:"There was an Old Man of Kilkenny,\nWho never had more than a penny;\nHe spent all that money,\nIn onions and honey,\nThat wayward Old Man of Kilkenny."},
+// ===== NORTHERN IRELAND =====
+{id:"derry",n:"Derry",r:"Northern Ireland",s:"visited",lat:54.9966,lng:-7.3086,d:"2024-05-25",u:"https://edwardleartrail.wordpress.com/2024/05/25/there-was-an-old-derry-down-derry/",game:true,lim:"There was an Old Derry down Derry,\nWho loved to see little folks merry;\nSo he made them a Book,\nAnd with laughter they shook,\nAt the fun of that Derry down Derry!",note:"The limerick that opens the Book of Nonsense — Lear himself, the original Derry down Derry."},
+{id:"dunluce",n:"Dunluce",r:"Northern Ireland",s:"visited",lat:55.211,lng:-6.579,d:"2024-05-26",u:"https://edwardleartrail.wordpress.com/2024/05/26/there-was-an-old-man-of-dunluce/",game:true,lim:"There was an old man of Dunluce,\nWho went out to sea on a goose:\nWhen he'd gone out a mile, he observ'd with a smile,\n\"It is time to return to Dunluce.\""},
+{id:"newry",n:"Newry",r:"Northern Ireland",s:"visited",lat:54.175,lng:-6.34,d:"2024-05-23",u:"https://edwardleartrail.wordpress.com/2024/05/23/there-was-an-old-person-of-newry/",game:true,lim:"There was an old person of Newry,\nWhose manners were tinctured with fury;\nHe tore all the rugs, and broke all the jugs,\nWithin twenty miles' distance of Newry."},
+// ===== SCOTLAND =====
+{id:"ayr",n:"Ayr",r:"Scotland",s:"visited",lat:55.4586,lng:-4.6292,d:"2023-05-21",u:"https://edwardleartrail.wordpress.com/2023/05/21/there-was-a-young-person-of-ayr/",game:true,lim:"There was a young person of Ayr,\nWhose head was remarkably square:\nOn the top, in fine weather, she wore a gold feather;\nWhich dazzled the people of Ayr."},
+{id:"border",n:"the Border",r:"Scotland",s:"visited",lat:55.3541,lng:-2.4802,d:"2017-05-16",u:"https://edwardleartrail.wordpress.com/2017/05/18/there-was-an-old-man-on-the-border/",game:true,lim:"There was an old man on the Border,\nWho lived in the utmost disorder;\nHe danced with the cat, and made tea in his hat,\nWhich vexed all the folks on the Border.",note:"Carter Bar, on the A68 — with a piper, a kiosk, and tea very nearly made in a hat."},
+{id:"bute",n:"Bute",r:"Scotland",s:"visited",lat:55.837,lng:-5.053,d:"2023-05-22",u:"https://edwardleartrail.wordpress.com/2023/05/22/there-was-a-young-lady-of-bute/",game:true,lim:"There was a Young Lady of Bute,\nWho played on a silver-gilt flute;\nShe played several jigs,\nTo her uncle's white pigs,\nThat amusing Young Lady of Bute."},
+{id:"dunblane",n:"Dunblane",r:"Scotland",s:"visited",lat:56.188,lng:-3.964,d:"2017-05-19",u:"https://edwardleartrail.wordpress.com/2017/05/19/there-was-an-old-man-of-dunblane/",game:true,lim:"There was an old man of Dumblane,\nWho greatly resembled a crane;\nBut they said, \"Is it wrong, since your legs are so long,\nTo request you won't stay in Dumblane?\""},
+{id:"dundee",n:"Dundee",r:"Scotland",s:"visited",lat:56.462,lng:-2.9707,d:"2017-05-20",u:"https://edwardleartrail.wordpress.com/2017/05/20/there-was-an-old-man-of-dundee/",game:true,lim:"There was an Old Man of Dundee,\nWho frequented the top of a tree;\nWhen disturbed by the crows,\nHe abruptly arose,\nAnd exclaimed, \"I'll return to Dundee.\""},
+{id:"fife",n:"Fife",r:"Scotland",s:"visited",lat:56.132,lng:-3.428,d:"2017-05-19",u:"https://edwardleartrail.wordpress.com/2017/05/19/there-was-an-old-person-of-fife/",game:true,lim:"There was an old person of Fife,\nWho was greatly disgusted with life;\nThey sang him a ballad, and fed him on salad,\nWhich cured that old person of Fife.",note:"Pinned at the Kingdom of Fife boundary sign. The salad was plucked fresh from the verge."},
+{id:"gretna",n:"Gretna",r:"Scotland",s:"visited",lat:54.995,lng:-3.064,d:"2018-12-24",u:"https://edwardleartrail.wordpress.com/2018/12/24/there-was-an-old-person-of-gretna/",game:true,lim:"There was an Old Person of Gretna,\nWho rushed down the crater of Etna;\nWhen they said, \"Is it hot?\"\nHe replied, \"No, it's not!\"\nThat mendacious Old Person of Gretna.",note:"One limerick, two volcanically different places."},
+{id:"isles",n:"the Isles",r:"Scotland",s:"visited",lat:56.4785,lng:-6.162,d:"2021-05-27",u:"https://edwardleartrail.wordpress.com/2021/06/03/there-was-an-old-man-of-the-isles/",game:true,lim:"There was an Old Man of the Isles,\nWhose face was pervaded with smiles;\nHe sung high dum diddle,\nAnd played on the fiddle,\nThat amiable Man of the Isles.",note:"Mull and Ulva — two Isles for the price of one. The fiddle was borrowed, on strict conditions that were not met."},
+{id:"johnogroats",n:"John o'Groats",r:"Scotland",s:"visited",lat:58.6373,lng:-3.0689,d:"2026-05-17",u:"https://edwardleartrail.wordpress.com/2026/05/17/the-fellow-they-called-john-ogroats/",game:false,lim:null},
+{id:"joppa",n:"Joppa",r:"Scotland",s:"visited",lat:55.947,lng:-3.098,d:"2021-12-27",u:"https://edwardleartrail.wordpress.com/2021/12/27/there-was-an-old-lady-of-joppa/",game:false,lim:null,note:"Joppa, Edinburgh — also claimed by Jaffa, Israel."},
+{id:"leith",n:"Leith",r:"Scotland",s:"visited",lat:55.976,lng:-3.172,d:"2023-03-16",u:"https://edwardleartrail.wordpress.com/2023/03/16/there-was-an-old-person-of-leith/",game:false,lim:null},
+{id:"melrose",n:"Melrose",r:"Scotland",s:"visited",lat:55.599,lng:-2.728,d:"2017-05-19",u:"https://edwardleartrail.wordpress.com/2017/05/19/there-was-an-old-man-of-melrose/",game:true,lim:"There was an Old Man of Melrose,\nWho walked on the tips of his toes;\nBut they said, \"It ain't pleasant,\nTo see you at present,\nYou stupid Old Man of Melrose.\""},
+{id:"north",n:"the North",r:"Scotland",s:"visited",lat:58.6706,lng:-3.3765,d:"2026-05-19",u:"https://edwardleartrail.wordpress.com/2026/05/19/there-was-an-old-man-of-the-north/",game:true,lim:"There was an Old Man of the North,\nWho fell into a basin of broth;\nBut a laudable cook,\nFished him out with a hook,\nWhich saved that Old Man of the North.",note:"Dunnet Head — the true most northerly point of the British mainland (less famous than John o'Groats, much as the Lizard outranks Land's End). The final cardinal point."},
+{id:"skye",n:"Skye",r:"Scotland",s:"visited",lat:57.413,lng:-6.194,d:"2023-05-29",u:"https://edwardleartrail.wordpress.com/2023/05/29/there-was-an-old-person-of-skye/",game:true,lim:"There was an old person of Skye,\nWho waltz'd with a Bluebottle fly:\nThey buzz'd a sweet tune, to the light of the moon,\nAnd entranced all the people of Skye.",note:"Two limericks, one Skye."},
+{id:"west",n:"the West",r:"Scotland",s:"visited",lat:56.7266,lng:-6.2223,d:"2021-06-03",u:"https://edwardleartrail.wordpress.com/2021/06/03/there-was-an-old-man-of-the-west/",game:true,lim:"There was an Old Man of the West,\nWho wore a pale plum-coloured vest;\nWhen they said, \"Does it fit?\"\nHe replied, \"Not a bit!\"\nThat uneasy Old Man of the West.",note:"Ardnamurchan Point — the most westerly point of the British mainland. Two limericks, one lighthouse."},
+{id:"wick",n:"Wick",r:"Scotland",s:"visited",lat:58.439,lng:-3.094,d:"2026-05-23",u:"https://edwardleartrail.wordpress.com/2026/05/28/there-was-an-old-person-of-wick/",game:true,lim:"There was an old person of Wick,\nWho said, \"Tick-a-Tick, Tick-a-Tick;\nChickabee, Chickabaw.\" And he said nothing more,\nThat laconic old person of Wick.",note:"The 164th and final dispatch: the long, leisurely, costly and pointless journey, complete. 23 May 2026."},
+// ===== WALES =====
+{id:"bangor",n:"Bangor",r:"Wales",s:"visited",lat:53.227,lng:-4.129,d:"2016-09-25",u:"https://edwardleartrail.wordpress.com/2016/09/25/there-was-an-old-person-of-bangor/",game:true,lim:"There was an Old Person of Bangor,\nWhose face was distorted with anger;\nHe tore off his boots,\nAnd subsisted on roots,\nThat borascible person of Bangor."},
+{id:"dee",n:"the Dee",r:"Wales",s:"visited",lat:53.14,lng:-2.88,d:"2016-09-17",u:"https://edwardleartrail.wordpress.com/2016/09/17/there-was-an-old-man-of-the-dee/",game:true,lim:"There was an Old Man of the Dee,\nWho was sadly annoyed by a flea;\nWhen he said, \"I will scratch it,\"\nThey gave him a hatchet,\nWhich grieved that Old Man of the Dee.",note:"Two limericks, one river, two countries."},
+{id:"deeside",n:"Dee-side",r:"Wales",s:"visited",lat:53.19,lng:-3.03,d:"2016-09-18",u:"https://edwardleartrail.wordpress.com/2016/09/18/there-was-an-old-man-of-dee-side/",game:true,lim:"There was an old man of Dee-side\nWhose hat was exceedingly wide,\nBut he said, \"Do not fail, if it happen to hail,\nTo come under my hat at Dee-side!\""},
+{id:"mold",n:"Mold",r:"Wales",s:"visited",lat:53.166,lng:-3.144,d:"2016-09-19",u:"https://edwardleartrail.wordpress.com/2016/09/19/there-was-an-old-person-of-mold/",game:true,lim:"There was an Old Person of Mold,\nWho shrank from sensations of cold;\nSo he purchased some muffs,\nSome furs and some fluffs,\nAnd wrapped himself from the cold."},
+{id:"wales",n:"Wales",r:"Wales",s:"visited",lat:52.935,lng:-3.057,d:"2016-09-24",u:"https://edwardleartrail.wordpress.com/2016/09/25/there-was-a-young-lady-of-wales/",game:true,lim:"There was a Young Lady of Wales,\nWho caught a large fish without scales;\nWhen she lifted her hook,\nShe exclaimed, \"Only look!\"\nThat ecstatic Young Lady of Wales.",note:"Pinned at Chirk, just over the border. The fish was caught at Beaumaris."},
+// ===== OVERSEAS — VISITED =====
+{id:"calais",n:"Calais",r:"France",s:"visited",lat:50.9513,lng:1.8587,d:"2025-05-07",u:"https://edwardleartrail.wordpress.com/2025/05/07/there-was-an-old-person-of-calais/",game:false,lim:null},
+{id:"cassel",n:"Cassel",r:"France",s:"visited",lat:50.8,lng:2.485,d:"2025-05-11",u:"https://edwardleartrail.wordpress.com/2025/05/11/there-was-an-old-person-of-cassel/",game:true,lim:"There was an old person of Cassel,\nWhose nose finished off in a tassel;\nBut they call'd out, \"Oh well! don't it look like a bell!\"\nWhich perplexed that old person of Cassel."},
+{id:"france",n:"France",r:"France",s:"visited",lat:45.8992,lng:6.1294,d:"2016-07-21",u:"https://edwardleartrail.wordpress.com/2016/07/26/there-was-an-old-lady-of-france/",game:true,lim:"There was an old lady of France,\nWho taught little ducklings to dance;\nWhen she said, \"Tick-a-tack!\" they only said, \"Quack!\"\nWhich grieved that old lady of France.",note:"Annecy and Talloires, French Alps."},
+{id:"crete",n:"Crete",r:"Greece",s:"visited",lat:35.3387,lng:25.1442,d:"2018-10-12",u:"https://edwardleartrail.wordpress.com/2018/10/12/there-was-a-young-person-of-crete/",game:true,lim:"There was a Young person of Crete,\nWhose toilette was far from complete;\nShe dressed in a sack,\nSpickle-speckled with black,\nThat ombliferous person of Crete."},
+{id:"janina",n:"Janina",r:"Greece",s:"visited",lat:39.665,lng:20.8537,d:"2017-10-13",u:"https://edwardleartrail.wordpress.com/2017/10/13/there-was-a-young-person-of-janina/",game:true,lim:"There was a young person of Janina,\nWhose uncle was always a fanning her;\nWhen he fanned off her head, she smiled sweetly, and said,\n\"You propitious old person of Janina!\""},
+{id:"sparta",n:"Sparta",r:"Greece",s:"visited",lat:37.074,lng:22.43,d:"2025-09-30",u:"https://edwardleartrail.wordpress.com/2025/09/30/there-was-an-old-person-of-sparta/",game:true,lim:"There was an Old Person of Sparta,\nWho had twenty-five sons and one daughter;\nHe fed them on snails,\nAnd weighed them in scales,\nThat wonderful person of Sparta."},
+{id:"thermopylae",n:"Thermopylae",r:"Greece",s:"visited",lat:38.796,lng:22.536,d:"2017-10-11",u:"https://edwardleartrail.wordpress.com/2017/10/11/there-was-an-old-man-of-thermopylae/",game:true,lim:"There was an old man of Thermopylae,\nWho never did anything properly;\nBut they said, \"If you choose to boil eggs in your shoes,\nYou shall never remain in Thermopylae.\""},
+{id:"portugal",n:"Portugal",r:"Portugal",s:"visited",lat:38.7223,lng:-9.133,d:"2018-02-16",u:"https://edwardleartrail.wordpress.com/2018/02/19/there-was-a-young-lady-of-portugal/",game:true,lim:"There was a Young lady of Portugal,\nWhose ideas were excessively nautical;\nShe climbed up a tree,\nTo examine the sea,\nBut declared she would never leave Portugal.",note:"Lisbon. The Young Lady was eventually prevailed upon to leave."},
+{id:"majorca",n:"Majorca",r:"Spain",s:"visited",lat:39.5696,lng:2.6502,d:"2015-09-13",u:"https://edwardleartrail.wordpress.com/2015/09/13/there-was-a-young-girl-of-majorca/",game:true,lim:"There was a Young Girl of Majorca,\nWhose aunt was a very fast walker;\nShe walked seventy miles,\nAnd leaped fifteen stiles,\nWhich astonished that Girl of Majorca."},
+{id:"newyork",n:"New York",r:"USA",s:"visited",lat:40.7128,lng:-74.006,d:"2022-04-10",u:"https://edwardleartrail.wordpress.com/2022/04/10/there-was-an-old-man-of-new-york/",game:false,lim:null},
+{id:"etna",n:"Etna",r:"Italy",s:"visited",lat:37.751,lng:14.9934,d:"2018-12-24",u:"https://edwardleartrail.wordpress.com/2018/12/24/there-was-an-old-person-of-gretna/",game:false,lim:null,note:"Covered by the Gretna limerick — see Gretna. The crater was not personally rushed down."},
+{id:"ems",n:"Domat/Ems",r:"Switzerland",s:"longdistance",lat:46.834,lng:9.451,d:"2022-08-19",u:"https://edwardleartrail.wordpress.com/2022/08/19/there-was-an-old-person-of-ems/",game:false,lim:null,note:"A Long-distance Lear contribution — the Thames half was handled personally."},
+{id:"russia",n:"Russia",r:"Russia",s:"longdistance",lat:55.596,lng:38.155,d:"2021-12-02",u:"https://edwardleartrail.wordpress.com/2021/12/02/there-was-a-young-lady-of-russia/",game:true,lim:"There was a Young Lady of Russia,\nWho screamed so that no one could hush her;\nHer screams were extreme,\nNo one heard such a scream,\nAs was screamed by that Lady of Russia.",note:"Long-distance Lear: re-enacted in Kratovo by Aleksandra, the Trail's first Russian correspondent. The scream was audible from 1,590 miles away."},
+{id:"turkey",n:"Turkey",r:"Turkey",s:"longdistance",lat:41.0082,lng:28.9784,d:"2024-10-01",u:"https://edwardleartrail.wordpress.com/2024/10/01/there-was-a-young-lady-of-turkey/",game:true,lim:"There was a Young Lady of Turkey,\nWho wept when the weather was murky;\nWhen the day turned out fine,\nShe ceased to repine,\nThat capricious Young Lady of Turkey.",note:"Long-distance Lear: roving ambassadors Gordon & Marian, pouncing weather permitting."},
+{id:"sweden",n:"Sweden",r:"Sweden",s:"technicality",lat:59.3293,lng:18.0686,d:"2016-09-15",u:"https://edwardleartrail.wordpress.com/2016/09/15/there-was-a-young-lady-of-sweden/",game:false,lim:null,note:"Considered dealt with via Weedon, England. The slow train has been taken."},
+// ===== OVERSEAS — STILL TO CONQUER =====
+{id:"algiers",n:"Algiers",r:"Algeria",s:"unvisited",lat:36.7538,lng:3.0588},
+{id:"vienna",n:"Vienna",r:"Austria",s:"unvisited",lat:48.2082,lng:16.3738,game:true,lim:"There was an Old Man of Vienna,\nWho lived upon Tincture of Senna;\nWhen that did not agree,\nHe took Camomile Tea,\nThat nasty Old Man of Vienna."},
+{id:"brussels",n:"Brussels",r:"Belgium",s:"unvisited",lat:50.8503,lng:4.3517},
+{id:"quebec",n:"Quebec",r:"Canada",s:"unvisited",lat:46.8139,lng:-71.208,game:true,lim:"There was an Old Man of Quebec,\nA beetle ran over his neck;\nBut he cried, \"With a needle,\nI'll slay you, O beadle!\"\nThat angry Old Man of Quebec."},
+{id:"capehorn",n:"Cape Horn",r:"Chile",s:"unvisited",lat:-55.9833,lng:-67.2667,game:true,lim:"There was an Old Man of Cape Horn,\nWho wished he had never been born;\nSo he sat on a chair,\nTill he died of despair,\nThat dolorous Man of Cape Horn."},
+{id:"chili",n:"Chili",r:"Chile",s:"unvisited",lat:-33.4489,lng:-70.6693,game:true,lim:"There was an Old Person of Chili,\nWhose conduct was painful and silly;\nHe sate on the stairs,\nEating apples and pears,\nThat imprudent Old Person of Chili."},
+{id:"china",n:"China",r:"China",s:"unvisited",lat:39.9042,lng:116.4074,game:true,lim:"There was an old person of China,\nWhose daughters were Jiska and Dinah,\nAmelia and Fluffy, Olivia and Chuffy,\nAnd all of them settled in China."},
+{id:"hongkong",n:"Hong Kong",r:"China",s:"unvisited",lat:22.3193,lng:114.1694,game:true,lim:"There was an old man of Hong Kong,\nWho never did anything wrong;\nHe lay on his back, with his head in a sack,\nThat innocuous old man of Hong Kong."},
+{id:"tartary",n:"Tartary",r:"Central Asia",s:"unvisited",lat:39.627,lng:66.975,game:true,lim:"There was an Old Person of Tartary,\nWho divided his jugular artery;\nBut he screeched to his wife,\nAnd she said, \"Oh, my life!\nYour death will be felt by all Tartary!\""},
+{id:"columbia",n:"Columbia",r:"Colombia",s:"unvisited",lat:4.711,lng:-74.0721,game:true,lim:"There was an Old Man of Columbia,\nWho was thirsty, and called out for some beer;\nBut they brought it quite hot,\nIn a small copper pot,\nWhich disgusted that man of Columbia."},
+{id:"bohemia",n:"Bohemia",r:"Czech Republic",s:"unvisited",lat:49.7384,lng:13.3736,game:true,lim:"There was an old Man of Bohemia,\nWhose daughter was christened Euphemia;\nTill one day, to his grief,\nShe married a thief,\nWhich grieved that old Man of Bohemia."},
+{id:"prague",n:"Prague",r:"Czech Republic",s:"unvisited",lat:50.0755,lng:14.4378,game:true,lim:"There was an Old Person of Prague,\nWho was suddenly seized with the plague;\nBut they gave him some butter,\nWhich caused him to mutter,\nAnd cured that Old Person of Prague.",note:"Two limericks, one Prague."},
+{id:"boulak",n:"Boulak",r:"Egypt",s:"unvisited",lat:30.068,lng:31.234,game:true,lim:"There was an old man of Boulak,\nWho sate on a Crocodile's back;\nBut they said, \"Towr'ds the night he may probably bite,\nWhich might vex you, old man of Boulak!\""},
+{id:"ibreem",n:"Ibreem",r:"Egypt",s:"unvisited",lat:22.65,lng:31.99,game:true,lim:"There was an old man of Ibreem,\nWho suddenly threaten'd to scream;\nBut they said, \"If you do, we will thump you quite blue,\nYou disgusting old man of Ibreem!\""},
+{id:"karnak",n:"Karnak",r:"Egypt",s:"unvisited",lat:25.7188,lng:32.6573,game:true,lim:"There was an old person of Ickley,\nWho could not abide to ride quickly;\nHe rode to Karnak on a tortoise's back,\nThat moony old person of Ickley.",note:"Reached by tortoise from Ickley, wherever that is."},
+{id:"nile",n:"the Nile",r:"Egypt",s:"unvisited",lat:25.7,lng:32.64,game:true,lim:"There was an Old Man of the Nile,\nWho sharpened his nails with a file;\nTill he cut off his thumbs,\nAnd said calmly, \"This comes—\nOf sharpening one's nails with a file!\""},
+{id:"philae",n:"Philae",r:"Egypt",s:"unvisited",lat:24.025,lng:32.884,game:true,lim:"There was an Old Person of Philae,\nWhose conduct was scroobious and wily;\nHe rushed up a Palm,\nWhen the weather was calm,\nAnd observed all the ruins of Philae."},
+{id:"cannes",n:"Cannes",r:"France",s:"unvisited",lat:43.5528,lng:7.0174,game:true,lim:"There was an old person of Cannes,\nWho purchased three fowls and a fan;\nThose she placed on a stool, and to make them feel cool\nShe constantly fanned them at Cannes."},
+{id:"corsica",n:"Corsica",r:"France",s:"unvisited",lat:41.9192,lng:8.7386,game:true,lim:"There was a young lady of Corsica,\nWho purchased a little brown saucy-cur;\nWhich she fed upon ham, and hot raspberry jam,\nThat expensive young lady of Corsica."},
+{id:"marseilles",n:"Marseilles",r:"France",s:"unvisited",lat:43.2965,lng:5.3698,game:true,lim:"There was an Old Man of Marseilles,\nWhose daughters wore bottle-green veils;\nThey caught several Fish,\nWhich they put in a dish,\nAnd sent to their Pa at Marseilles."},
+{id:"nice",n:"Nice",r:"France",s:"unvisited",lat:43.7102,lng:7.262,game:true,lim:"There was an old person of Nice,\nWhose associates were usually Geese.\nThey walked out together in all sorts of weather,\nThat affable person of Nice!"},
+{id:"orleans",n:"Orleans",r:"France",s:"unvisited",lat:47.9029,lng:1.9093},
+{id:"rheims",n:"Rheims",r:"France",s:"unvisited",lat:49.2583,lng:4.0317,game:true,lim:"There was an Old Person of Rheims,\nWho was troubled with horrible dreams;\nSo, to keep him awake,\nThey fed him with cake,\nWhich amused that Old Person of Rheims."},
+{id:"toulouse",n:"Toulouse",r:"France",s:"unvisited",lat:43.6047,lng:1.4442,game:true,lim:"There was an old man of Toulouse\nWho purchased a new pair of shoes;\nWhen they asked, \"Are they pleasant?\" he said, \"Not at present!\"\nThat turbid old man of Toulouse."},
+{id:"berlin",n:"Berlin",r:"Germany",s:"unvisited",lat:52.52,lng:13.405,game:true,lim:"There was an Old Man of Berlin,\nWhose form was uncommonly thin;\nTill he once, by mistake,\nWas mixed up in a cake,\nSo they baked that Old Man of Berlin."},
+{id:"coblenz",n:"Coblenz",r:"Germany",s:"unvisited",lat:50.3569,lng:7.589,game:true,lim:"There was an Old Man of Coblenz,\nThe length of whose legs was immense;\nHe went with one prance,\nFrom Turkey to France,\nThat surprising Old Man of Coblenz."},
+{id:"rhine",n:"the Rhine",r:"Germany",s:"unvisited",lat:50.139,lng:7.729},
+{id:"corfu",n:"Corfu",r:"Greece",s:"unvisited",lat:39.6243,lng:19.9217,game:true,lim:"There was an Old Man of Corfu,\nWho never knew what he should do;\nSo he rushed up and down,\nTill the sun made him brown,\nThat bewildered Old Man of Corfu."},
+{id:"paxo",n:"Paxo",r:"Greece",s:"unvisited",lat:39.2,lng:20.183},
+{id:"rhodes",n:"Rhodes",r:"Greece",s:"unvisited",lat:36.4341,lng:28.2176,game:true,lim:"There was an Old Person of Rhodes,\nWho strongly objected to toads;\nHe paid several cousins,\nTo catch them by dozens,\nThat futile Old Person of Rhodes."},
+{id:"buda",n:"Buda",r:"Hungary",s:"unvisited",lat:47.4979,lng:19.0402,game:true,lim:"There was an Old Person of Buda,\nWhose conduct grew ruder and ruder;\nTill at last, with a hammer,\nThey silenced his clamour,\nBy smashing that Person of Buda."},
+{id:"calcutta",n:"Calcutta",r:"India",s:"unvisited",lat:22.5726,lng:88.3639,game:true,lim:"There was an Old Man of Calcutta,\nWho perpetually ate bread and butter;\nTill a great bit of muffin,\nOn which he was stuffing,\nChoked that horrid old man of Calcutta."},
+{id:"cashmere",n:"Cashmere",r:"India",s:"unvisited",lat:34.0837,lng:74.7973,game:true,lim:"There was an old man of Cashmere,\nWhose movements were scroobious and queer;\nBeing slender and tall, he looked over a wall,\nAnd perceived two fat ducks of Cashmere."},
+{id:"fagoo",n:"Fagoo",r:"India",s:"unvisited",lat:31.13,lng:77.307},
+{id:"madras",n:"Madras",r:"India",s:"unvisited",lat:13.0827,lng:80.2707,game:true,lim:"There was an Old Man of Madras,\nWho rode on a cream-coloured ass;\nBut the length of its ears,\nSo promoted his fears,\nThat it killed that Old Man of Madras."},
+{id:"mahasso",n:"Mahasso",r:"India",s:"unvisited",lat:31.11,lng:77.25},
+{id:"narkunda",n:"Narkunda",r:"India",s:"unvisited",lat:31.259,lng:77.455,note:"Three limericks, one Narkunda."},
+{id:"oude",n:"Oude",r:"India",s:"unvisited",lat:26.8467,lng:80.9462},
+{id:"teog",n:"Teog",r:"India",s:"unvisited",lat:31.121,lng:77.356},
+{id:"jodd",n:"Jodd",r:"Iran",s:"unvisited",lat:32.0,lng:53.0,game:true,lim:"There was an old person of Jodd,\nWhose ways were perplexing and odd;\nShe purchased a whistle, and sate on a thistle,\nAnd squeaked to the people of Jodd."},
+{id:"ramleh",n:"Ramleh",r:"Israel",s:"unvisited",lat:31.925,lng:34.873},
+{id:"joppa-il",n:"Joppa (Jaffa)",r:"Israel",s:"unvisited",lat:32.053,lng:34.752,note:"The Scottish Joppa has been visited on its behalf."},
+{id:"abruzzi",n:"th'Abruzzi",r:"Italy",s:"unvisited",lat:42.3506,lng:13.3995,game:true,lim:"There was an old Man of th' Abruzzi,\nSo blind that he couldn't his foot see;\nWhen they said, \"That's your toe,\"\nHe replied, \"Is it so?\"\nThat doubtful old Man of th' Abruzzi."},
+{id:"ancona",n:"Ancona",r:"Italy",s:"unvisited",lat:43.6158,lng:13.5189,game:true,lim:"There was an old man of Ancona,\nWho found a small dog with no owner,\nWhich he took up and down all the streets of the town,\nThat anxious old man of Ancona."},
+{id:"aosta",n:"Aosta",r:"Italy",s:"unvisited",lat:45.737,lng:7.313,game:true,lim:"There was an Old Man of Aosta,\nWho possessed a large Cow, but he lost her;\nBut they said, \"Don't you see,\nShe has rushed up a tree?\nYou invidious Old Man of Aosta!\""},
+{id:"apulia",n:"Apulia",r:"Italy",s:"unvisited",lat:41.1171,lng:16.8719,game:true,lim:"There was an Old Man of Apulia,\nWhose conduct was very peculiar;\nHe fed twenty sons,\nUpon nothing but buns,\nThat whimsical Man of Apulia."},
+{id:"florence",n:"Florence",r:"Italy",s:"unvisited",lat:43.7696,lng:11.2558,game:true,lim:"There was an old person of Florence,\nWho held mutton chops in abhorrence;\nHe purchased a Bustard, and fried him in Mustard,\nWhich choked that old person of Florence."},
+{id:"girgenti",n:"Girgenti",r:"Italy",s:"unvisited",lat:37.3111,lng:13.5765},
+{id:"ischia",n:"Ischia",r:"Italy",s:"unvisited",lat:40.731,lng:13.952,game:true,lim:"There was an Old Person of Ischia,\nWhose conduct grew friskier and friskier;\nHe danced hornpipes and jigs,\nAnd ate thousands of figs,\nThat lively Old Person of Ischia."},
+{id:"leghorn",n:"Leghorn",r:"Italy",s:"unvisited",lat:43.5485,lng:10.3106,game:true,lim:"There was an Old Man of Leghorn,\nThe smallest as ever was born;\nBut quickly snapt up he,\nWas once by a puppy,\nWho devoured that Old Man of Leghorn."},
+{id:"lucca",n:"Lucca",r:"Italy",s:"unvisited",lat:43.843,lng:10.508,game:true,lim:"There was a Young Lady of Lucca,\nWhose lovers completely forsook her;\nShe ran up a tree,\nAnd said, \"Fiddle-de-dee!\"\nWhich embarrassed the people of Lucca."},
+{id:"messina",n:"Messina",r:"Italy",s:"unvisited",lat:38.1938,lng:15.554,game:true,lim:"There was an old man of Messina,\nWhose daughter was named Opsibeena;\nShe wore a small wig, and rode out on a pig,\nTo the perfect delight of Messina."},
+{id:"parma",n:"Parma",r:"Italy",s:"unvisited",lat:44.8015,lng:10.3279,game:true,lim:"There was a Young Lady of Parma,\nWhose conduct grew calmer and calmer;\nWhen they said, \"Are you dumb?\"\nShe merely said, \"Hum!\"\nThat provoking Young Lady of Parma."},
+{id:"pisa",n:"Pisa",r:"Italy",s:"unvisited",lat:43.7228,lng:10.4017,game:true,lim:"There was an old person of Pisa,\nWhose daughters did nothing to please her;\nShe dressed them in gray, and banged them all day,\nRound the walls of the city of Pisa."},
+{id:"rimini",n:"Rimini",r:"Italy",s:"unvisited",lat:44.0678,lng:12.5695,game:true,lim:"There was an old person of Rimini,\nWho said, \"Gracious! Goodness! O Gimini!\"\nWhen they said, \"Please be still!\" she ran down a hill,\nAnd was never more heard of at Rimini."},
+{id:"sestri",n:"Sestri",r:"Italy",s:"unvisited",lat:44.273,lng:9.396,game:true,lim:"There was an old person of Sestri,\nWho sate himself down in the vestry;\nWhen they said, \"You are wrong!\" he merely said \"Bong!\"\nThat repulsive old person of Sestri."},
+{id:"vesuvius",n:"Vesuvius",r:"Italy",s:"unvisited",lat:40.822,lng:14.426,game:true,lim:"There was an Old Man of Vesuvius,\nWho studied the works of Vitruvius;\nWhen the flames burnt his book,\nTo drinking he took,\nThat morbid Old Man of Vesuvius."},
+{id:"jamaica",n:"Jamaica",r:"Jamaica",s:"unvisited",lat:17.9712,lng:-76.7936},
+{id:"sidon",n:"Sidon",r:"Lebanon",s:"unvisited",lat:33.557,lng:35.372},
+{id:"tyre",n:"Tyre",r:"Lebanon",s:"unvisited",lat:33.27,lng:35.203,game:true,lim:"There was a Young Lady of Tyre,\nWho swept the loud chords of a lyre;\nAt the sound of each sweep,\nShe enraptured the deep,\nAnd enchanted the city of Tyre."},
+{id:"moldavia",n:"Moldavia",r:"Moldova/Romania",s:"unvisited",lat:47.0105,lng:28.8638,game:true,lim:"There was an Old Man of Moldavia,\nWho had the most curious behaviour;\nFor while he was able,\nHe slept on a table,\nThat funny Old Man of Moldavia."},
+{id:"nepaul",n:"Nepaul",r:"Nepal",s:"unvisited",lat:27.7172,lng:85.324,game:true,lim:"There was an Old Man or Nepaul,\nFrom his horse had a terrible fall;\nBut, though split quite in two,\nBy some very strong glue,\nThey mended that Man of Nepaul."},
+{id:"hague",n:"the Hague",r:"Netherlands",s:"unvisited",lat:52.0705,lng:4.3007,game:true,lim:"There was an Old Man of the Hague,\nWhose ideas were excessively vague;\nHe built a balloon,\nTo examine the moon,\nThat deluded Old Man of the Hague."},
+{id:"norway",n:"Norway",r:"Norway",s:"unvisited",lat:59.9139,lng:10.7522,game:true,lim:"There was a Young Lady of Norway,\nWho casually sat in a doorway;\nWhen the door squeezed her flat,\nShe exclaimed, \"What of that?\"\nThis courageous Young Lady of Norway."},
+{id:"peru",n:"Peru",r:"Peru",s:"unvisited",lat:-12.0464,lng:-77.0428,game:true,lim:"There was an Old Man of Peru,\nWho never knew what he should do;\nSo he tore off his hair,\nAnd behaved like a bear,\nThat intrinsic Old Man of Peru.",note:"Two limericks, one Peru. The other involves a stew and is best not dwelt upon."},
+{id:"kamschatka",n:"Kamschatka",r:"Russia",s:"unvisited",lat:53.0446,lng:158.6483,game:true,lim:"There was an Old Man of Kamschatka,\nWho possessed a remarkably fat cur,\nHis gait and his waddle,\nWere held as a model,\nTo all the fat dogs in Kamschatka.",note:"The Trail's white whale. Applications from Kamchatka-based correspondents remain warmly invited."},
+{id:"cape",n:"The Cape",r:"South Africa",s:"unvisited",lat:-33.9249,lng:18.4241,game:true,lim:"There was an Old Man of the Cape,\nWho possessed a large Barbary Ape;\nTill the Ape one dark night,\nSet the house on a light,\nWhich burned that Old Man of the Cape."},
+{id:"cadiz",n:"Cadiz",r:"Spain",s:"unvisited",lat:36.5271,lng:-6.2886,game:true,lim:"There was an Old Person of Cadiz,\nWho was always polite to all ladies;\nBut in handing his daughter,\nHe fell into the water,\nWhich drowned that Old Person of Cadiz."},
+{id:"spain",n:"Spain",r:"Spain",s:"unvisited",lat:40.4168,lng:-3.7038,game:true,lim:"There was an Old Person of Spain,\nWho hated all trouble and pain;\nSo he sate on a chair,\nWith his feet in the air,\nThat umbrageous Old Person of Spain."},
+{id:"smyrna",n:"Smyrna",r:"Turkey",s:"unvisited",lat:38.4237,lng:27.1428,game:true,lim:"There was a Young Person of Smyrna,\nWhose Grandmother threatened to burn her;\nBut she seized on the Cat,\nAnd said, \"Granny, burn that!\nYou incongruous Old Woman of Smyrna!\""},
+{id:"troy",n:"Troy",r:"Turkey",s:"unvisited",lat:39.957,lng:26.239,game:true,lim:"There was an Old Person of Troy,\nWhose drink was warm brandy and soy;\nWhich he took with a spoon,\nBy the light of the moon,\nIn sight of the city of Troy.",note:"Two limericks, one Troy."}
+];
+
+// Locations that inexplicably do not exist
+const INVENTED = [
+{n:"Bar",lim:"There was an old person of Bar,\nWho passed all her life in a jar,\nWhich she painted pea-green, to appear more serene,\nThat placid old person of Bar."},
+{n:"Dumbree",lim:"There was an old man of Dumbree,\nWho taught little owls to drink tea;\nFor he said, \"To eat mice is not proper or nice,\"\nThat amiable man of Dumbree."},
+{n:"Dunrose",lim:"There was an old man of Dunrose;\nA parrot seized hold of his nose.\nWhen he grew melancholy, they said, \"His name's Polly,\"\nWhich soothed that old man of Dunrose."},
+{n:"El Hums",lim:"There was an old man of El Hums,\nWho lived upon nothing but crumbs,\nWhich he picked off the ground, with the other birds round,\nIn the roads and the lanes of El Hums."},
+{n:"Ickley",lim:"There was an old person of Ickley,\nWho could not abide to ride quickly;\nHe rode to Karnak on a tortoise's back,\nThat moony old person of Ickley."},
+{n:"Port Grigor",lim:"There was an old man of Port Grigor,\nWhose actions were noted for vigour;\nHe stood on his head till his waistcoat turned red,\nThat eclectic old man of Port Grigor."},
+{n:"West Dumpet",lim:"There was an old man of West Dumpet,\nWho possessed a large nose like a trumpet;\nWhen he blew it aloud, it astonished the crowd,\nAnd was heard through the whole of West Dumpet."}
+];
+
+const LOCKDOWN = [
+{n:"There was a Young Person in green",u:"https://edwardleartrail.wordpress.com/2020/04/10/there-was-a-young-person-in-green/"},
+{n:"There was a Young Person whose History",u:"https://edwardleartrail.wordpress.com/2020/05/05/there-was-a-young-person-whose-history/"},
+{n:"There was an Old Lady whose folly",u:"https://edwardleartrail.wordpress.com/2020/04/19/there-was-an-old-lady-whose-folly/"},
+{n:"There was an Old Man in a casement",u:"https://edwardleartrail.wordpress.com/2020/04/21/there-was-an-old-man-in-a-casement/"},
+{n:"There was an Old Man on whose nose",u:"https://edwardleartrail.wordpress.com/2020/05/16/there-was-an-old-man-on-whose-nose/"},
+{n:"There was an Old Man who said \u201cHush!\u201d",u:"https://edwardleartrail.wordpress.com/2020/04/04/there-was-an-old-man-who-said-hush/"},
+{n:"There was an Old Man who supposed",u:"https://edwardleartrail.wordpress.com/2020/05/18/there-was-an-old-man-who-supposed/"},
+{n:"There was an Old Man with a flute",u:"https://edwardleartrail.wordpress.com/2020/05/17/there-was-an-old-man-with-a-flute/"},
+{n:"There was an Old Man with an Owl",u:"https://edwardleartrail.wordpress.com/2020/05/09/there-was-an-old-man-with-an-owl/"},
+{n:"There was an Old Person whose habits",u:"https://edwardleartrail.wordpress.com/2020/04/13/there-was-an-old-person-whose-habits/"}
+];
+
+const SUNDRIES = [
+{n:"How the Edward Lear trail started",u:"https://edwardleartrail.wordpress.com/2017/05/09/how-the-edward-lear-trail-started/"},
+{n:"How pleasant to know Mr Lear",u:"https://edwardleartrail.wordpress.com/2017/05/12/how-pleasant-to-know-mr-lear/"},
+{n:"How pleasant to know Mr Lear \u2014 by Jim Grant",u:"https://edwardleartrail.wordpress.com/2023/10/27/how-pleasant-to-know-mr-lear-by-jim-grant/"},
+{n:"Edward Lear\u2019s new limericks",u:"https://edwardleartrail.wordpress.com/2019/07/19/edward-lears-new-limericks/"},
+{n:"There was an Old Man of St. Bees",u:"https://edwardleartrail.wordpress.com/2016/04/16/there-was-an-old-man-of-st-bees/"},
+{n:"There was a Young Lady of Llanfairpwllgwyngyll\u2026",u:"https://edwardleartrail.wordpress.com/2016/09/20/there-was-a-young-lady-of-llanfair%c2%adpwllgwyngyll%c2%adgogery%c2%adchwyrn%c2%addrobwll%c2%adllan%c2%adtysilio%c2%adgogo%c2%adgoch/"},
+{n:"There wasn\u2019t an Old Person of Limerick",u:"https://edwardleartrail.wordpress.com/2019/05/21/there-wasnt-an-old-person-of-limerick/"},
+{n:"There was a Young Bard of Japan",u:"https://edwardleartrail.wordpress.com/2019/03/07/there-was-a-young-bard-of-japan/"},
+{n:"There was a Young Lady called Alice",u:"https://edwardleartrail.wordpress.com/2016/08/05/there-was-a-young-lady-called-alice/"},
+{n:"Nonsense Botany",u:"https://edwardleartrail.wordpress.com/2015/11/07/nonsense-botany/"},
+{n:"To Make an Amblongus Pie",u:"https://edwardleartrail.wordpress.com/2015/08/31/to-make-an-amblongus-pie/"},
+{n:"More Cookery",u:"https://edwardleartrail.wordpress.com/2016/10/30/more-cookery/"},
+{n:"At Last, More Nonsense Cookery",u:"https://edwardleartrail.wordpress.com/2018/07/19/at-last-more-nonsense-cookery/"},
+{n:"George Orwell on Edward Lear",u:"https://edwardleartrail.wordpress.com/2018/10/16/george-orwell-on-edward-lear/"},
+{n:"Lear mania sweeps the nation!",u:"https://edwardleartrail.wordpress.com/2016/10/19/lear-mania-sweeps-the-nation/"},
+{n:"Educating the Nation",u:"https://edwardleartrail.wordpress.com/2021/09/17/educating-the-nation/"},
+{n:"A Wren Menaces a Spider",u:"https://edwardleartrail.wordpress.com/2018/08/22/a-wren-menaces-a-spider/"},
+{n:"For our Spanish readers: Hab\u00eda un viejo\u2026",u:"https://edwardleartrail.wordpress.com/2017/06/21/for-our-spanish-readers-habia-un-viejo/"},
+{n:"Progress Report and Analytics",u:"https://edwardleartrail.wordpress.com/2019/01/27/progress-report-and-analytics/"},
+{n:"Trouble at the Wilkins Building",u:"https://edwardleartrail.wordpress.com/2016/12/09/trouble-at-the-wilkins-building/"}
+];
+</script>
+<script>
+/* ============ helpers ============ */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmtDate(d){ if(!d) return ''; const p=d.split('-'); return `${+p[2]} ${MONTHS[+p[1]-1]} ${p[0]}`; }
+function haversine(a,b){ const R=6371, dLat=(b.lat-a.lat)*Math.PI/180, dLng=(b.lng-a.lng)*Math.PI/180;
+  const s=Math.sin(dLat/2)**2 + Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s)); }
+const slugOf = u => (u||'').replace(/\/+$/,'').split('/').pop();
+
+/* ============ WGS84 → OS National Grid reference ============ */
+function toGridRef(lat, lon){
+  // Not valid for the island of Ireland (Irish Grid) or overseas
+  if (lat > 51.3 && lat < 55.5 && lon < -5.9) return null;
+  const D = Math.PI/180;
+  // WGS84 → cartesian
+  const a1=6378137, b1=6356752.3142, e21=1-(b1*b1)/(a1*a1);
+  const phi=lat*D, lam=lon*D;
+  const nu1=a1/Math.sqrt(1-e21*Math.sin(phi)**2);
+  const x1=nu1*Math.cos(phi)*Math.cos(lam), y1=nu1*Math.cos(phi)*Math.sin(lam), z1=nu1*(1-e21)*Math.sin(phi);
+  // Helmert WGS84 → OSGB36
+  const tx=-446.448, ty=125.157, tz=-542.060, s=20.4894e-6;
+  const rx=-0.1502/3600*D, ry=-0.2470/3600*D, rz=-0.8421/3600*D;
+  const x2=tx+(1+s)*x1-rz*y1+ry*z1;
+  const y2=ty+rz*x1+(1+s)*y1-rx*z1;
+  const z2=tz-ry*x1+rx*y1+(1+s)*z1;
+  // cartesian → Airy 1830 lat/lon
+  const a=6377563.396, b=6356256.909, e2=1-(b*b)/(a*a);
+  const p=Math.sqrt(x2*x2+y2*y2);
+  let phi2=Math.atan2(z2, p*(1-e2));
+  for(let i=0;i<8;i++){ const nu=a/Math.sqrt(1-e2*Math.sin(phi2)**2); phi2=Math.atan2(z2+e2*nu*Math.sin(phi2), p); }
+  const lam2=Math.atan2(y2,x2);
+  // transverse Mercator
+  const F0=0.9996012717, phi0=49*D, lam0=-2*D, N0=-100000, E0=400000, n=(a-b)/(a+b);
+  const sin=Math.sin(phi2), cos=Math.cos(phi2), tan=Math.tan(phi2);
+  const nu=a*F0/Math.sqrt(1-e2*sin*sin);
+  const rho=a*F0*(1-e2)/Math.pow(1-e2*sin*sin,1.5);
+  const eta2=nu/rho-1;
+  const M=b*F0*((1+n+1.25*n*n+1.25*n**3)*(phi2-phi0)
+    -(3*n+3*n*n+2.625*n**3)*Math.sin(phi2-phi0)*Math.cos(phi2+phi0)
+    +(1.875*n*n+1.875*n**3)*Math.sin(2*(phi2-phi0))*Math.cos(2*(phi2+phi0))
+    -(35/24)*n**3*Math.sin(3*(phi2-phi0))*Math.cos(3*(phi2+phi0)));
+  const I=M+N0, II=nu/2*sin*cos, III=nu/24*sin*cos**3*(5-tan**2+9*eta2);
+  const IIIA=nu/720*sin*cos**5*(61-58*tan**2+tan**4);
+  const IV=nu*cos, V=nu/6*cos**3*(nu/rho-tan**2);
+  const VI=nu/120*cos**5*(5-18*tan**2+tan**4+14*eta2-58*tan**2*eta2);
+  const dl=lam2-lam0;
+  const N=I+II*dl**2+III*dl**4+IIIA*dl**6;
+  const E=E0+IV*dl+V*dl**3+VI*dl**5;
+  if(E<0||E>=700000||N<0||N>=1300000) return null;
+  const e100=Math.floor(E/100000), n100=Math.floor(N/100000);
+  let l1=(19-n100)-(19-n100)%5+Math.floor((e100+10)/5);
+  let l2=((19-n100)*5)%25+e100%5;
+  if(l1>7)l1++; if(l2>7)l2++;
+  return String.fromCharCode(l1+65)+String.fromCharCode(l2+65)+' '+
+    String(Math.floor((E%100000)/100)).padStart(3,'0')+' '+
+    String(Math.floor((N%100000)/100)).padStart(3,'0');
+}
+
+/* ============ featured images from WordPress (runtime, graceful) ============ */
+const IMGS = {};
+(async function loadImages(){
+  try{ // prefer the local bundle if bundle.js has been run (see README)
+    const r0 = await fetch('images.json');
+    if (r0.ok){ Object.assign(IMGS, await r0.json()); return; }
+  }catch(e){ /* no local bundle — fall through to the live API */ }
+  try{
+    for(let page=1; page<=2; page++){
+      const r = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/edwardleartrail.wordpress.com/posts/?number=100&page=${page}&fields=URL,featured_image`);
+      if(!r.ok) return;
+      const j = await r.json();
+      (j.posts||[]).forEach(p => { if(p.featured_image) IMGS[slugOf(p.URL)] = p.featured_image; });
+      if(!j.posts || j.posts.length < 100) return;
+    }
+  }catch(e){ /* offline or blocked — the map simply shows text */ }
+})();
+
+/* ============ tabs ============ */
+const tabs = document.querySelectorAll('.tab');
+const panels = { 'tab-map':'panel-map', 'tab-game':'panel-game', 'tab-report':'panel-report', 'tab-margins':'panel-margins' };
+tabs.forEach(t => t.addEventListener('click', () => {
+  tabs.forEach(x => x.setAttribute('aria-selected', x===t ? 'true' : 'false'));
+  Object.values(panels).forEach(id => document.getElementById(id).hidden = true);
+  document.getElementById(panels[t.id]).hidden = false;
+  if(t.id==='tab-map' && mainMap) setTimeout(()=>mainMap.invalidateSize(), 60);
+  if(t.id==='tab-game'){ if(!gameMap) initGameMap(); else setTimeout(()=>gameMap.invalidateSize(), 60); }
+}));
+
+/* ============ basemap layers ============ */
+function baseLayers(){
+  const layers = {}, overlays = {};
+  const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' });
+  if (CONFIG.OS_KEY){
+    const os = L.tileLayer(`https://api.os.uk/maps/raster/v1/zxy/Outdoor_3857/{z}/{x}/{y}.png?key=${CONFIG.OS_KEY}`, {
+      maxZoom: 19, attribution: 'Contains OS data &copy; Crown copyright and database rights ' + new Date().getFullYear() });
+    layers['Ordnance Survey (today)'] = L.layerGroup([osm, os]);
+  }
+  layers[CONFIG.OS_KEY ? 'World (OpenStreetMap)' : 'Modern map (OpenStreetMap)'] = osm;
+  if (CONFIG.MAPTILER_KEY){
+    layers['1890s sheets (NLS)'] = L.tileLayer(`https://api.maptiler.com/tiles/uk-osgb63k1885/{z}/{x}/{y}.jpg?key=${CONFIG.MAPTILER_KEY}`, {
+      maxZoom: 15, attribution: 'Historic maps &copy; National Library of Scotland, via MapTiler' });
+  }
+  return { layers, overlays };
+}
+document.getElementById('keynote').innerHTML = (CONFIG.OS_KEY)
+  ? 'Backdrop: the real Ordnance Survey. Lear would have wanted it this way.'
+  : 'Current backdrop: OpenStreetMap, standing in. To switch on the genuine Ordnance Survey backdrop (and the 1890s sheets), add the two free keys in <code>CONFIG</code> — instructions in the README.';
+
+/* ============ main map ============ */
+const STYLE = {
+  visited:     { radius:7, fillColor:'#2E7D4F', color:'#fff', weight:2, fillOpacity:.9 },
+  longdistance:{ radius:7, fillColor:'#D98E4A', color:'#fff', weight:2, fillOpacity:.9 },
+  technicality:{ radius:7, fillColor:'#D63384', color:'#fff', weight:2, fillOpacity:.9 },
+  unvisited:   { radius:6, fillColor:'#FFFFFF', color:'#8D8D86', weight:2, dashArray:'3,3', fillOpacity:.85 }
+};
+const CHIP = {
+  visited: d => `<span class="chip">Visited · ${fmtDate(d)}</span>`,
+  longdistance: () => `<span class="chip orange">By long-distance correspondent</span>`,
+  technicality: () => `<span class="chip mag">On a technicality</span>`,
+  unvisited: () => `<span class="chip grey">Still to conquer</span>`
+};
+function popupHTML(t){
+  const gr = toGridRef(t.lat, t.lng);
+  const where = gr ? `<span class="chip" style="background:#23231F">${gr}</span> ` : '';
+  let h = `<div class="pop"><h4>${esc(t.n)}</h4>${where}${CHIP[t.s](t.d)}`;
+  const img = t.u ? IMGS[slugOf(t.u)] : null;
+  if (t.lim) h += `<div class="verse">${esc(t.lim)}</div>`;
+  else if (img) h += `<img src="${esc(img)}" alt="Edward Lear's illustrated limerick for ${esc(t.n)}" loading="lazy">`;
+  else if (t.s === 'unvisited') h += `<div class="note">No dispatch yet. The management regrets the delay (11 years and counting).</div>`;
+  if (t.lim && img) h += `<img src="${esc(img)}" alt="From the dispatch" loading="lazy">`;
+  if (t.note) h += `<div class="note">${esc(t.note)}</div>`;
+  if (t.u) h += `<a class="read" href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a>`;
+  return h + `</div>`;
+}
+let mainMap;
+(function initMainMap(){
+  const { layers } = baseLayers();
+  const first = Object.values(layers)[0];
+  mainMap = L.map('map', { layers:[first], worldCopyJump:true }).setView([54.2, -3.5], 6);
+  if (Object.keys(layers).length > 1) L.control.layers(layers, null, { collapsed:true }).addTo(mainMap);
+  // invisible tap halos first (underneath), so dense clusters are easy to hit on phones;
+  // visible dots added second so a precise click always wins
+  const dots = TRAIL.map(t => L.circleMarker([t.lat, t.lng], STYLE[t.s] || STYLE.visited)
+    .bindPopup(() => popupHTML(t), { maxWidth: 290 }));
+  TRAIL.forEach((t, i) => {
+    L.circleMarker([t.lat, t.lng], { radius:16, stroke:false, fillColor:'#000', fillOpacity:0 })
+      .on('click', () => dots[i].openPopup())
+      .addTo(mainMap);
+  });
+  dots.forEach(d => d.addTo(mainMap));
+  const legend = L.control({ position:'bottomleft' });
+  legend.onAdd = function(){
+    const div = L.DomUtil.create('div','legend');
+    div.innerHTML = `<h5>Legend</h5>
+      <span class="dot" style="background:#2E7D4F"></span>Visited in person<br>
+      <span class="dot" style="background:#D98E4A"></span>Long-distance Lear (by correspondent)<br>
+      <span class="dot" style="background:#D63384"></span>Claimed on a technicality<br>
+      <span class="dot" style="background:#fff;box-shadow:0 0 0 1.5px #8D8D86"></span>Still to conquer`;
+    return div;
+  };
+  legend.addTo(mainMap);
+})();
+
+/* ============ the examination (game) ============ */
+const EXTRA_REDACT = {
+  weedon:['Sweden','Weedon'], thames:['Ems','Thames'], gretna:['Gretna','Etna'],
+  downe:['Downe','Down'], deeside:['Dee-side','Dee'], dee:['Dee']
+};
+function redact(t){
+  const tokens = EXTRA_REDACT[t.id] || t.n.replace(/^the /i,'').split(/[\s/()]+/).filter(w => w.length > 2);
+  let html = esc(t.lim);
+  tokens.forEach(tok => {
+    html = html.replace(new RegExp(esc(tok).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'gi'),
+      '<span class="redact">██████</span>');
+  });
+  return html;
+}
+const QUIPS = [
+  [2,   'Within the parish. The beadle salutes you.'],
+  [15,  'A brisk walk away. Highly creditable.'],
+  [50,  'Same map sheet, at least.'],
+  [150, 'You relinquished your hold somewhat.'],
+  [400, 'The slow train does not stop there.'],
+  [1e9, 'You have discovered an entirely different country.']
+];
+const RANKS = [
+  [850, 'Chief Surveyor of the Nonsense Ordnance'],
+  [700, 'Old Person of Considerable Learning'],
+  [550, 'Scholar of the Slow Train to Weedon'],
+  [400, 'Competent Rambler, Occasionally Lost'],
+  [250, 'Young Lady of Approximate Geography'],
+  [-1,  'You Will Go Back Directly to Bow']
+];
+let gameMap, guessMarker, answerLayer = null;
+let rounds = [], roundIx = 0, total = 0, guessing = false;
+
+function initGameMap(){
+  gameMap = L.map('gamemap', { worldCopyJump:true }).setView([54.5, -4], 5);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution:'&copy; OpenStreetMap contributors' }).addTo(gameMap);
+  gameMap.on('click', e => {
+    if(!guessing) return;
+    if(guessMarker) guessMarker.setLatLng(e.latlng);
+    else guessMarker = L.circleMarker(e.latlng, { radius:8, fillColor:'#D63384', color:'#fff', weight:2, fillOpacity:.95 }).addTo(gameMap);
+    const b = document.getElementById('guessbtn');
+    b.disabled = false; b.textContent = 'Submit to the examiners';
+  });
+  setTimeout(()=>gameMap.invalidateSize(), 60);
+}
+function startGame(){
+  const pool = TRAIL.filter(t => t.game && t.lim);
+  rounds = pool.slice().sort(() => Math.random() - .5).slice(0, 10);
+  roundIx = 0; total = 0;
+  document.getElementById('gamestart').hidden = true;
+  document.getElementById('finale').hidden = true;
+  document.getElementById('gamearea').hidden = false;
+  if(!gameMap) initGameMap(); else setTimeout(()=>gameMap.invalidateSize(), 60);
+  showRound();
+}
+function showRound(){
+  const t = rounds[roundIx];
+  guessing = true;
+  document.getElementById('scorebar').innerHTML =
+    rounds.map((_,i) => `<i class="${i < roundIx ? 'done' : ''}"></i>`).join('');
+  document.getElementById('roundno').textContent = `Question ${roundIx+1} of ${rounds.length}`;
+  document.getElementById('verse').innerHTML = redact(t);
+  const b = document.getElementById('guessbtn');
+  b.disabled = true; b.textContent = 'Drop your pin first';
+  document.getElementById('result').hidden = true;
+  if (guessMarker){ gameMap.removeLayer(guessMarker); guessMarker = null; }
+  if (answerLayer){ gameMap.removeLayer(answerLayer); answerLayer = null; }
+  gameMap.setView([54.5, -4], 5);
+}
+function submitGuess(){
+  if(!guessMarker || !guessing) return;
+  guessing = false;
+  const t = rounds[roundIx];
+  const g = guessMarker.getLatLng();
+  const d = haversine({lat:g.lat, lng:g.lng}, t);
+  const pts = d < 1 ? 100 : Math.max(0, Math.round(100 * Math.exp(-d/120)));
+  total += pts;
+  const quip = QUIPS.find(q => d < q[0])[1];
+  answerLayer = L.layerGroup([
+    L.circleMarker([t.lat, t.lng], STYLE.visited).bindPopup(`<div class="pop"><h4>${esc(t.n)}</h4></div>`),
+    L.polyline([[g.lat, g.lng], [t.lat, t.lng]], { color:'#D63384', dashArray:'6,6', weight:2 })
+  ]).addTo(gameMap);
+  gameMap.fitBounds(L.latLngBounds([g, [t.lat, t.lng]]).pad(.35));
+  const res = document.getElementById('result');
+  res.hidden = false;
+  res.innerHTML = `<div class="pts">${pts} marks</div>
+    <div>It was <strong>${esc(t.n)}</strong> — you were ${d < 1 ? 'under a mile' : Math.round(d) + ' km'} out.</div>
+    <div class="quip">${quip}</div>
+    ${t.u ? `<div style="margin-top:6px"><a href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a></div>` : ''}
+    <div style="margin-top:10px"><button class="btn" id="nextbtn">${roundIx === rounds.length-1 ? 'See your certificate' : 'Next question'}</button></div>`;
+  document.getElementById('guessbtn').disabled = true;
+  document.getElementById('nextbtn').addEventListener('click', nextRound);
+}
+function nextRound(){
+  roundIx++;
+  if (roundIx >= rounds.length) return finale();
+  showRound();
+}
+function finale(){
+  document.getElementById('gamearea').hidden = true;
+  const rank = RANKS.find(r => total > r[0])[1];
+  const f = document.getElementById('finale');
+  f.hidden = false;
+  f.innerHTML = `<span class="eyebrow">Certificate of Examination</span>
+    <div class="total">${total}</div>
+    <div>marks of a possible 1,000</div>
+    <div class="rank">${rank}</div>
+    <p>The examiners' decision is final, arbitrary, and inconsistent, in keeping with the standards of the Trail itself.</p>
+    <button class="btn" id="againbtn">Sit the paper again</button>`;
+  document.getElementById('againbtn').addEventListener('click', startGame);
+}
+document.getElementById('beginbtn').addEventListener('click', startGame);
+document.getElementById('guessbtn').addEventListener('click', submitGuess);
+
+/* ============ the annual report ============ */
+(function report(){
+  const visited = TRAIL.filter(t => t.s === 'visited');
+  const unvisited = TRAIL.filter(t => t.s === 'unvisited');
+  const longd = TRAIL.filter(t => t.s === 'longdistance');
+  const start = new Date('2015-02-14'), end = new Date('2026-05-23');
+  const days = Math.round((end - start) / 86400000);
+  const yearCounts = {};
+  const yearOf = x => { const m = (x.d || x.u || '').match(/20\d\d/); return m ? +m[0] : null; };
+  [...TRAIL.filter(t => t.u), ...LOCKDOWN, ...SUNDRIES].forEach(x => {
+    const y = yearOf(x); if (y) yearCounts[y] = (yearCounts[y] || 0) + 1;
+  });
+  const busiest = Object.entries(yearCounts).sort((a,b) => b[1] - a[1])[0];
+  const north = visited.reduce((a,b) => a.lat > b.lat ? a : b);
+  const south = visited.reduce((a,b) => a.lat < b.lat ? a : b);
+  const east  = visited.reduce((a,b) => a.lng > b.lng ? a : b);
+  const west  = visited.reduce((a,b) => a.lng < b.lng ? a : b);
+  const stats = [
+    ['164', 'dispatches published', 'green'],
+    [String(days.toLocaleString('en-GB')), 'days, first dispatch to last', ''],
+    ['100%', 'of Britain &amp; Ireland limericks visited', 'green'],
+    [String(TRAIL.length), 'locations surveyed on the map', ''],
+    [String(unvisited.length), 'still to conquer (management remains "optimistic")', 'orange'],
+    [String(longd.length), 'outsourced to long-distance correspondents', 'orange'],
+    [`${busiest[0]}`, `busiest year — ${busiest[1]} dispatches`, 'mag'],
+    ['95', 'subscribers ("worldwide acclaim")', 'mag']
+  ];
+  document.getElementById('stats').innerHTML = stats.map(([b, s, c]) =>
+    `<div class="stat ${c}"><b>${b}</b><span>${s}</span></div>`).join('');
+  const years = Object.keys(yearCounts).map(Number).sort();
+  const max = Math.max(...Object.values(yearCounts));
+  document.getElementById('chartrows').innerHTML = years.map(y =>
+    `<div class="row"><span class="yr">${y}</span><span class="bar" style="width:${(yearCounts[y]/max)*72}%"></span><span class="n">${yearCounts[y]}</span></div>`).join('');
+  const compass = [
+    `Northernmost point personally attained: ${north.n} (${north.lat.toFixed(2)}°N).`,
+    `Southernmost: ${south.n}. Easternmost: ${east.n}. Westernmost: ${west.n}.`
+  ];
+  const notes = [
+    'Dispatch count of 164 is as declared by the management; the auditors counted differently and were dismissed.',
+    'Pigs carried down the Strand: 0 of a possible 2. Two pigs were nonetheless purchased.',
+    'Crabs lost in the post: 1 (see Hyde).',
+    'Fire irons acquired: 1 set, £10, marked down from £6 (see Bradley).',
+    'Beer-tasting tokens exchanged for Pepsi: yes (see Burton). The shame endures.',
+    'Total cost of the project: undisclosed, but described in the founding documents as "costly".',
+    'Kamschatka remains at large.',
+    ...compass
+  ];
+  document.getElementById('notes').innerHTML = notes.map(n => `<li>${n}</li>`).join('');
+})();
+
+/* ============ the margins ============ */
+(function margins(){
+  const inv = INVENTED.map(v =>
+    `<div><span class="vname">${esc(v.n)}</span><div class="verse">${esc(v.lim)}</div></div>`).join('');
+  const lock = LOCKDOWN.map(p => `<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
+  const sund = SUNDRIES.map(p => `<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
+  const roll = TRAIL.filter(t => t.s === 'unvisited').map(t => esc(t.n)).join(' · ');
+  document.getElementById('margins').innerHTML = `
+    <div class="card mcard"><h3>The Lockdown Lears</h3>
+      <div class="sub">Spring 2020: travel forbidden, nonsense undimmed. Ten limericks with no location at all, re-enacted without leaving the house.</div>
+      <ul>${lock}</ul></div>
+    <div class="card mcard"><h3>Sundry dispatches</h3>
+      <div class="sub">Scholarly apparatus, nonsense cookery, botanical studies, and other essential business of the Trail.</div>
+      <ul>${sund}</ul></div>
+    <div class="card mcard"><h3>Locations that inexplicably do not exist</h3>
+      <div class="sub">Lear invented these outright, which the management considers poor planning on his part.</div>
+      ${inv}</div>
+    <div class="card mcard ghost"><h3>The roll of the unconquered</h3>
+      <div class="sub">Every location still awaiting a visit, listed so that nobody can say the Trail is finished. (The Trail is finished.)</div>
+      <p style="font-size:14px;line-height:1.9">${roll}</p></div>`;
+})();
+</script>
+</body>
+</html>
