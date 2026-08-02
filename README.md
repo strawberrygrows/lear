@@ -2,17 +2,17 @@
 
 ## What you have
 
-- **index.html** — the whole site in one file: map, guessing game, annual report, margins. Works as-is by double-clicking it (it needs internet for map tiles and the limerick scans).
+- **index.html** — the whole site in one file: map, quiz, miscellany. Works as-is by double-clicking it (it needs internet for map tiles and the limerick scans).
 - **bundle.js** — optional script that downloads all the blog's limerick scans/photos next to the site so it doesn't lean on WordPress at runtime.
-- **lear-trail-copy-review.md** — every word on the site. Edit, re-upload to me, I apply.
+- **lear-trail-copy-review.md** — every word on the site, with Rachel's edits applied.
+- **vendor/leaflet/** — the map library, served locally so the site doesn't depend on a CDN.
 
 ## Putting it on the internet
 
-Any static host takes this as-is; no server code. Easiest routes:
-
-1. **Netlify Drop** (drop.netlify.com) — drag the folder in, done, free.
-2. **GitHub Pages** — you know this one already; a repo with index.html and Pages switched on.
-3. Your own domain: buy it, then point it at whichever of the above you used (both have "add custom domain" flows that walk you through the DNS records — same dance as antalszerb.com on Porkbun).
+Deployed via **GitHub Pages**: every push to the default branch runs
+`.github/workflows/deploy.yml` and republishes the site. For a custom
+domain later, add it under Settings → Pages (same DNS dance as
+antalszerb.com on Porkbun).
 
 ## Switching on the real Ordnance Survey backdrop
 

@@ -9,44 +9,44 @@
 3. **The Fife pin** is an approximation (Kingdom of Fife boundary sign, ~56.13, −3.43). Correct me if you know the exact sign.
 4. **Limerick accuracy.** Verse texts come verbatim from the Project Gutenberg editions of *A Book of Nonsense* and *More Nonsense*. Twenty posthumous limericks aren't in those editions, so their popups show your dad's scan of Lear's illustration instead. Worth spot-checking a few popups against the blog.
 5. **Assumptions to bless:** Cheadle = Greater Manchester; Stratton = East Stratton, Hants; Shoreham = Shoreham-by-Sea; Hyde = Hyde, Greater Manchester; Shields pinned at North Shields.
-6. **St. Bees and Llanfairpwllgwyngyll** are currently in the Margins (sundries). Both are real visited places — say the word and I'll promote them to green pins.
+6. **St. Bees and Llanfairpwllgwyngyll** are currently in the Margins (sundries). Both are real visited places — say the word and I'll promote them to green pins. Yes green pins please
 7. **The "164 dispatches" figure** is your dad's own count from the About page. My count of pinnable posts is slightly lower, so the Annual Report jokes about it ("the auditors counted differently and were dismissed"). Happy?
 
 ## ② Global
 
-- Banner: **Explorer Series · Sheet 164 · Scale 1:Nonsense**
+- Banner: **Explorer Series · Nonsense**
 - Title: **The Edward Lear Trail**
-- Strap: **Tring → Wick · 2015–2026 · All routes complete**
-- Byline: *Surveyed on foot, by car, and occasionally by proxy, by Rik & Debbie Edwards of Chorleywood.*
-- Tabs: **The Map · The Examination · The Annual Report · The Margins**
-- Footer: *Based on The Edward Lear Trail by Rik & Debbie Edwards — 164 dispatches, 2015–2026. Limericks by Edward Lear (1812–1888), who started all this. Site by Rachel, with a computer. · Map data © OpenStreetMap contributors; OS layers © Crown copyright where enabled.*
+- Strap: **The travels of Rik and Debbie Edwards**
+- No byline
+- Tabs: **The Map · Quiz · [Deleted] · Misc**
+- Footer: *Limericks by Edward Lear (1812–1888. Site by Rachel. · Map data © OpenStreetMap contributors; OS layers © Crown copyright where enabled.*
 
 ## ③ The Map
 
-- Birthday card label: **A note from the cartographer's daughter**
-- Map footnote (before keys added): *Current backdrop: OpenStreetMap, standing in. To switch on the genuine Ordnance Survey backdrop (and the 1890s sheets), add the two free keys in CONFIG — instructions in the README.*
-- Map footnote (after keys added): *Backdrop: the real Ordnance Survey. Lear would have wanted it this way.*
+- Birthday card label: **Happy birthday Dad!**
+- Map footnote (before keys added): *Current backdrop: OpenStreetMap, standing in. To switch on the genuine Ordnance Survey backdrop (and the 1890s sheets), add the two free keys in CONFIG — instructions in the README.* NO FOOTNOTE DELETE THIS PART ENTIRELY
+- Map footnote (after keys added): *Backdrop: the real Ordnance Survey. Lear would have wanted it this way.* NO FOOTNOTE DELETE THIS PART ENTIRELY
 - Legend: **Visited in person / Long-distance Lear (by correspondent) / Claimed on a technicality / Still to conquer**
 - Popup status chips: **Visited · [date] / By long-distance correspondent / On a technicality / Still to conquer**
 - Popup link: **Read the dispatch →**
-- Unvisited popup line: *No dispatch yet. The management regrets the delay (11 years and counting).*
+- Unvisited popup line: *No dispatch yet.*
 
-## ④ The Examination (guessing game)
+## ④ The Quiz
 
-- Eyebrow: **Ordnance Survey of Nonsense · Practical Paper**
-- Intro: *Ten limericks, names redacted. Read the verse, then place your pin where you believe the Trail went. Marks are awarded for proximity and withheld for hubris. Some questions are brutally unfair; this is tradition.*
-- Buttons: **Begin the examination / Drop your pin first / Submit to the examiners / Next question / See your certificate / Sit the paper again**
+- Eyebrow: **Ordnance Survey of Nonsense · Quiz**
+- Intro: *Ten limericks, names redacted. Read the verse, then place your pin where you believe the Trail went.*
+- Buttons: **Begin the Quiz / Drop your pin first / Submit / Next question / See your results / Try again**
 - Distance verdicts (near → far):
-  - *Within the parish. The beadle salutes you.*
-  - *A brisk walk away. Highly creditable.*
-  - *Same map sheet, at least.*
-  - *You relinquished your hold somewhat.*
-  - *The slow train does not stop there.*
-  - *You have discovered an entirely different country.*
-- Ranks (best → worst): **Chief Surveyor of the Nonsense Ordnance / Old Person of Considerable Learning / Scholar of the Slow Train to Weedon / Competent Rambler, Occasionally Lost / Young Lady of Approximate Geography / You Will Go Back Directly to Bow**
-- Certificate small print: *The examiners' decision is final, arbitrary, and inconsistent, in keeping with the standards of the Trail itself.*
+  - *Within the parish. Bravo.*
+  - *A brisk walk away. Respectable.*
+  - *Could be worse.*
+  - *Could be better.*
+  - *As Celine Dion once said, "Far."*
+  - *Miles away! Total nonsense.*
+- Ranks (best → worst): **Chief Surveyor of the Nonsense Ordnance / Old Person of Considerable Learning / Scholar of the Slow Train to Weedon / Competent Rambler, Occasionally Lost / Young Lady of Approximate Geography / You Will Go Back Directly to Bow** Remind me to update these when I have internet and can source them from Lear limericks 
+- Certificate small print: *The examiners' decision is final, arbitrary, and inconsistent, in keeping with the standards of the Trail itself.* DELETE THIS NO SMALL PRINT NEEDED
 
-## ⑤ The Annual Report
+## ⑤ The Annual Report < Delete this tab on reflection I don't think it's very good 
 
 - Eyebrow: **For the attention of all 95 subscribers**
 - Intro: *Compiled to the exacting standards of the Trail's own Progress Report and Analytics (2019). All figures audited by nobody.*
@@ -61,16 +61,16 @@
   - *Kamschatka remains at large.*
   - *(Plus computed compass extremes — northern/southern/eastern/westernmost points personally attained.)*
 
-## ⑥ The Margins
+## ⑥ Misc
 
-- Eyebrow: **Beyond the sheet edge** · Title: **The Margins of the Map**
+- Eyebrow: **Beyond the sheet edge** · Title: **Miscellany**
 - Intro: *Matters the grid cannot contain: verses written from the sofa in 2020, scholarly apparatus, and the places Lear simply made up.*
 - Lockdown Lears blurb: *Spring 2020: travel forbidden, nonsense undimmed. Ten limericks with no location at all, re-enacted without leaving the house.*
 - Sundries blurb: *Scholarly apparatus, nonsense cookery, botanical studies, and other essential business of the Trail.*
 - Invented places blurb: *Lear invented these outright, which the management considers poor planning on his part.*
 - Unconquered roll blurb: *Every location still awaiting a visit, listed so that nobody can say the Trail is finished. (The Trail is finished.)*
 
-## ⑦ Pin-by-pin jokes (popup notes)
+## ⑦ Pin-by-pin jokes (popup notes) None of these jokes are funny sorry. please delete them all 
 
 These appear in small grey text inside individual popups. Cut any that misfire — some invent plausible details from the posts, so please catch anything that contradicts the actual dispatch:
 
