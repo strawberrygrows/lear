@@ -1,0 +1,33 @@
+name: Bundle limerick images
+
+# Runs bundle.js on a GitHub runner (which can reach WordPress), commits
+# the downloaded images, and republishes the site. Trigger manually from
+# the Actions tab, or re-run whenever the blog gains new images.
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node bundle.js
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add images images.json
+          git diff --cached --quiet && echo "No image changes" && exit 0
+          git commit -m "Bundle limerick images from WordPress"
+          git push
+      - name: Republish site
+        run: git push --force origin HEAD:gh-pages

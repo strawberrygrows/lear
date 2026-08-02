@@ -144,7 +144,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
 <section id="panel-map" role="tabpanel" aria-labelledby="tab-map">
   <div class="birthday" id="birthday">
     <span class="hand">Happy birthday Dad!</span>
-    <p id="birthday-text">[BIRTHDAY MESSAGE GOES HERE — Rachel writes this]</p>
+    <p id="birthday-text">YARHI! Happy birthday Dad</p>
   </div>
   <div class="mapwrap"><div id="map" aria-label="Map of every Edward Lear limerick location"></div></div>
 </section>
@@ -592,8 +592,13 @@ let mainMap;
   if (Object.keys(layers).length > 1) L.control.layers(layers, null, { collapsed:true }).addTo(mainMap);
   // invisible tap halos first (underneath), so dense clusters are easy to hit on phones;
   // visible dots added second so a precise click always wins
+  // cap popup height to the map box so tall popups scroll instead of
+  // being clipped off the top edge where they can't be panned into view
+  const popOpts = () => ({ maxWidth: 290,
+    maxHeight: Math.max(200, document.getElementById('map').clientHeight - 110),
+    autoPanPadding: L.point(16, 16) });
   const dots = TRAIL.map(t => L.circleMarker([t.lat, t.lng], STYLE[t.s] || STYLE.visited)
-    .bindPopup(() => popupHTML(t), { maxWidth: 290 }));
+    .bindPopup(() => popupHTML(t), popOpts()));
   TRAIL.forEach((t, i) => {
     L.circleMarker([t.lat, t.lng], { radius:16, stroke:false, fillColor:'#000', fillOpacity:0 })
       .on('click', () => dots[i].openPopup())
