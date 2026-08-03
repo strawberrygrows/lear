@@ -19,6 +19,7 @@
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
 body{
+  overflow-x:clip;
   background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.55;
   background-image:linear-gradient(rgba(157,184,210,.22) 1px,transparent 1px),
                    linear-gradient(90deg,rgba(157,184,210,.22) 1px,transparent 1px);
@@ -29,7 +30,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--magenta);outline-of
 
 /* ---------- header ---------- */
 header{border-bottom:3px solid var(--ink);background:var(--paper)}
-.masthead{max-width:1080px;margin:0 auto;padding:22px 18px 16px}
+.masthead{max-width:1080px;margin:0 auto;padding:22px 18px 2px}
 .series{display:inline-block;background:var(--magenta);color:#fff;font-family:var(--disp);
   font-weight:700;font-size:clamp(15px,2.5vw,19px);letter-spacing:.06em;text-transform:uppercase;padding:6px 14px}
 h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:1;
@@ -58,6 +59,11 @@ section[hidden]{display:none}
 /* ---------- map ---------- */
 .mapwrap{border:2px solid var(--ink);background:#fff}
 #map{height:min(72vh,640px);min-height:420px}
+/* up to medium screens the main map goes edge to edge, like on phones */
+@media (max-width:1280px){
+  #panel-map .mapwrap{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-left:none;border-right:none}
+  #map{height:76vh}
+}
 .mapnote{font-size:13px;color:#57564F;margin-top:8px}
 .mapnote code{background:#EFEFE9;padding:1px 5px;border-radius:3px}
 .leaflet-container{font-family:var(--body)}
@@ -556,12 +562,14 @@ function baseLayers(){
   const layers = {}, overlays = {};
   const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' });
+  // OpenStreetMap stays the default (one consistent style worldwide);
+  // the OS backdrop, when a key is added, is an option in the switcher
+  layers[CONFIG.OS_KEY ? 'World (OpenStreetMap)' : 'Modern map (OpenStreetMap)'] = osm;
   if (CONFIG.OS_KEY){
     const os = L.tileLayer(`https://api.os.uk/maps/raster/v1/zxy/Outdoor_3857/{z}/{x}/{y}.png?key=${CONFIG.OS_KEY}`, {
       maxZoom: 19, attribution: 'Contains OS data &copy; Crown copyright and database rights ' + new Date().getFullYear() });
-    layers['Ordnance Survey (today)'] = L.layerGroup([osm, os]);
+    layers['Ordnance Survey (GB only)'] = L.layerGroup([osm, os]);
   }
-  layers[CONFIG.OS_KEY ? 'World (OpenStreetMap)' : 'Modern map (OpenStreetMap)'] = osm;
   if (CONFIG.MAPTILER_KEY){
     layers['1890s sheets (NLS)'] = L.tileLayer(`https://api.maptiler.com/tiles/uk-osgb63k1885/{z}/{x}/{y}.jpg?key=${CONFIG.MAPTILER_KEY}`, {
       maxZoom: 15, attribution: 'Historic maps &copy; National Library of Scotland, via MapTiler' });
@@ -621,12 +629,12 @@ let mainMap;
       const pop = L.popup({ ...popOpts(), offset: L.point(0, -6) })
         .setLatLng([t.lat, t.lng]).setContent(node).openOn(mainMap);
       node.querySelectorAll('img').forEach(el => {
+        // only hide on a PROVEN failure (error event / rejected decode) —
+        // synchronous complete/naturalWidth checks misreport on Safari
         const hide = () => { el.style.display = 'none'; pop.update(); };
-        if (el.complete && !el.naturalWidth) hide();
-        else if (!el.complete || !el.naturalWidth) {
-          el.addEventListener('load', () => pop.update(), { once: true });
-          el.addEventListener('error', hide, { once: true });
-        }
+        el.addEventListener('load', () => pop.update(), { once: true });
+        el.addEventListener('error', hide, { once: true });
+        if (el.complete && el.decode) el.decode().then(() => pop.update()).catch(hide);
       });
     };
     if (!img || imgReady[img]) return show();
