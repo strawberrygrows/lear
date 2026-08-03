@@ -755,7 +755,7 @@ function submitGuess(){
   const res = document.getElementById('result');
   res.hidden = false;
   res.innerHTML = `<div class="pts">${pts} marks</div>
-    <div>It was <strong>${esc(t.n)}</strong> — you were ${mi < 1 ? 'within a mile' : Math.round(mi) + ' miles'} off.</div>
+    <div>It was <strong>${esc(t.n)}</strong> — you were ${mi < 1 ? 'within a mile' : mi < 2 ? 'within 2 miles' : Math.round(mi) + ' miles off'}.</div>
     <div class="quip">${quip}</div>
     ${t.u ? `<div style="margin-top:6px"><a href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a></div>` : ''}
     <div style="margin-top:10px"><button class="btn" id="nextbtn">${roundIx === rounds.length-1 ? 'See your results' : 'Next question'}</button></div>`;
