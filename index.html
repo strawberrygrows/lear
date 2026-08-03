@@ -16,6 +16,7 @@
   --disp:'Barlow Condensed',Arial,sans-serif; --body:'Source Sans 3',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
 body{
@@ -50,13 +51,6 @@ main>section{max-width:1080px;margin:0 auto;padding:0 18px}
    its width is simply the window's, capped for very large monitors */
 #panel-map{max-width:1400px}
 section[hidden]{display:none}
-
-/* ---------- birthday card ---------- */
-.birthday{background:#fff;border:2px solid var(--ink);position:relative;padding:18px 20px;margin:0 auto 20px;max-width:1044px}
-.birthday::after{content:"";position:absolute;inset:5px;border:1px dashed var(--orange);pointer-events:none}
-.birthday .hand{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:15px;
-  letter-spacing:.14em;color:var(--magenta)}
-.birthday p{margin-top:6px;font-size:16px}
 
 /* ---------- map ---------- */
 .mapwrap{border:2px solid var(--ink);background:#fff}
@@ -144,10 +138,6 @@ footer{border-top:3px solid var(--ink);background:#fff}
 
 <!-- ================= MAP ================= -->
 <section id="panel-map" role="tabpanel" aria-labelledby="tab-map">
-  <div class="birthday" id="birthday">
-    <span class="hand">Happy birthday Dad!</span>
-    <p id="birthday-text">YARHI! Happy birthday Dad</p>
-  </div>
   <div class="mapwrap"><div id="map" aria-label="Map of every Edward Lear limerick location"></div></div>
 </section>
 
@@ -155,8 +145,8 @@ footer{border-top:3px solid var(--ink);background:#fff}
 <section id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
   <h2>The Quiz</h2>
   <p class="lede">Read the limerick, then place your pin where you think it was re-enacted.</p>
-  <div id="gamestart" class="card" style="text-align:center;padding:30px">
-    <button class="btn" id="beginbtn">Begin the Quiz</button>
+  <div id="gamestart" class="card" style="text-align:center;padding:48px 30px">
+    <button class="btn" id="beginbtn" style="font-size:24px;padding:18px 48px">Begin the Quiz</button>
   </div>
   <div class="gamegrid" id="gamearea" hidden>
     <div class="card qcard">
@@ -181,8 +171,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
 
 <footer>
   <div class="footin">
-    Limericks by Edward Lear (1812–1888). Site by Rachel. ·
-    Map data © OpenStreetMap contributors; OS layers © Crown copyright where enabled.
+    Limericks by Edward Lear (1812–1888). Site by Rachel. Map data © OpenStreetMap contributors.
   </div>
 </footer>
 
