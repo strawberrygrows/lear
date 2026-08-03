@@ -69,7 +69,8 @@ section[hidden]{display:none}
   font-size:13px;letter-spacing:.1em;padding:2px 9px;margin:5px 0 8px;text-transform:uppercase}
 .pop .chip.grey{background:var(--grey)} .pop .chip.orange{background:var(--orange)} .pop .chip.mag{background:var(--magenta)}
 .pop .verse{font-style:italic;font-size:14.5px;border-left:3px solid var(--gridblue);padding-left:10px;margin:8px 0;white-space:pre-line}
-.pop img{width:100%;max-height:170px;object-fit:contain;border:1px solid #D8D8D0;margin:6px 0;background:#fff}
+.pop img{display:block;width:100%;height:170px;object-fit:contain;border:1px solid #D8D8D0;margin:6px 0;background:#fff;opacity:0;transition:opacity .3s ease}
+.pop img.loaded{opacity:1}
 .pop .note{font-size:13px;color:#57564F;margin:6px 0}
 .pop .read{font-weight:600}
 .legend{background:#fff;border:2px solid var(--ink);padding:10px 14px;font-size:13.5px;line-height:2}
@@ -614,11 +615,17 @@ let mainMap;
       .addTo(mainMap);
   });
   dots.forEach(d => d.addTo(mainMap));
-  // popups are positioned when opened, but their images finish loading a
-  // moment later and grow the popup off the top edge — re-lay-out on load
+  // the image slot has a fixed height so the popup opens at its final
+  // size; the picture fades in when ready, and a failed load collapses
+  // the slot rather than leaving an empty frame
   mainMap.on('popupopen', e => {
     e.popup.getElement().querySelectorAll('img').forEach(img => {
-      if (!img.complete) img.addEventListener('load', () => e.popup.update(), { once: true });
+      const show = () => img.classList.add('loaded');
+      if (img.complete && img.naturalWidth) show();
+      else {
+        img.addEventListener('load', show, { once: true });
+        img.addEventListener('error', () => { img.style.display = 'none'; e.popup.update(); }, { once: true });
+      }
     });
   });
   const legend = L.control({ position:'bottomleft' });
