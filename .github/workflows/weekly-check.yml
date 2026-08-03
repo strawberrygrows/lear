@@ -25,12 +25,12 @@ jobs:
         with:
           node-version: 20
       - name: Refresh bundled images
-        run: node bundle.js
+        run: node bundle.js && node image-dims.js
       - name: Commit and republish if images changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add images images.json
+          git add images images.json imagedims.json
           if git diff --cached --quiet; then
             echo "No image changes"
           else

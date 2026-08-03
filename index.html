@@ -528,8 +528,12 @@ function toGridRef(lat, lon){
 }
 
 /* ============ featured images from WordPress (runtime, graceful) ============ */
-const IMGS = {};
+const IMGS = {}, DIMS = {};
 (async function loadImages(){
+  try{ // image sizes, so popups can reserve each picture's box up front
+    const rd = await fetch('imagedims.json');
+    if (rd.ok) Object.assign(DIMS, await rd.json());
+  }catch(e){ /* fine — popups fall back to sizing on load */ }
   try{ // prefer the local bundle if bundle.js has been run (see README)
     const r0 = await fetch('images.json');
     if (r0.ok){ Object.assign(IMGS, await r0.json()); return; }
@@ -588,15 +592,26 @@ const CHIP = {
   technicality: () => `<span class="chip mag">On a technicality</span>`,
   unvisited: () => `<span class="chip grey">Still to conquer</span>`
 };
+function imgTag(src, alt){
+  // reserve the picture's exact display size so the popup opens at its
+  // final layout even before the file has loaded (max 258×240 box)
+  const d = DIMS[src];
+  let style = '';
+  if (d){
+    const s = Math.min(1, 258 / d[0], 240 / d[1]);
+    style = ` style="width:${Math.round(d[0]*s)}px;height:${Math.round(d[1]*s)}px"`;
+  }
+  return `<img src="${esc(src)}"${style} alt="${alt}" loading="lazy">`;
+}
 function popupHTML(t){
   const gr = toGridRef(t.lat, t.lng);
   const where = gr ? `<span class="chip" style="background:#23231F">${gr}</span> ` : '';
   let h = `<div class="pop"><h4>${esc(t.n)}</h4>${where}${CHIP[t.s](t.d)}`;
   const img = t.u ? IMGS[slugOf(t.u)] : null;
   if (t.lim) h += `<div class="verse">${esc(t.lim)}</div>`;
-  else if (img) h += `<img src="${esc(img)}" alt="Edward Lear's illustrated limerick for ${esc(t.n)}" loading="lazy">`;
+  else if (img) h += imgTag(img, `Edward Lear's illustrated limerick for ${esc(t.n)}`);
   else if (t.s === 'unvisited') h += `<div class="note">No dispatch yet.</div>`;
-  if (t.lim && img) h += `<img src="${esc(img)}" alt="From the dispatch" loading="lazy">`;
+  if (t.lim && img) h += imgTag(img, 'From the dispatch');
   if (t.u) h += `<a class="read" href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a>`;
   return h + `</div>`;
 }
@@ -613,35 +628,23 @@ let mainMap;
   const popOpts = () => ({ maxWidth: 290,
     maxHeight: Math.max(200, document.getElementById('map').clientHeight - 110),
     autoPanPadding: L.point(16, 16) });
-  // popups wait for their picture before opening, so they always appear
-  // complete and sized to the picture's own proportions; a slow load
-  // gives up after 2.5s rather than blocking the popup
-  const imgReady = {};
+  // popups open immediately; the picture's box is pre-reserved at its
+  // final size (see imgTag) so nothing shifts when the file arrives
   function openTrailPopup(t){
-    const img = t.u ? IMGS[slugOf(t.u)] : null;
-    let shown = false;
-    const show = () => { if (shown) return; shown = true;
-      // content is a DOM node (not a string) so hiding a failed image
-      // survives Leaflet re-rendering the popup on update()
-      const node = document.createElement('div');
-      node.innerHTML = popupHTML(t);
-      const pop = L.popup({ ...popOpts(), offset: L.point(0, -6) })
-        .setLatLng([t.lat, t.lng]).setContent(node).openOn(mainMap);
-      node.querySelectorAll('img').forEach(el => {
-        // only hide on a PROVEN failure (error event / rejected decode) —
-        // synchronous complete/naturalWidth checks misreport on Safari
-        const hide = () => { el.style.display = 'none'; pop.update(); };
-        el.addEventListener('load', () => pop.update(), { once: true });
-        el.addEventListener('error', hide, { once: true });
-        if (el.complete && el.decode) el.decode().then(() => pop.update()).catch(hide);
-      });
-    };
-    if (!img || imgReady[img]) return show();
-    const im = new Image();
-    im.onload = () => { imgReady[img] = true; show(); };
-    im.onerror = show;
-    im.src = img;
-    setTimeout(show, 2500);
+    // content is a DOM node (not a string) so hiding a failed image
+    // survives Leaflet re-rendering the popup on update()
+    const node = document.createElement('div');
+    node.innerHTML = popupHTML(t);
+    const pop = L.popup({ ...popOpts(), offset: L.point(0, -6) })
+      .setLatLng([t.lat, t.lng]).setContent(node).openOn(mainMap);
+    node.querySelectorAll('img').forEach(el => {
+      // only hide on a PROVEN failure (error event / rejected decode) —
+      // synchronous complete/naturalWidth checks misreport on Safari
+      const hide = () => { el.style.display = 'none'; pop.update(); };
+      el.addEventListener('error', hide, { once: true });
+      if (!el.style.width) el.addEventListener('load', () => pop.update(), { once: true });
+      if (el.complete && el.decode) el.decode().catch(hide);
+    });
   }
   const dots = TRAIL.map(t => L.circleMarker([t.lat, t.lng], STYLE[t.s] || STYLE.visited)
     .on('click', () => openTrailPopup(t)));
