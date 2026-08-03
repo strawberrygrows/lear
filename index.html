@@ -154,7 +154,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
 <!-- ================= GAME ================= -->
 <section id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
   <h2>The Quiz</h2>
-  <p class="lede">Read the verse, then place your pin where you think the limerick was re-enacted.</p>
+  <p class="lede">Read the limerick, then place your pin where you think it was re-enacted.</p>
   <div id="gamestart" class="card" style="text-align:center;padding:30px">
     <button class="btn" id="beginbtn">Begin the Quiz</button>
   </div>
@@ -677,7 +677,7 @@ function redact(t){
   return html;
 }
 const QUIPS = [
-  [2,   'Within the parish. Bravo.'],
+  [2,   'Within the parish. Bang on.'],
   [15,  'A brisk walk away. Respectable.'],
   [50,  'Could be worse.'],
   [150, 'Could be better.'],
@@ -755,7 +755,7 @@ function submitGuess(){
   const res = document.getElementById('result');
   res.hidden = false;
   res.innerHTML = `<div class="pts">${pts} marks</div>
-    <div>It was <strong>${esc(t.n)}</strong> — you were ${d * 0.621371 < 1 ? 'under a mile' : Math.round(d * 0.621371) + ' miles'} out.</div>
+    <div>It was <strong>${esc(t.n)}</strong> — you were ${d * 0.621371 < 1 ? 'under a mile' : Math.round(d * 0.621371) + ' miles'} off.</div>
     <div class="quip">${quip}</div>
     ${t.u ? `<div style="margin-top:6px"><a href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a></div>` : ''}
     <div style="margin-top:10px"><button class="btn" id="nextbtn">${roundIx === rounds.length-1 ? 'See your results' : 'Next question'}</button></div>`;
