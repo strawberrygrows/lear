@@ -1,11 +1,2 @@
 # Blog posts deliberately not referenced on the site.
 # The weekly check ignores these; remove a line to be alerted about it again.
-brush-up-your-lear
-another-birthday-treat
-outstanding-new-edward-lear-tribute
-25-best-edward-lear-limericks
-the-bream-and-the-mule
-they-dined-on-mince-and-slices-of-quince-which-they-ate-with-a-runcible-spoon
-there-was-an-old-man-who-said-well
-there-was-a-young-person-in-pink
-there-was-an-old-man-with-a-beard

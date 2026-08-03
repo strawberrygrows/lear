@@ -422,12 +422,15 @@ const INVENTED = [
 
 const LOCKDOWN = [
 {n:"There was a Young Person in green",u:"https://edwardleartrail.wordpress.com/2020/04/10/there-was-a-young-person-in-green/"},
+{n:"There was a Young Person in Pink",u:"https://edwardleartrail.wordpress.com/2020/06/21/there-was-a-young-person-in-pink/"},
 {n:"There was a Young Person whose History",u:"https://edwardleartrail.wordpress.com/2020/05/05/there-was-a-young-person-whose-history/"},
 {n:"There was an Old Lady whose folly",u:"https://edwardleartrail.wordpress.com/2020/04/19/there-was-an-old-lady-whose-folly/"},
 {n:"There was an Old Man in a casement",u:"https://edwardleartrail.wordpress.com/2020/04/21/there-was-an-old-man-in-a-casement/"},
 {n:"There was an Old Man on whose nose",u:"https://edwardleartrail.wordpress.com/2020/05/16/there-was-an-old-man-on-whose-nose/"},
 {n:"There was an Old Man who said \u201cHush!\u201d",u:"https://edwardleartrail.wordpress.com/2020/04/04/there-was-an-old-man-who-said-hush/"},
+{n:"There was an Old Man who said \u201cWell!\u201d",u:"https://edwardleartrail.wordpress.com/2020/07/01/there-was-an-old-man-who-said-well/"},
 {n:"There was an Old Man who supposed",u:"https://edwardleartrail.wordpress.com/2020/05/18/there-was-an-old-man-who-supposed/"},
+{n:"There was an Old Man with a beard",u:"https://edwardleartrail.wordpress.com/2020/05/30/there-was-an-old-man-with-a-beard/"},
 {n:"There was an Old Man with a flute",u:"https://edwardleartrail.wordpress.com/2020/05/17/there-was-an-old-man-with-a-flute/"},
 {n:"There was an Old Man with an Owl",u:"https://edwardleartrail.wordpress.com/2020/05/09/there-was-an-old-man-with-an-owl/"},
 {n:"There was an Old Person whose habits",u:"https://edwardleartrail.wordpress.com/2020/04/13/there-was-an-old-person-whose-habits/"}
@@ -438,9 +441,15 @@ const SUNDRIES = [
 {n:"How pleasant to know Mr Lear",u:"https://edwardleartrail.wordpress.com/2017/05/12/how-pleasant-to-know-mr-lear/"},
 {n:"How pleasant to know Mr Lear \u2014 by Jim Grant",u:"https://edwardleartrail.wordpress.com/2023/10/27/how-pleasant-to-know-mr-lear-by-jim-grant/"},
 {n:"Edward Lear\u2019s new limericks",u:"https://edwardleartrail.wordpress.com/2019/07/19/edward-lears-new-limericks/"},
+{n:"25 best Edward Lear limericks",u:"https://edwardleartrail.wordpress.com/2022/06/12/25-best-edward-lear-limericks/"},
+{n:"Brush up your Lear",u:"https://edwardleartrail.wordpress.com/2026/03/01/brush-up-your-lear/"},
+{n:"Outstanding new Edward Lear tribute",u:"https://edwardleartrail.wordpress.com/2022/08/03/outstanding-new-edward-lear-tribute/"},
+{n:"Another birthday treat!",u:"https://edwardleartrail.wordpress.com/2023/08/03/another-birthday-treat/"},
 {n:"There wasn\u2019t an Old Person of Limerick",u:"https://edwardleartrail.wordpress.com/2019/05/21/there-wasnt-an-old-person-of-limerick/"},
 {n:"There was a Young Bard of Japan",u:"https://edwardleartrail.wordpress.com/2019/03/07/there-was-a-young-bard-of-japan/"},
 {n:"There was a Young Lady called Alice",u:"https://edwardleartrail.wordpress.com/2016/08/05/there-was-a-young-lady-called-alice/"},
+{n:"They dined on mince, and slices of quince…",u:"https://edwardleartrail.wordpress.com/2020/10/31/they-dined-on-mince-and-slices-of-quince-which-they-ate-with-a-runcible-spoon/"},
+{n:"The Bream and the Mule",u:"https://edwardleartrail.wordpress.com/2020/11/06/the-bream-and-the-mule/"},
 {n:"Nonsense Botany",u:"https://edwardleartrail.wordpress.com/2015/11/07/nonsense-botany/"},
 {n:"To Make an Amblongus Pie",u:"https://edwardleartrail.wordpress.com/2015/08/31/to-make-an-amblongus-pie/"},
 {n:"More Cookery",u:"https://edwardleartrail.wordpress.com/2016/10/30/more-cookery/"},
@@ -748,7 +757,7 @@ document.getElementById('guessbtn').addEventListener('click', submitGuess);
   const roll = TRAIL.filter(t => t.s === 'unvisited').map(t => esc(t.n)).join(' · ');
   document.getElementById('margins').innerHTML = `
     <div class="card mcard"><h3>The Lockdown Lears</h3>
-      <div class="sub">Spring 2020: travel forbidden, nonsense undimmed. Ten limericks with no location at all, re-enacted without leaving the house.</div>
+      <div class="sub">Spring 2020: travel forbidden, nonsense undimmed. Thirteen limericks with no location at all, re-enacted without leaving the house.</div>
       <ul>${lock}</ul></div>
     <div class="card mcard"><h3>Sundry dispatches</h3>
       <div class="sub">Scholarly apparatus, nonsense cookery, botanical studies, and other essential business of the Trail.</div>
