@@ -46,11 +46,15 @@ nav{max-width:1080px;margin:18px auto 20px;padding:0 18px;display:flex;gap:8px;f
 .tab[aria-selected="true"]{background:var(--magenta);border-color:var(--magenta);color:#fff}
 .tab:hover{background:var(--ink);color:#fff}
 .tab[aria-selected="true"]:hover{background:var(--magenta)}
-main{max-width:1080px;margin:0 auto;padding:20px 18px 70px}
+main{padding:20px 0 70px}
+main>section{max-width:1080px;margin:0 auto;padding:0 18px}
+/* the map page may run wider than the text pages, but never jumps:
+   its width is simply the window's, capped for very large monitors */
+#panel-map{max-width:1400px}
 section[hidden]{display:none}
 
 /* ---------- birthday card ---------- */
-.birthday{background:#fff;border:2px solid var(--ink);position:relative;padding:18px 20px;margin-bottom:20px}
+.birthday{background:#fff;border:2px solid var(--ink);position:relative;padding:18px 20px;margin:0 auto 20px;max-width:1044px}
 .birthday::after{content:"";position:absolute;inset:5px;border:1px dashed var(--orange);pointer-events:none}
 .birthday .hand{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:15px;
   letter-spacing:.14em;color:var(--magenta)}
@@ -58,12 +62,7 @@ section[hidden]{display:none}
 
 /* ---------- map ---------- */
 .mapwrap{border:2px solid var(--ink);background:#fff}
-#map{height:min(72vh,640px);min-height:420px}
-/* up to medium screens the main map goes edge to edge, like on phones */
-@media (max-width:1280px){
-  #panel-map .mapwrap{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-left:none;border-right:none}
-  #map{height:76vh}
-}
+#map{height:clamp(420px,76vh,720px)}
 .mapnote{font-size:13px;color:#57564F;margin-top:8px}
 .mapnote code{background:#EFEFE9;padding:1px 5px;border-radius:3px}
 .leaflet-container{font-family:var(--body)}
@@ -688,12 +687,12 @@ const QUIPS = [
   [1e9, 'Miles away! Total nonsense.']
 ];
 const RANKS = [
-  [850, 'Chief Surveyor of the Nonsense Ordnance'],
-  [700, 'Old Person of Considerable Learning'],
-  [550, 'Scholar of the Slow Train to Weedon'],
-  [400, 'Competent Rambler, Occasionally Lost'],
-  [250, 'Young Lady of Approximate Geography'],
-  [-1,  'You Will Go Back Directly to Bow']
+  [850, 'Ecstatic Old Person of Tring'],
+  [700, 'Luminous Person of Barnes'],
+  [550, 'Amiable Man of the Isles'],
+  [400, 'Placid Old Person of Sheen'],
+  [250, 'Bewildered Old Man of Corfu'],
+  [-1,  'Stupid Old Man of Melrose']
 ];
 let gameMap, guessMarker, answerLayer = null;
 let rounds = [], roundIx = 0, total = 0, guessing = false;
