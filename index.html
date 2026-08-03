@@ -31,10 +31,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--magenta);outline-of
 /* ---------- header ---------- */
 header{border-bottom:3px solid var(--ink);background:var(--paper)}
 .masthead{max-width:1080px;margin:0 auto;padding:22px 18px 2px}
-.series{display:inline-block;background:var(--magenta);color:#fff;font-family:var(--disp);
-  font-weight:700;font-size:clamp(15px,2.5vw,19px);letter-spacing:.06em;text-transform:uppercase;padding:6px 14px}
 h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:1;
-  font-size:clamp(38px,8vw,68px);letter-spacing:.01em;margin-top:12px}
+  font-size:clamp(38px,8vw,68px);letter-spacing:.01em}
 .strap{font-family:var(--disp);font-weight:500;color:var(--green);font-size:clamp(16px,3vw,21px);
   letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 .surveyors{font-size:14px;color:#57564F;margin-top:6px;font-style:italic}
@@ -132,7 +130,6 @@ footer{border-top:3px solid var(--ink);background:#fff}
 
 <header>
   <div class="masthead">
-    <span class="series">Explorer Series · Nonsense</span>
     <h1>The Edward Lear Trail</h1>
     <div class="strap">The travels of Rik and Debbie Edwards</div>
   </div>
@@ -156,9 +153,8 @@ footer{border-top:3px solid var(--ink);background:#fff}
 
 <!-- ================= GAME ================= -->
 <section id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
-  <span class="eyebrow">Ordnance Survey of Nonsense · Quiz</span>
   <h2>The Quiz</h2>
-  <p class="lede">Ten limericks, names redacted. Read the verse, then place your pin where you believe the Trail went.</p>
+  <p class="lede">Read the verse, then place your pin where you think the limerick was re-enacted.</p>
   <div id="gamestart" class="card" style="text-align:center;padding:30px">
     <button class="btn" id="beginbtn">Begin the Quiz</button>
   </div>
@@ -177,7 +173,6 @@ footer{border-top:3px solid var(--ink);background:#fff}
 
 <!-- ================= MARGINS ================= -->
 <section id="panel-margins" role="tabpanel" aria-labelledby="tab-margins" hidden>
-  <span class="eyebrow">Beyond the sheet edge</span>
   <h2>Miscellany</h2>
   <div class="margingrid" id="margins" style="margin-top:20px"></div>
 </section>
@@ -714,7 +709,9 @@ function initGameMap(){
   setTimeout(()=>gameMap.invalidateSize(), 60);
 }
 function startGame(){
-  const pool = TRAIL.filter(t => t.game && t.lim);
+  // only places the Trail actually went — unvisited pins can stand for
+  // broad regions, which makes for unfair guessing targets
+  const pool = TRAIL.filter(t => t.game && t.lim && t.s !== 'unvisited');
   for (let i = pool.length - 1; i > 0; i--) { // Fisher–Yates
     const j = Math.floor(Math.random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
