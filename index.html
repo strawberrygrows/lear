@@ -114,7 +114,7 @@ h2{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:cl
 
 /* ---------- margins ---------- */
 .margingrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px}
-.mcard h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:21px}
+.mcard h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:21px;margin-bottom:8px}
 .mcard .sub{font-size:13.5px;color:#57564F;margin:2px 0 10px}
 .mcard ul{list-style:none}
 .mcard li{margin:7px 0;padding-left:14px;position:relative;font-size:14.5px}
@@ -179,8 +179,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
 <section id="panel-margins" role="tabpanel" aria-labelledby="tab-margins" hidden>
   <span class="eyebrow">Beyond the sheet edge</span>
   <h2>Miscellany</h2>
-  <p class="lede">Matters the grid cannot contain: verses written from the sofa in 2020, scholarly apparatus, and the places Lear simply made up.</p>
-  <div class="margingrid" id="margins"></div>
+  <div class="margingrid" id="margins" style="margin-top:20px"></div>
 </section>
 
 </main>
@@ -442,6 +441,7 @@ const LOCKDOWN = [
 ];
 
 const SUNDRIES = [
+{n:"About the Edward Lear Trail",u:"https://edwardleartrail.wordpress.com/about/"},
 {n:"How the Edward Lear trail started",u:"https://edwardleartrail.wordpress.com/2017/05/09/how-the-edward-lear-trail-started/"},
 {n:"How pleasant to know Mr Lear",u:"https://edwardleartrail.wordpress.com/2017/05/12/how-pleasant-to-know-mr-lear/"},
 {n:"How pleasant to know Mr Lear \u2014 by Jim Grant",u:"https://edwardleartrail.wordpress.com/2023/10/27/how-pleasant-to-know-mr-lear-by-jim-grant/"},
@@ -792,20 +792,13 @@ document.getElementById('guessbtn').addEventListener('click', submitGuess);
     `<div><span class="vname">${esc(v.n)}</span><div class="verse">${esc(v.lim)}</div></div>`).join('');
   const lock = LOCKDOWN.map(p => `<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
   const sund = SUNDRIES.map(p => `<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
-  const roll = TRAIL.filter(t => t.s === 'unvisited').map(t => esc(t.n)).join(' · ');
   document.getElementById('margins').innerHTML = `
     <div class="card mcard"><h3>The Lockdown Lears</h3>
-      <div class="sub">Spring 2020: travel forbidden, nonsense undimmed. Thirteen limericks with no location at all, re-enacted without leaving the house.</div>
       <ul>${lock}</ul></div>
-    <div class="card mcard"><h3>Sundry dispatches</h3>
-      <div class="sub">Scholarly apparatus, nonsense cookery, botanical studies, and other essential business of the Trail.</div>
+    <div class="card mcard"><h3>Sundry posts</h3>
       <ul>${sund}</ul></div>
-    <div class="card mcard"><h3>Locations that inexplicably do not exist</h3>
-      <div class="sub">Lear invented these outright, which the management considers poor planning on his part.</div>
-      ${inv}</div>
-    <div class="card mcard ghost"><h3>The roll of the unconquered</h3>
-      <div class="sub">Every location still awaiting a visit, listed so that nobody can say the Trail is finished. (The Trail is finished.)</div>
-      <p style="font-size:14px;line-height:1.9">${roll}</p></div>`;
+    <div class="card mcard"><h3>Unknown/invented locations</h3>
+      ${inv}</div>`;
 })();
 </script>
 </body>
