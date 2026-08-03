@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>The Edward Lear Trail</title>
+<!-- Hop page: iPads with the Jetpack app installed hijack direct taps on
+     wordpress.com links; a same-site JS redirect keeps them in the browser. -->
+<script>
+var u = new URLSearchParams(location.search).get('u');
+if (u && /^https:\/\/edwardleartrail\.wordpress\.com(\/|$)/.test(u)) location.replace(u);
+else location.replace('./');
+</script>
+</head>
+<body></body>
+</html>

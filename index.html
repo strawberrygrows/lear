@@ -140,7 +140,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
     <button class="tab" role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map">The Map</button>
     <button class="tab" role="tab" id="tab-game" aria-selected="false" aria-controls="panel-game">Quiz</button>
     <button class="tab" role="tab" id="tab-margins" aria-selected="false" aria-controls="panel-margins">Misc</button>
-    <a class="tab" href="https://edwardleartrail.wordpress.com/" target="_blank" rel="noopener">Blog</a>
+    <a class="tab" href="go.html?u=https%3A%2F%2Fedwardleartrail.wordpress.com%2F" target="_blank" rel="noopener">Blog</a>
   </nav>
 </header>
 
@@ -471,6 +471,9 @@ function haversine(a,b){ const R=6371, dLat=(b.lat-a.lat)*Math.PI/180, dLng=(b.l
   const s=Math.sin(dLat/2)**2 + Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLng/2)**2;
   return 2*R*Math.asin(Math.sqrt(s)); }
 const slugOf = u => (u||'').replace(/\/+$/,'').split('/').pop();
+// blog links hop via go.html so iPads with the Jetpack app installed
+// don't hijack the tap into the app instead of the browser
+const go = u => 'go.html?u=' + encodeURIComponent(u);
 
 /* ============ WGS84 → OS National Grid reference ============ */
 function toGridRef(lat, lon){
@@ -605,7 +608,7 @@ function popupHTML(t){
   if (t.lim) h += `<div class="verse">${esc(t.lim)}</div>`;
   else if (img) h += imgTag(img, `Edward Lear's illustrated limerick for ${esc(t.n)}`);
   if (t.lim && img) h += imgTag(img, 'From the dispatch');
-  if (t.u) h += `<a class="read" href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a>`;
+  if (t.u) h += `<a class="read" href="${esc(go(t.u))}" target="_blank" rel="noopener">Read the dispatch →</a>`;
   return h + `</div>`;
 }
 let mainMap;
@@ -757,7 +760,7 @@ function submitGuess(){
   res.innerHTML = `<div class="pts">${pts} marks</div>
     <div>It was <strong>${esc(t.n)}</strong> — you were ${mi < 1 ? 'within a mile' : mi < 2 ? 'within 2 miles' : Math.round(mi) + ' miles off'}.</div>
     <div class="quip">${quip}</div>
-    ${t.u ? `<div style="margin-top:6px"><a href="${esc(t.u)}" target="_blank" rel="noopener">Read the dispatch →</a></div>` : ''}
+    ${t.u ? `<div style="margin-top:6px"><a href="${esc(go(t.u))}" target="_blank" rel="noopener">Read the dispatch →</a></div>` : ''}
     <div style="margin-top:10px"><button class="btn" id="nextbtn">${roundIx === rounds.length-1 ? 'See your results' : 'Next question'}</button></div>`;
   document.getElementById('guessbtn').disabled = true;
   document.getElementById('nextbtn').addEventListener('click', nextRound);
@@ -787,8 +790,8 @@ document.getElementById('guessbtn').addEventListener('click', submitGuess);
 (function margins(){
   const inv = INVENTED.map(v =>
     `<div><span class="vname">${esc(v.n)}</span><div class="verse">${esc(v.lim)}</div></div>`).join('');
-  const lock = LOCKDOWN.map(p => `<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
-  const sund = SUNDRIES.map(p => `<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
+  const lock = LOCKDOWN.map(p => `<li><a href="${esc(go(p.u))}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
+  const sund = SUNDRIES.map(p => `<li><a href="${esc(go(p.u))}" target="_blank" rel="noopener">${esc(p.n)}</a></li>`).join('');
   document.getElementById('margins').innerHTML = `
     <div class="card mcard"><h3>The Lockdown Lears</h3>
       <ul>${lock}</ul></div>
