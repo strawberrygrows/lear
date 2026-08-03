@@ -1,0 +1,13 @@
+name: Spot check posts
+# Temporary helper: prints metadata for six posts to verify pin data.
+on: workflow_dispatch
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch six posts
+        run: |
+          for slug in there-was-an-old-person-of-tring there-was-an-old-person-of-wick there-was-a-young-lady-of-clare there-was-an-old-person-of-fife there-was-a-young-lady-of-portugal there-was-an-old-person-of-bradley; do
+            curl -s "https://public-api.wordpress.com/rest/v1.1/sites/edwardleartrail.wordpress.com/posts/slug:$slug?fields=title,URL,date,featured_image" | jq '{title, URL, date, featured_image}'
+          done
