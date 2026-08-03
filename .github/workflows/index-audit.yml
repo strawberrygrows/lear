@@ -1,0 +1,31 @@
+name: Index audit
+# Temporary helper: lists blog posts not linked from the About/index page.
+on: workflow_dispatch
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compare all posts against the About page
+        run: |
+          curl -s "https://public-api.wordpress.com/rest/v1.1/sites/edwardleartrail.wordpress.com/posts/slug:about?type=page&fields=URL,title,content" -o about.json
+          curl -sL "https://edwardleartrail.wordpress.com/about/" -o about.html
+          curl -s "https://public-api.wordpress.com/rest/v1.1/sites/edwardleartrail.wordpress.com/posts/?number=100&page=1&fields=URL,title,date" -o p1.json
+          curl -s "https://public-api.wordpress.com/rest/v1.1/sites/edwardleartrail.wordpress.com/posts/?number=100&page=2&fields=URL,title,date" -o p2.json
+          node -e '
+            const fs = require("fs");
+            let content = "";
+            try { content += JSON.parse(fs.readFileSync("about.json","utf8")).content || ""; } catch {}
+            try { content += fs.readFileSync("about.html","utf8"); } catch {}
+            content = content.replace(/­/g, "").replace(/%c2%ad/gi, "");
+            const posts = [];
+            for (const f of ["p1.json","p2.json"]) {
+              try { posts.push(...(JSON.parse(fs.readFileSync(f,"utf8")).posts || [])); } catch {}
+            }
+            const slugOf = u => u.replace(/\/+$/,"").split("/").pop().replace(/%c2%ad/gi,"");
+            console.log("TOTAL POSTS:", posts.length, "| about content length:", content.length);
+            const missing = posts.filter(p => !content.includes(slugOf(p.URL)));
+            console.log("NOT LINKED FROM ABOUT:", missing.length);
+            missing.sort((a,b) => a.date < b.date ? -1 : 1)
+              .forEach(p => console.log("-", p.date.slice(0,10), "|", p.title));
+          '
