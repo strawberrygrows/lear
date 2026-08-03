@@ -50,7 +50,7 @@ h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:
 /* ---------- tabs ---------- */
 nav{max-width:1080px;margin:18px auto 20px;padding:0 18px;display:flex;gap:8px;flex-wrap:wrap}
 .tab{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:.05em;text-transform:uppercase;
-  background:#fff;border:2px solid var(--ink);padding:8px 18px;cursor:pointer;color:var(--ink)}
+  background:#fff;border:2px solid var(--ink);padding:8px 18px;cursor:pointer;color:var(--ink);text-decoration:none;display:inline-block}
 .tab[aria-selected="true"]{background:var(--magenta);border-color:var(--magenta);color:#fff}
 .tab:hover{background:var(--ink);color:#fff}
 .tab[aria-selected="true"]:hover{background:var(--magenta)}
@@ -140,6 +140,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
     <button class="tab" role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map">The Map</button>
     <button class="tab" role="tab" id="tab-game" aria-selected="false" aria-controls="panel-game">Quiz</button>
     <button class="tab" role="tab" id="tab-margins" aria-selected="false" aria-controls="panel-margins">Misc</button>
+    <a class="tab" href="https://edwardleartrail.wordpress.com/" target="_blank" rel="noopener">Blog</a>
   </nav>
 </header>
 
@@ -180,7 +181,7 @@ footer{border-top:3px solid var(--ink);background:#fff}
 
 <footer>
   <div class="footin">
-    Limericks by Edward Lear (1812–1888). Site by Rachel. Map data © OpenStreetMap contributors.
+    Limericks by Edward Lear (1812–1888). Site by Rachel.
   </div>
 </footer>
 
@@ -543,7 +544,7 @@ const IMGS = {}, DIMS = {};
 })();
 
 /* ============ tabs ============ */
-const tabs = document.querySelectorAll('.tab');
+const tabs = document.querySelectorAll('button.tab');
 const panels = { 'tab-map':'panel-map', 'tab-game':'panel-game', 'tab-margins':'panel-margins' };
 tabs.forEach(t => t.addEventListener('click', () => {
   tabs.forEach(x => x.setAttribute('aria-selected', x===t ? 'true' : 'false'));
