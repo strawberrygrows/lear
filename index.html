@@ -690,12 +690,12 @@ const QUIPS = [
   [1e9, 'Miles away! Total nonsense.']
 ];
 const RANKS = [
-  [850, 'Ecstatic Old Person of Tring'],
-  [700, 'Luminous Person of Barnes'],
-  [550, 'Amiable Man of the Isles'],
-  [400, 'Placid Old Person of Sheen'],
-  [250, 'Bewildered Old Man of Corfu'],
-  [-1,  'Stupid Old Man of Melrose']
+  [850, 'Ecstatic Old Person of Tring', "Wow, you really know your stuff! They should call you 'King Lear'."],
+  [700, 'Luminous Person of Barnes', 'Marvellous! You must be a true fan.'],
+  [550, 'Amiable Man of the Isles', 'A very respectable result.'],
+  [400, 'Placid Old Person of Sheen', 'This was a valiant effort – but not valiant enough. Better luck next time!'],
+  [250, 'Bewildered Old Man of Corfu', 'This was a valiant effort – but not valiant enough. Better luck next time!'],
+  [-1,  'Stupid Old Man of Melrose', 'Better luck next time! The good news is: the only way to go is up.']
 ];
 let gameMap, guessMarker, answerLayer = null;
 let rounds = [], roundIx = 0, total = 0, guessing = false;
@@ -772,13 +772,14 @@ function nextRound(){
 }
 function finale(){
   document.getElementById('gamearea').hidden = true;
-  const rank = RANKS.find(r => total > r[0])[1];
+  const rank = RANKS.find(r => total > r[0]);
   const f = document.getElementById('finale');
   f.hidden = false;
   f.innerHTML = `<span class="eyebrow">Your results</span>
     <div class="total">${total}</div>
     <div>marks of a possible 1,000</div>
-    <div class="rank">${rank}</div>
+    <div class="rank">${rank[1]}</div>
+    <p>${rank[2]}</p>
     <button class="btn" id="againbtn">Try again</button>`;
   document.getElementById('againbtn').addEventListener('click', startGame);
 }
