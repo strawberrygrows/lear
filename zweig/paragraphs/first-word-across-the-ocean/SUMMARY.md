@@ -12,7 +12,7 @@ Cyrus W. Field and the Atlantic telegraph: the failed voyages of 1857 and 1858, 
 
 ## Annotations
 
-36 in total: 28 `note`, 7 `quote`, 1 `query`. The page shows all except the query.
+36 in total: 29 `note`, 6 `quote`, 1 `query`. (The prayer has a library entry but its annotation is the `query`.) The page shows all except the query.
 
 ## Library entries (in `quotes/library.yaml`)
 
