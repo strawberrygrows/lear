@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p02
+locus: Die Entdeckung Eldorados, paragraph 2
+section:
+  de: Der Europamüde
+  en: Weary of Europe
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Aber Johann August Suter hat Abenteurerblut, ihn lockt es nicht, stillzusitzen und seinen guten Grund zu bebauen. Eines Tages, im Jahre 1837, verkauft er sein Hab und Gut, rüstet eine Expedition mit Wagen und Pferden und Büffelherden aus und zieht vom Fort Independence ins Unbekannte.
+  ocr_corrections: []
+translation_draft: |
+  But Johann August Suter has the blood of an adventurer, it holds no lure for him to sit still and till his good land. One day, in the year 1837, he sells all that he has, fits out an expedition with wagons and horses and herds of buffalo, and sets out from Fort Independence into the unknown.
+translation_final: ''
+annotations: []

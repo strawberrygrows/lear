@@ -1,0 +1,22 @@
+id: discovery-of-eldorado-p03
+locus: Die Entdeckung Eldorados, paragraph 3
+section:
+  de: Der Marsch nach Kalifornien
+  en: The March to California
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    1838. Zwei Offiziere, fünf Missionare, drei Frauen ziehen aus in Büffelwagen ins unendliche Leere. Durch Steppen und Steppen, schließlich über die Berge, dem Pazifischen Ozean entgegen. Drei Monate lang reisen sie, um Ende Oktober in Fort Van Couver anzukommen. Die beiden Offiziere haben Suter schon vorher verlassen, die Missionare gehen nicht weiter, die drei Frauen sind unterwegs an den Entbehrungen gestorben.
+  ocr_corrections: []
+translation_draft: |
+  1838. Two officers, five missionaries, three women set out in buffalo-wagons into the infinite emptiness. Across plains and plains, and at last over the mountains, towards the Pacific Ocean. For three months they travel, to arrive at the end of October at Fort Vancouver. The two officers have left Suter before this, the missionaries go no farther, the three women have died on the way of privation.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: buffalo-wagons
+  body: Zweig’s *Büffelwagen*. Historically these would have been ox-wagons, but the buffalo
+    is one of Zweig’s recurring images of the West (the herds, the sixty buffalo that haul
+    the steam-engine), so the word is kept.
+  status: claude-drafted

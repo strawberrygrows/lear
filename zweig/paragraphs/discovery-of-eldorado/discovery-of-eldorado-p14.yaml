@@ -1,0 +1,35 @@
+id: discovery-of-eldorado-p14
+locus: Die Entdeckung Eldorados, paragraph 14
+section:
+  de: Der Rush
+  en: The Rush
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Der reichste Mann? Nein – der ärmste, der jämmerlichste, der enttäuschteste Bettler dieser Erde. Nach acht Tagen ist das Geheimnis verraten, eine Frau – immer eine Frau! – hat es irgendeinem Vorübergehenden erzählt und ihm ein paar Goldkörner gegeben. Und was nun geschieht, ist ohne Beispiel. Sofort lassen alle Männer Suters ihre Arbeit, die Schlosser laufen von der Schmiede, die Schäfer von den Herden, die Weinbauern von den Reben, die Soldaten lassen ihre Gewehre, alles ist wie besessen und rennt mit rasch geholten Sieben und Kasserollen hin zum Sägewerk, Gold aus dem Sand zu schütteln. Über Nacht ist das ganze Land verlassen, die Milchkühe, die niemand melkt, brüllen und verrecken, die Büffelherden zerreißen ihre Hürden, stampfen hinein in die Felder, wo die Frucht am Halme verfault, die Käsereien arbeiten nicht, die Scheunen stürzen ein, das ungeheure Räderwerk des gigantischen Betriebes steht still. Telegraphen sprühen die goldene Verheißung über Länder und Meere. Und schon kommen die Leute herauf von den Städten, von den Häfen, Matrosen verlassen ihre Schiffe, die Regierungsbeamten ihren Posten, in langen, unendlichen Kolonnen zieht es von Osten, von Westen, zu Fuß, zu Pferd und zu Wagen heran, der Rush, der menschliche Heuschreckenschwarm, die Goldgräber. Eine zügellose, brutale Horde, die kein Gesetz kennt als das der Faust, kein Gebot als das ihres Revolvers, ergießt sich über die blühende Kolonie. Alles ist für sie herrenlos, niemand wagt diesen Desperados entgegenzutreten. Sie schlachten Suters Kühe, sie reißen seine Scheuern ein, um sich Häuser zu bauen, sie zerstampfen seine Äcker, sie stehlen seine Maschinen – über Nacht ist Johann August Suter bettelarm geworden, wie König Midas, erstickt im eigenen Gold.
+  ocr_corrections: []
+translation_draft: |
+  The richest man? No – the poorest, the most wretched, the most disappointed beggar on this earth. Within eight days the secret is betrayed, a woman – always a woman! – has told it to some passer-by and given him a few grains of gold. And what now follows is without precedent. At once all Suter’s men leave their work, the smiths run from the forge, the shepherds from the flocks, the vine-dressers from the vines, the soldiers abandon their rifles, all are as if possessed and run with hastily fetched sieves and saucepans to the sawmill, to shake gold out of the sand. Overnight the whole country is deserted, the milch-cows, which no one milks, bellow and die, the herds of buffalo break their folds and trample into the fields, where the grain rots on the stalk, the dairies stand idle, the barns fall in, the vast wheelwork of the gigantic enterprise stands still. Telegraphs flash the golden promise over lands and seas. And already people are coming up from the towns, from the harbours, sailors desert their ships, government officials their posts, in long, endless columns they come streaming from the east, from the west, on foot, on horseback, and by wagon, the Rush, the human swarm of locusts, the gold-diggers. An unbridled, brutal horde, knowing no law but that of the fist, no command but that of the revolver, pours over the flourishing colony. To them everything is ownerless, no one dares to stand up to these desperadoes. They slaughter Suter’s cows, they pull down his barns to build themselves houses, they trample his fields, they steal his machines – overnight Johann August Suter has become a pauper, like King Midas, stifled in his own gold.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: the Rush
+  body: Zweig uses the English word (*der Rush*) as his section title and here, as Szerb uses
+    ‘thrill’ (cf. Szerb DECISION-004). In English the borrowing is invisible, so it is capitalised
+    to keep its force as a name.
+  status: claude-drafted
+- id: 2
+  type: note
+  span: Telegraphs flash
+  body: An anachronism of Zweig’s (there was no telegraph to California in 1848); kept as
+    written.
+  status: claude-drafted
+- id: 3
+  type: quote
+  span: like King Midas, stifled in his own gold
+  quote_library_ref: ovid-metamorphoses-xi-midas
+  body: Allusion to Midas, whose touch turned even his food to gold (Ovid, *Metamorphoses*
+    XI). Zweig’s *erstickt* (‘stifled, smothered’) is his own sharpening of the myth.
+  status: claude-drafted

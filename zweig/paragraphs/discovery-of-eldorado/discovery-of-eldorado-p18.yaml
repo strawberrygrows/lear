@@ -1,0 +1,21 @@
+id: discovery-of-eldorado-p18
+locus: Die Entdeckung Eldorados, paragraph 18
+section:
+  de: Der Prozeß
+  en: The Lawsuit
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Und nun tritt Johann August Suter plötzlich vor mit seinen Ansprüchen. Der ganze Boden, so heischt er, auf dem die Stadt San Franzisko gebaut ist, gehört ihm nach Fug und Recht. Der Staat ist verpflichtet, den Schaden, den er durch Diebstahl seines Eigentums erlitten, gutzumachen, an allem aus seiner Erde geförderten Gold beansprucht er sein Teil. Ein Prozeß beginnt, in Dimensionen, wie sie die Menschheit vor ihm nie gekannt. Johann August Suter verklagt 17 221 Farmer, die sich in seinen Pflanzungen angesiedelt haben, und fordert sie auf, den gestohlenen Grund zu räumen, er verlangt 25 Millionen Dollar vom Staate Kalifornien dafür, daß er sich die von ihm gebauten Wege, Kanäle, Brücken, Stauwerke, Mühlen einfach angeeignet habe, er verlangt von der Union 25 Millionen Dollar als Schadenersatz für zerstörtes Gut und außerdem noch seinen Anteil am geförderten Gold. Er hat seinen älteren Sohn, Emil, in Washington die Rechte studieren lassen, um den Prozeß zu führen, und verwendet die ungeheuren Einnahmen aus seinen neuen Farmen einzig dazu, diesen kostspieligen Prozeß zu nähren. Vier Jahre lang treibt er ihn durch alle Instanzen.
+  ocr_corrections: []
+translation_draft: |
+  And now Johann August Suter suddenly comes forward with his claims. The whole of the ground, so he demands, on which the city of San Francisco is built belongs to him by every right. The State is bound to make good the damage he has suffered by the theft of his property, of all the gold extracted from his soil he claims his share. A lawsuit begins, of dimensions such as mankind had never known before. Johann August Suter sues 17,221 farmers who have settled on his plantations and calls upon them to quit the stolen land, he demands 25 million dollars from the State of California for having simply appropriated the roads, canals, bridges, dams, and mills he built, he demands 25 million dollars from the Union as compensation for property destroyed, and in addition his share of the gold extracted. He has had his elder son, Emil, study law in Washington in order to conduct the case, and he uses the enormous revenues of his new farms solely to feed this costly lawsuit. For four years he drives it through every court.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: his elder son
+  body: Zweig writes *älteren* (‘elder’) of three sons; the comparative is kept rather than
+    silently corrected to ‘eldest’.
+  status: claude-drafted

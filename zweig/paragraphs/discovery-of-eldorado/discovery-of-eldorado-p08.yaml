@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p08
+locus: Die Entdeckung Eldorados, paragraph 8
+section:
+  de: Der Marsch nach Kalifornien
+  en: The March to California
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Man sieht: Geschäfte werden dort rasch abgeschlossen. Tausend Meilen von jeder Zivilisation hat Energie eines einzelnen Menschen einen anderen Preis als zu Hause.
+  ocr_corrections: []
+translation_draft: |
+  One sees: business is quickly concluded out there. A thousand miles from any civilisation, the energy of a single man fetches a different price from what it fetches at home.
+translation_final: ''
+annotations: []

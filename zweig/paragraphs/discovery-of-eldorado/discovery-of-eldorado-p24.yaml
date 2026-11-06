@@ -1,0 +1,23 @@
+id: discovery-of-eldorado-p24
+locus: Die Entdeckung Eldorados, paragraph 24
+section:
+  de: Das Ende
+  en: The End
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Niemand hat Suters Erbe bislang angefordert, kein Nachfahr hat seinen Anspruch angemeldet. Noch immer steht San Franzisko, steht ein ganzes Land auf fremdem Boden. Noch immer ist hier nicht Recht gesprochen, und nur ein Künstler, Blaise Cendrars, hat dem vergessenen Johann August Suter wenigstens das einzige Recht großen Schicksals gegeben, das Recht auf staunendes Gedenken der Nachwelt.
+  ocr_corrections: []
+translation_draft: |
+  No one has yet claimed Suter’s inheritance, no descendant has entered his claim. Still San Francisco stands, still a whole country stands, on another man’s ground. Still no justice has been done here, and only an artist, Blaise Cendrars, has given the forgotten Johann August Suter at least the one right of a great destiny, the right to the wondering remembrance of posterity.
+translation_final: ''
+annotations:
+- id: 1
+  type: quote
+  span: Blaise Cendrars
+  quote_library_ref: cendrars-l-or
+  body: 'Zweig’s acknowledgement of his source: Cendrars’s novel *L’Or* (1925), translated
+    into English in 1926 as *Sutter’s Gold*. Zweig’s chapter is largely a condensation of
+    it, including its departures from history.'
+  status: claude-drafted

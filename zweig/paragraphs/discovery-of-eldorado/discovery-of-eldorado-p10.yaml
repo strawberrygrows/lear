@@ -1,0 +1,22 @@
+id: discovery-of-eldorado-p10
+locus: Die Entdeckung Eldorados, paragraph 10
+section:
+  de: Neu-Helvetien
+  en: New Helvetia
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Vor ihnen rollt eine gigantische Feuerwoge. Sie zünden die Wälder an, bequemere Methode, als sie auszuroden. Und kaum, daß die riesige Lohe über das Land gerannt ist, noch auf den rauchenden Baumstrünken, beginnen sie ihre Arbeit. Magazine werden gebaut, Brunnen gegraben, der Boden, der keiner Pflügung bedarf, besät, Hürden geschaffen für die unendlichen Herden; allmählich strömt von den Nachbarorten Zuwachs aus den verlassenen Missionskolonien.
+  ocr_corrections: []
+translation_draft: |
+  Before them rolls a gigantic wave of fire. They set the forests alight, a more convenient method than clearing them. And scarcely has the vast blaze raced across the land when, upon the still-smoking stumps, they begin their work. Storehouses are built, wells dug, the soil, which needs no ploughing, sown, folds made for the endless herds; little by little new hands flow in from the neighbouring places, from the abandoned mission settlements.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: gigantic
+  body: '*gigantisch* recurs a dozen times in the piece (the wave of fire, the success, the
+    enterprise, the dragon’s crop). Zweig’s insistence is deliberate and is kept, as with
+    Szerb’s repetitions.'
+  status: claude-drafted

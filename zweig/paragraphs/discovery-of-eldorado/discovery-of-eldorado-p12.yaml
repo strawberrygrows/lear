@@ -1,0 +1,21 @@
+id: discovery-of-eldorado-p12
+locus: Die Entdeckung Eldorados, paragraph 12
+section:
+  de: Der verhängnisvolle Spatenstich
+  en: The Fateful Stroke of the Spade
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    1848, im Januar. Plötzlich kommt James W. Marshall, sein Schreiner, aufgeregt zu Johann August Suter ins Haus gestürzt, er müsse ihn unbedingt sprechen. Suter ist erstaunt, hat er doch noch gestern Marshall hinauf geschickt in seine Farm nach Coloma, dort ein neues Sägewerk anzulegen. Und nun ist der Mann ohne Erlaubnis zurückgekehrt, steht zitternd vor Aufregung vor ihm, drängt ihn in sein Zimmer, schließt die Tür ab und zieht aus der Tasche eine Handvoll Sand mit ein paar gelben Körnern darin. Gestern beim Graben sei ihm dieses sonderbare Metall aufgefallen, er glaube, es sei Gold, aber die anderen hätten ihn ausgelacht. Suter wird ernst, nimmt die Körner, macht die Scheideprobe: es ist Gold. Er entschließt sich, sofort am nächsten Tage mit Marshall zur Farm hinaufzureiten, aber der Zimmermeister ist als erster von dem furchtbaren Fieber ergriffen, das bald die Welt durchschütteln wird: noch in der Nacht, mitten im Sturm reitet er zurück, ungeduldig nach Gewißheit.
+  ocr_corrections: []
+translation_draft: |
+  1848, in January. Suddenly James W. Marshall, his carpenter, comes bursting excitedly into Johann August Suter’s house: he must speak to him without fail. Suter is astonished, for only yesterday he sent Marshall up to his farm at Coloma to set up a new sawmill there. And now the man has come back without leave, stands before him trembling with excitement, presses him into his room, locks the door, and draws from his pocket a handful of sand with a few yellow grains in it. Yesterday, while digging, he had noticed this curious metal; he believed it was gold, but the others had laughed at him. Suter grows grave, takes the grains, and makes the assay: it is gold. He resolves to ride up to the farm with Marshall first thing the next day, but the master carpenter is the first to be seized by the terrible fever that will soon shake the world: that very night, in the midst of a storm, he rides back, impatient for certainty.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: makes the assay
+  body: '*macht die Scheideprobe*: the parting test that separates gold from silver with acid.
+    ‘Assay’ is the period English term.'
+  status: claude-drafted

@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p20
+locus: Die Entdeckung Eldorados, paragraph 20
+section:
+  de: Der Prozeß
+  en: The Lawsuit
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    An diesem Tage ist Johann August Suter am Ziel. Er ist der reichste Mann der Welt.
+  ocr_corrections: []
+translation_draft: |
+  On this day Johann August Suter has reached his goal. He is the richest man in the world.
+translation_final: ''
+annotations: []

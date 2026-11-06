@@ -1,0 +1,51 @@
+quotes:
+- id: bible-exodus-3-8
+  type: allusion
+  author: Bible
+  work: Exodus
+  locus: '3:8'
+  original_language: de
+  original: ein Land, darin Milch und Honig fließt (Luther)
+  zweig_rendering: Ein Land, wo Milch und Honig fließt
+  english_used: a land flowing with milk and honey
+  english_provenance: Authorised Version (1611)
+  used_in:
+  - discovery-of-eldorado-p01
+- id: ovid-metamorphoses-xi-midas
+  type: allusion
+  author: Ovid
+  work: Metamorphoses
+  locus: XI.85–145
+  original_language: la
+  original: (the golden touch of Midas)
+  zweig_rendering: wie König Midas, erstickt im eigenen Gold
+  english_used: like King Midas, stifled in his own gold
+  english_provenance: Fresh translation of Zweig; allusion only, no text quoted
+  used_in:
+  - discovery-of-eldorado-p14
+- id: ovid-metamorphoses-iii-cadmus
+  type: allusion
+  author: Ovid
+  work: Metamorphoses
+  locus: III.95–130
+  original_language: la
+  original: (Cadmus sows the dragon’s teeth)
+  zweig_rendering: diese gigantische Drachensaat
+  english_used: this gigantic crop of dragon’s teeth
+  english_provenance: Fresh translation of Zweig; the English idiom ‘dragon’s teeth’ used
+    for the figure
+  used_in:
+  - discovery-of-eldorado-p16
+- id: cendrars-l-or
+  type: allusion
+  author: Blaise Cendrars
+  work: 'L’Or: La merveilleuse histoire du général Johann August Suter'
+  locus: passim
+  original_language: fr
+  original: '(the novel as a whole: Zweig’s principal source)'
+  zweig_rendering: nur ein Künstler, Blaise Cendrars
+  english_used: only an artist, Blaise Cendrars
+  english_provenance: 'English translation: Sutter’s Gold, trans. Henry Longan Stuart (1926).
+    Not quoted.'
+  used_in:
+  - discovery-of-eldorado-p24

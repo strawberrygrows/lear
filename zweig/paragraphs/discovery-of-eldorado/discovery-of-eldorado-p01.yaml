@@ -1,0 +1,57 @@
+id: discovery-of-eldorado-p01
+locus: Die Entdeckung Eldorados, paragraph 1
+section:
+  de: Der Europamüde
+  en: Weary of Europe
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    1834. Ein Amerikadampfer steuert von Le Hâvre nach Neuyork. Mitten unter den Desperados, einer unter Hunderten, Johann August Suter, heimisch zu Rynenberg bei Basel, 31 Jahre alt und höchst eilig, das Weltmeer zwischen sich und den europäischen Gerichten zu haben, Bankerotteur, Dieb, Wechselfälscher, hat er seine Frau und drei Kinder einfach im Stich gelassen, in Paris sich mit einem betrügerischen Ausweis etwas Geld verschafft und ist nun auf der Suche nach neuer Existenz. Am 7. Juli landet er in Neuyork und treibt dort zwei Jahre lang alle möglichen und unmöglichen Geschäfte, wird Packer, Drogist, Zahnarzt, Arzneiverkäufer, Tavernenhälter. Schließlich, einigermaßen gesettlet, siedelt er sich in einem Wirtshaus an, verkauft es wieder und zieht, dem magischen Zug der Zeit folgend, nach Missouri. Dort wird er Landmann, schafft sich in kurzer Zeit ein kleines Eigentum und könnte ruhig leben. Aber immer hasten Menschen an seinem Hause vorbei, Pelzhändler, Jäger, Abenteurer und Soldaten, sie kommen vom Westen, sie ziehen nach Westen, und dieses Wort Westen bekommt allmählich einen magischen Klang. Zuerst, so weiß man, sind Steppen, Steppen mit ungeheuren Büffelherden, tageweit, wochenweit menschenleer, nur durchjagt von den Rothäuten, dann kommen Gebirge, hoch, unerstiegen, dann endlich jenes andere Land, von dem niemand Genaues weiß und dessen sagenhafter Reichtum gerühmt wird, Kalifornien, das noch unerforschte. Ein Land, wo Milch und Honig fließt, frei jedem, der es nehmen will – nur weit, unendlich weit und lebensgefährlich zu erreichen.
+  ocr_corrections: []
+translation_draft: |
+  1834. A steamer bound for America is making its way from Le Havre to New York. In the very midst of the desperadoes, one among hundreds, Johann August Suter, native of Rynenberg near Basel, thirty-one years of age and in the utmost haste to put the ocean between himself and the courts of Europe, bankrupt, thief, forger of bills, has simply left his wife and three children in the lurch, procured himself a little money in Paris with a fraudulent passport, and is now in search of a new existence. On 7 July he lands in New York, and there for two years he plies every trade possible and impossible, turning packer, druggist, dentist, vendor of medicines, tavern-keeper. At length, settled after a fashion, he establishes himself in an inn, sells it again, and, following the magical drift of the age, moves on to Missouri. There he becomes a farmer, in a short time acquires a small property of his own, and might live in peace. But always there are people hurrying past his house, fur-traders, hunters, adventurers, and soldiers, they come from the West, they go to the West, and little by little this word West acquires a magical ring. First, so much is known, there are plains, plains with immense herds of buffalo, empty of men for days, for weeks on end, ridden through only by the Red Indians, then come mountains, high, unclimbed, then at last that other land of which no one knows anything certain and whose fabled riches are everywhere extolled, California, the still unexplored. A land flowing with milk and honey, free to any man who will take it – only far, infinitely far, and to be reached at peril of one’s life.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: Johann August Suter
+  body: 'The historical figure is known in English as John Augustus Sutter. Zweig uses the
+    German form of the name throughout and we keep it: the story is Zweig’s Suter, not the
+    biographer’s Sutter (see DECISION-Z03).'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: Rynenberg near Basel
+  body: Zweig’s spelling. The family came from Rünenberg in the canton of Basel-Landschaft
+    (Sutter himself was born across the border in Kandern, Baden). Kept as Zweig wrote it;
+    Basel given in its modern form.
+  status: claude-drafted
+- id: 3
+  type: note
+  span: settled after a fashion
+  body: Zweig writes *gesettlet*, a jocular German past participle made from the English ‘settle’.
+    English cannot reproduce the joke, since the word is simply English; ‘after a fashion’
+    keeps a little of its irony.
+  status: claude-drafted
+- id: 4
+  type: note
+  span: magical drift of the age
+  body: '*magisch* is a leitmotif of the piece: the magical pull of the age, the magical ring
+    of the word West, the lure of the magical name, and finally the magic word ‘Eldorado’.
+    It is rendered ‘magical’ or ‘magic’ every time so that the chain survives.'
+  status: claude-drafted
+- id: 5
+  type: note
+  span: Red Indians
+  body: Zweig’s *Rothäute* (literally ‘redskins’). We give the interwar British idiom ‘Red
+    Indians’, which keeps the period register and the 1927 outlook without sharpening the
+    slur beyond the original. The editor may prefer the literal word.
+  status: claude-drafted
+- id: 6
+  type: quote
+  span: A land flowing with milk and honey
+  quote_library_ref: bible-exodus-3-8
+  body: Zweig echoes Luther’s Exodus 3:8 (*ein Land, darin Milch und Honig fließt*); the English
+    is the Authorised Version phrase an English reader recognises.
+  status: claude-drafted

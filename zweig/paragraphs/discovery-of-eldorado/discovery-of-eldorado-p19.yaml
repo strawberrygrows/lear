@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p19
+locus: Die Entdeckung Eldorados, paragraph 19
+section:
+  de: Der Prozeß
+  en: The Lawsuit
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Am 15. März 1855 wird endlich das Urteil gefällt. Der unbestechliche Richter Thompson, der höchste Beamte Kaliforniens, erkennt die Rechte Johann August Suters auf den Boden als vollkommen berechtigt und unantastbar an.
+  ocr_corrections: []
+translation_draft: |
+  On 15 March 1855 judgement is at last pronounced. The incorruptible Judge Thompson, the highest official in California, recognises Johann August Suter’s rights to the land as entirely justified and inviolable.
+translation_final: ''
+annotations: []

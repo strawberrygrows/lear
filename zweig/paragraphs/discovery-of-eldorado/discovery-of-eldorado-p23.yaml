@@ -1,0 +1,41 @@
+id: discovery-of-eldorado-p23
+locus: Die Entdeckung Eldorados, paragraph 23
+section:
+  de: Das Ende
+  en: The End
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Fünfundzwanzig Jahre irrt dann noch ein alter, geistesschwacher, schlechtgekleideter Mann in Washington um den Justizpalast. In allen Büros kennt man dort den »General« im schmutzigen Überrock und mit den zerfetzten Schuhen, der seine Milliarden fordert. Und immer wieder finden sich Advokaten, Abenteurer und Filous, die ihm das Letzte seiner Pension entlocken und ihn neuerdings zum Prozesse treiben. Er selbst will kein Geld, er haßt das Gold, das ihn arm gemacht, das ihm drei Kinder ermordet, das sein Leben zerstört. Er will nur sein Recht und verficht es mit der querulantischen Erbitterung des Monomanen. Er reklamiert beim Senat, er reklamiert beim Kongreß, er vertraut sich allerlei Helfern an, die, mit Pomp dann die Affäre aufzäumend, ihm eine lächerliche Generalsuniform anziehen und den Unglücklichen als Popanz von Amt zu Amt, von Abgeordneten zu Abgeordneten schleppen. Das geht zwanzig Jahre lang, von 1860 bis 1880, zwanzig erbärmliche Bettlerjahre. Tag um Tag umlungert er den Kongreßpalast, Spott aller Beamten, Spiel aller Gassenjungen, er, dem das reichste Land der Erde gehört und auf dessen Grund und Boden die zweite Hauptstadt des Riesenreiches steht und stündlich wächst. Aber man läßt den Unbequemen warten. Und dort, auf der Treppe des Kongreßpalastes, trifft ihn endlich am 17. Juli 1880 am Nachmittag der erlösende Herzschlag – man trägt einen toten Bettler weg. Einen toten Bettler, aber einen mit einer Streitschrift in der Tasche, die ihm und seinen Erben nach allen irdischen Rechten den Anspruch auf das größte Vermögen der Weltgeschichte sichert.
+  ocr_corrections: []
+translation_draft: |
+  For twenty-five years more an old, feeble-minded, shabbily dressed man wanders about the Palace of Justice in Washington. In every office there they know the ‘General’ in the dirty frock-coat and the tattered shoes who demands his billions. And again and again there are lawyers, adventurers, and sharpers who wheedle from him the last of his pension and drive him afresh into litigation. He himself wants no money, he hates the gold that has made him poor, that has murdered three of his children, that has destroyed his life. He wants only his rights, and he champions them with the querulous bitterness of the monomaniac. He petitions the Senate, he petitions Congress, he entrusts himself to all manner of helpers who, rigging the affair out with pomp, put him into a ridiculous general’s uniform and drag the unfortunate man as a figure of fun from office to office, from Congressman to Congressman. This goes on for twenty years, from 1860 to 1880, twenty miserable years of beggary. Day after day he haunts the Capitol, the scorn of every official, the sport of every street-urchin, he to whom the richest land on earth belongs, and on whose land and soil the second capital of the giant realm stands and grows by the hour. But they let the troublesome man wait. And there, on the steps of the Capitol, on the afternoon of 17 July 1880, the heart-seizure that releases him at last strikes him down – they carry away a dead beggar. A dead beggar, but one with a statement of claim in his pocket that secures to him and his heirs, by every earthly law, the title to the greatest fortune in the history of the world.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: For twenty-five years more
+  body: Zweig says twenty-five years here and ‘twenty years, from 1860 to 1880’ a few lines
+    later. The inconsistency is his and is kept.
+  status: claude-drafted
+- id: 2
+  type: note
+  span: the Palace of Justice in Washington
+  body: '*Justizpalast*, a Continental institution transplanted by Zweig to San Francisco
+    and Washington alike. It is kept as ‘Palace of Justice’ in both places, since the European
+    colouring is part of his America; *Kongreßpalast* is given as ‘the Capitol’, which is
+    unambiguous.'
+  status: claude-drafted
+- id: 3
+  type: note
+  span: the scorn of every official, the sport of every street-urchin
+  body: '*Spott aller Beamten, Spiel aller Gassenjungen*: the alliteration is kept.'
+  status: claude-drafted
+- id: 4
+  type: note
+  span: 17 July 1880
+  body: So Zweig, after Cendrars. Sutter in fact died in a Washington hotel on 18 June 1880,
+    Congress having adjourned without acting on his petition. Not corrected (see the note
+    on p21).
+  status: claude-drafted

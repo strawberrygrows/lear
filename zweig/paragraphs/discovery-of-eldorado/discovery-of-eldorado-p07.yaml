@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p07
+locus: Die Entdeckung Eldorados, paragraph 7
+section:
+  de: Der Marsch nach Kalifornien
+  en: The March to California
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    »Gut, tun Sie, was Sie wollen, ich gebe Ihnen eine Konzession auf zehn Jahre.«
+  ocr_corrections: []
+translation_draft: |
+  ‘Good, do what you will, I give you a concession for ten years.’
+translation_final: ''
+annotations: []

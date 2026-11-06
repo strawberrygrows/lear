@@ -1,0 +1,21 @@
+id: discovery-of-eldorado-p13
+locus: Die Entdeckung Eldorados, paragraph 13
+section:
+  de: Der verhängnisvolle Spatenstich
+  en: The Fateful Stroke of the Spade
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Am nächsten Morgen ist Colonel Suter in Coloma, sie dämmen den Kanal ab und untersuchen den Sand. Man braucht nur ein Sieb zu nehmen, ein wenig hin und her zu schütteln, und die Goldkörner bleiben blank auf dem schwarzen Geflecht. Suter versammelt die paar weißen Leute um sich, nimmt ihnen das Ehrenwort ab, zu schweigen, bis das Sägewerk vollendet sei, dann reitet er ernst und entschlossen wieder zu seiner Farm zurück. Ungeheure Gedanken bewegen ihn: soweit man sich entsinnen kann, hat niemals das Gold so leicht faßbar, so offen in der Erde gelegen, und diese Erde ist sein, ist Suters Eigentum. Ein Jahrzehnt scheint übersprungen in einer Nacht: Er ist der reichste Mann der Welt.
+  ocr_corrections: []
+translation_draft: |
+  The next morning Colonel Suter is at Coloma; they dam the mill-race and examine the sand. One need only take a sieve and shake it a little to and fro, and the grains of gold remain, gleaming, on the black mesh. Suter gathers the few white men about him, takes their word of honour to keep silent until the sawmill is finished, and then rides back to his farm, grave and resolute. Tremendous thoughts move him: within the memory of man, gold has never lain so easily to hand, so openly in the earth, and this earth is his, is Suter’s property. A decade seems to have been leapt over in a single night: he is the richest man in the world.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: mill-race
+  body: Zweig’s *Kanal*. The channel in question is the race of the sawmill under construction,
+    where the gold was in fact found; ‘canal’ would mislead.
+  status: claude-drafted

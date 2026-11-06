@@ -1,0 +1,23 @@
+id: discovery-of-eldorado-p22
+locus: Die Entdeckung Eldorados, paragraph 22
+section:
+  de: Das Ende
+  en: The End
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Von diesem Schlage hat sich Johann August Suter nie mehr erholt. Sein Werk ist vernichtet, seine Frau, seine Kinder sind tot, sein Geist verwirrt: nur eine Idee flackert noch wirr in dem dumpf gewordenen Gehirn: das Recht, der Prozeß.
+  ocr_corrections: []
+translation_draft: |
+  From this blow Johann August Suter never recovered. His work is annihilated, his wife, his children are dead, his mind is deranged: one idea alone still flickers confusedly in the dulled brain: his right, the lawsuit.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: his right, the lawsuit
+  body: '*das Recht* (right, justice, law) runs through the close: ‘his right’ here, ‘he wants
+    only his rights’, ‘justice has not been done’, and finally ‘the one right of a great destiny’.
+    English must divide the word between ‘right’ and ‘justice’; ‘right’ is kept wherever the
+    sense allows, so that the last sentence still lands on it.'
+  status: claude-drafted

@@ -1,0 +1,22 @@
+id: discovery-of-eldorado-p04
+locus: Die Entdeckung Eldorados, paragraph 4
+section:
+  de: Der Marsch nach Kalifornien
+  en: The March to California
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Suter ist allein, vergebens sucht man ihn zurückzuhalten in Van Couver, bietet ihm eine Stellung an – er lehnt alles ab, die Lockung des magischen Namens sitzt ihm im Blut. Mit einem erbärmlichen Segler durchkreuzt er den Pazifik zuerst zu den Sandwichinseln und landet, nach unendlichen Schwierigkeiten an den Küsten von Alaska vorbei, an einem verlassenen Platz, namens San Franzisko. San Franzisko – nicht die Stadt von heute, nach dem Erdbeben mit verdoppeltem Wachstum zu Millionenzahlen emporgeschossen – nein, nur ein elendes Fischerdorf, so nach der Mission der Franziskaner genannt, nicht einmal Hauptstadt jener unbekannten mexikanischen Provinz Kalifornien, die verwahrlost, ohne Zucht und Blüte, in der üppigsten Zone des neuen Kontinents brachliegt.
+  ocr_corrections: []
+translation_draft: |
+  Suter is alone, in vain they seek to keep him at Vancouver, offer him a position – he refuses everything, the lure of the magical name is in his blood. In a wretched sailing-ship he crosses the Pacific, first to the Sandwich Islands, and, after endless difficulties along the coasts of Alaska, lands at a forsaken spot by the name of San Francisco. San Francisco – not the city of today, which after the earthquake shot up with redoubled growth to its millions – no, only a miserable fishing village, so called after the mission of the Franciscans, not even the capital of that obscure Mexican province of California which lies fallow, neglected, ungoverned and unflowering, in the most luxuriant zone of the new continent.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: Vancouver
+  body: Zweig writes *Van Couver*, and *Neuyork*, *San Franzisko*, *Sakramento*, *Monte Rey*,
+    *Le Hâvre*. All place-names are given silently in their standard English forms (DECISION-Z04).
+    ‘Sandwich Islands’ is kept as the period name for Hawaii.
+  status: claude-drafted

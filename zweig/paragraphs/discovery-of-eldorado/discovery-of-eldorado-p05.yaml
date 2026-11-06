@@ -1,0 +1,28 @@
+id: discovery-of-eldorado-p05
+locus: Die Entdeckung Eldorados, paragraph 5
+section:
+  de: Der Marsch nach Kalifornien
+  en: The March to California
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Spanische Unordnung, gesteigert durch Abwesenheit jeder Autorität, Revolten, Mangel an Arbeitstieren und Menschen, Mangel an zupackender Energie. Suter mietet ein Pferd, treibt es hinab in das fruchtbare Tal des Sakramento: ein Tag genügt, um ihm zu zeigen, daß hier nicht nur Platz ist für eine Farm, für ein großes Gut, sondern Raum für ein Königreich. Am nächsten Tag reitet er nach Monte Rey, in die klägliche Hauptstadt, stellt sich dem Gouverneur Alverado vor, erklärt ihm seine Absicht, das Land urbar zu machen. Er hat Kanaken mitgebracht von den Inseln, will regelmäßig diese fleißigen und arbeitsamen Farbigen von dort sich nachkommen lassen und macht sich anheischig, Ansiedlungen zu bauen und ein kleines Reich, eine Kolonie, Neu-Helvetien, zu gründen.
+  ocr_corrections: []
+translation_draft: |
+  Spanish disorder, aggravated by the absence of all authority, revolts, a want of beasts of burden and of men, a want of energy to take things in hand. Suter hires a horse and drives it down into the fertile valley of the Sacramento: a single day suffices to show him that here there is room not merely for a farm, for a great estate, but space for a kingdom. The next day he rides to Monterey, the wretched capital, presents himself to Governor Alvarado, and explains his intention of bringing the land under cultivation. He has brought Kanakas with him from the islands, means to have more of these diligent and industrious coloured men sent after him regularly, and undertakes to build settlements and to found a little realm, a colony, New Helvetia.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: Governor Alvarado
+  body: Zweig misspells the name *Alverado*. Juan Bautista Alvarado was governor of Alta California
+    from 1836 to 1842; the correct spelling is given silently, as with the place-names.
+  status: claude-drafted
+- id: 2
+  type: note
+  span: Kanakas
+  body: '*Kanaken*: the nineteenth-century word, in English as in German, for Pacific Islanders
+    employed as labourers, and the word used in the English sources on Sutter. *Farbigen*
+    is given literally as ‘coloured men’ to keep the 1927 register.'
+  status: claude-drafted

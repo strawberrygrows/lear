@@ -1,0 +1,35 @@
+id: discovery-of-eldorado-p16
+locus: Die Entdeckung Eldorados, paragraph 16
+section:
+  de: Der Rush
+  en: The Rush
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Johann August Suter, noch einmal bankerott, starrt wie gelähmt auf diese gigantische Drachensaat. Zuerst versucht er mitzugraben und selbst mit seinen Dienern und Gefährten den Reichtum auszunützen, aber alle verlassen ihn. So zieht er sich ganz aus dem Golddistrikt zurück, in eine abgesonderte Farm, nahe dem Gebirge, weg von dem verfluchten Fluß und dem unheiligen Sand, in seine Farm Eremitage. Dort erreicht ihn endlich seine Frau mit den drei herangewachsenen Kindern, aber kaum angelangt, stirbt sie infolge der Erschöpfung der Reise. Doch drei Söhne sind jetzt da, acht Arme, und mit ihnen beginnt Johann August Suter die Landwirtschaft; noch einmal, nun mit seinen drei Söhnen, arbeitet er sich empor, still, zäh, und nützt die phantastische Fruchtbarkeit dieser Erde. Noch einmal birgt und verbirgt er einen großen Plan.
+  ocr_corrections: []
+translation_draft: |
+  Johann August Suter, bankrupt once more, stares as if paralysed at this gigantic crop of dragon’s teeth. At first he tries to dig with the rest and, with his servants and companions, to exploit the riches himself, but all of them desert him. So he withdraws altogether from the gold district, to a secluded farm near the mountains, away from the accursed river and the unholy sand, to his farm the Hermitage. There his wife at last reaches him with the three children, now grown, but scarcely has she arrived when she dies of the exhaustion of the journey. Yet three sons are there now, eight arms, and with them Johann August Suter takes up farming; once more, now with his three sons, he works his way up, quietly, tenaciously, and turns to account the fantastic fertility of this soil. Once more he harbours and hides a great design.
+translation_final: ''
+annotations:
+- id: 1
+  type: quote
+  span: gigantic crop of dragon’s teeth
+  quote_library_ref: ovid-metamorphoses-iii-cadmus
+  body: '*Drachensaat*, ‘dragon’s sowing’: Cadmus sows the teeth of the slain dragon and a
+    crop of armed men springs up and turns on itself (Ovid, *Metamorphoses* III). ‘Dragon’s
+    teeth’ is the form in which the figure is current in English.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: the Hermitage
+  body: Zweig’s *Eremitage*, following Cendrars’s *L’Ermitage*. Sutter’s farm on the Feather
+    River was in fact called Hock Farm; Zweig’s name is kept and given in English.
+  status: claude-drafted
+- id: 3
+  type: note
+  span: harbours and hides
+  body: '*birgt und verbirgt*: Zweig’s play on the simple and prefixed verb. ‘Harbours and
+    hides’ keeps a pairing of sound in place of the etymological one.'
+  status: claude-drafted

@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p06
+locus: Die Entdeckung Eldorados, paragraph 6
+section:
+  de: Der Marsch nach Kalifornien
+  en: The March to California
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    »Warum Neu-Helvetien?« fragt der Gouverneur. »Ich bin Schweizer und Republikaner«, antwortet Suter.
+  ocr_corrections: []
+translation_draft: |
+  ‘Why New Helvetia?’ asks the Governor. ‘I am a Swiss and a republican,’ answers Suter.
+translation_final: ''
+annotations: []

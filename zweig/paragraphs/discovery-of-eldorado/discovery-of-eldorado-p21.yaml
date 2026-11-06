@@ -1,0 +1,29 @@
+id: discovery-of-eldorado-p21
+locus: Die Entdeckung Eldorados, paragraph 21
+section:
+  de: Das Ende
+  en: The End
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Der reichste Mann der Welt? Nein, abermals nein, der ärmste Bettler, der unglücklichste, geschlagenste Mann. Wieder führt das Schicksal wider ihn einen jener mörderischen Streiche, nun aber einen, der ihn für immer zu Boden streckt. Auf die Nachricht von dem Urteil bricht ein Sturm in San Franzisko und im ganzen Lande los. Zehntausende rotten sich zusammen, alle die bedrohten Eigentümer, der Mob der Straße, das immer plünderungsfrohe Gesindel, sie stürmen den Justizpalast und brennen ihn nieder, sie suchen den Richter, um ihn zu lynchen, und sie machen sich auf, eine ungeheure Schar, um den ganzen Besitz Johann August Suters zu plündern. Sein ältester Sohn erschießt sich, von den Banditen bedrängt, der zweite wird ermordet, der dritte flieht und ertrinkt auf der Heimkehr. Eine Feuerwoge fährt über Neu-Helvetien hin, Suters Farmen werden niedergebrannt, seine Weinstöcke zertreten, sein Mobiliar, seine Sammlungen, sein Geld geraubt und mit erbarmungsloser Wut der ungeheure Besitz zur Wüstenei gemacht. Suter selbst rettet sich mit knapper Not.
+  ocr_corrections: []
+translation_draft: |
+  The richest man in the world? No, and again no, the poorest beggar, the unhappiest, the most broken of men. Once more Fate deals him one of those murderous blows, but this time one that lays him low for ever. At the news of the judgement a storm breaks loose in San Francisco and throughout the country. Tens of thousands band together, all the threatened owners, the mob of the streets, the rabble ever eager for plunder, they storm the Palace of Justice and burn it down, they hunt for the judge to lynch him, and they set out, an immense multitude, to plunder the whole of Johann August Suter’s possessions. His eldest son, hard pressed by the bandits, shoots himself, the second is murdered, the third flees and is drowned on the way home. A wave of fire sweeps over New Helvetia, Suter’s farms are burnt down, his vines trampled, his furniture, his collections, his money carried off, and with pitiless fury the vast estate is made a wilderness. Suter himself escapes by a hair’s breadth.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: A wave of fire
+  body: '*Feuerwoge*, the same word as the ‘gigantic wave of fire’ with which Suter cleared
+    the land in 1839; the echo is deliberate and the same English is used.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: His eldest son, hard pressed by the bandits, shoots himself
+  body: Here, as throughout the last two sections, Zweig follows Cendrars’s novel rather than
+    the historical record (Sutter’s wife and sons did not die as described). The translation
+    renders Zweig and does not correct him; the departures are a matter for an introduction,
+    not for the text.
+  status: claude-drafted

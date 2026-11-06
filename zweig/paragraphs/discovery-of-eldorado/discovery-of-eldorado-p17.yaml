@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p17
+locus: Die Entdeckung Eldorados, paragraph 17
+section:
+  de: Der Prozeß
+  en: The Lawsuit
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    1850. Kalifornien ist in die Union der Vereinigten Staaten aufgenommen worden. Unter ihrer strengen Zucht kommt nach dem Reichtum endlich Ordnung in das goldbesessene Land. Die Anarchie ist gebändigt, das Gesetz gewinnt wieder sein Recht.
+  ocr_corrections: []
+translation_draft: |
+  1850. California has been admitted into the Union of the United States. Under their stern discipline, after riches, order at last comes to the gold-possessed land. Anarchy is tamed, the law regains its rights.
+translation_final: ''
+annotations: []

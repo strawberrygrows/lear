@@ -1,0 +1,34 @@
+id: discovery-of-eldorado-p11
+locus: Die Entdeckung Eldorados, paragraph 11
+section:
+  de: Neu-Helvetien
+  en: New Helvetia
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Der Erfolg ist gigantisch. Die Saaten tragen sofort fünfhundert Prozent. Die Scheuern bersten, bald zählen die Herden nach Tausenden, und ungeachtet der fortwährenden Schwierigkeiten im Lande, der Expeditionen gegen die Eingeborenen, die immer wieder Einbrüche in die aufblühende Kolonie wagen, entfaltet sich Neu-Helvetien zu tropisch gigantischer Größe. Kanäle, Mühlen, Faktoreien werden geschaffen, auf den Flüssen fahren Schiffe stromauf und stromab, Suter versorgt nicht nur Van Couver und die Sandwichinseln, sondern auch alle Segler, die in Kalifornien anlegen, er pflanzt Obst, das heute so berühmte und vielbewunderte Obst Kaliforniens. Sieh da! es gedeiht, und so läßt er Weinreben kommen aus Frankreich und vom Rhein, und nach wenigen Jahren bedecken sie weite Gelände. Sich selbst baut er Häuser und üppige Farmen, läßt ein Klavier von Pleyel hundertachtzig Tagereisen weit aus Paris kommen und eine Dampfmaschine mit sechzig Büffeln von Neuyork her über den ganzen Kontinent. Er hat Kredite und Guthaben bei den größten Bankhäusern Englands und Frankreichs, und nun, fünfundvierzig Jahre alt, auf der Höhe seines Triumphes, erinnert er sich, vor vierzehn Jahren eine Frau und drei Kinder irgendwo in der Welt gelassen zu haben. Er schreibt ihnen und ladet sie zu sich, in sein Fürstentum. Denn jetzt fühlt er die Fülle in den Fäusten, er ist Herr von Neu-Helvetien, einer der reichsten Männer der Welt, und wird es bleiben. Endlich reißen auch die Vereinigten Staaten die verwahrloste Kolonie aus Mexikos Händen. Nun ist alles gesichert und geborgen. Ein paar Jahre noch, und Suter ist der reichste Mann der Welt.
+  ocr_corrections: []
+translation_draft: |
+  The success is gigantic. The crops yield five hundred per cent at once. The barns are bursting, soon the herds are counted in thousands, and notwithstanding the continual difficulties in the country, the expeditions against the natives, who again and again venture raids upon the flourishing colony, New Helvetia unfolds to a tropical, gigantic greatness. Canals, mills, trading-posts are established, ships ply up and down the rivers, Suter supplies not only Vancouver and the Sandwich Islands but every sailing-ship that puts in at California, he plants fruit, the fruit of California so famous and so much admired today. And behold! it thrives, and so he sends for vines from France and from the Rhine, and after a few years they cover wide tracts of land. For himself he builds houses and sumptuous farms, has a Pleyel piano brought from Paris, a hundred and eighty days’ journey, and a steam-engine from New York, drawn by sixty buffalo across the whole continent. He has credit and balances with the greatest banking-houses of England and France, and now, forty-five years old, at the height of his triumph, he remembers that fourteen years ago he left a wife and three children somewhere in the world. He writes to them and invites them to come to him, into his principality. For now he feels the fullness in his fists, he is lord of New Helvetia, one of the richest men in the world, and will remain so. At last the United States, too, wrest the neglected colony from Mexico’s hands. Now all is secured and safe. A few years more, and Suter is the richest man in the world.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: And behold! it thrives
+  body: '*Sieh da! es gedeiht*, with the lower-case continuation after the exclamation, as
+    Zweig punctuates it. ‘Behold’ is the one slightly elevated word in the passage, matching
+    the narrator’s mock-biblical wonder.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: the fullness in his fists
+  body: '*die Fülle in den Fäusten*: the alliteration is kept.'
+  status: claude-drafted
+- id: 3
+  type: note
+  span: Suter is the richest man in the world
+  body: The refrain ‘the richest man in the world’ (*der reichste Mann der Welt*) structures
+    the whole piece and is reversed three times. It is rendered identically on every occurrence,
+    in Zweig’s present tense.
+  status: claude-drafted

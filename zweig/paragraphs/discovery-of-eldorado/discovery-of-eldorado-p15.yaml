@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p15
+locus: Die Entdeckung Eldorados, paragraph 15
+section:
+  de: Der Rush
+  en: The Rush
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    Und immer gewaltiger wird dieser beispiellose Sturm nach Gold; die Nachricht ist in die Welt gedrungen, von Neuyork allein gehen hundert Schiffe ab, aus Deutschland, aus England, aus Frankreich, aus Spanien kommen 1848, 1849, 1850, 1851 ungeheure Abenteurerhorden herübergezogen. Einige fahren um das Kap Hoorn, das ist aber den Ungeduldigsten zu lang, so wählen sie den gefährlicheren Weg über den Isthmus von Panama. Eine rasch entschlossene Kompanie baut flink am Isthmus eine Eisenbahn, bei der Tausende Arbeiter im Fieber zugrunde gehen, nur damit für die Ungeduldigen drei bis vier Wochen erspart würden und sie früher zum Gold gelangen. Quer über den Kontinent ziehen riesige Karawanen, Menschen aller Rassen und Sprachen, und alle wühlen sie in Johann August Suters Eigentum wie auf eigenem Grunde. Auf der Erde von San Franzisko, die ihm durch besiegelten Akt der Regierung zugehört, wächst in traumhafter Geschwindigkeit eine Stadt, fremde Menschen verkaufen sich gegenseitig seinen Grund und Boden, und der Name Neu-Helvetien, sein Reich, verschwindet hinter dem magischen Wort: Eldorado, Kalifornien.
+  ocr_corrections: []
+translation_draft: |
+  And ever more violent grows this unexampled storm after gold; the news has gone out into the world, from New York alone a hundred ships set sail, from Germany, from England, from France, from Spain, in 1848, 1849, 1850, 1851, enormous hordes of adventurers come over. Some sail round Cape Horn, but that is too long for the most impatient, and so they choose the more dangerous way across the Isthmus of Panama. A company, swift to resolve, briskly builds a railway across the Isthmus, at which thousands of labourers perish of fever, only so that the impatient may be spared three or four weeks and reach the gold the sooner. Across the continent move enormous caravans, people of all races and tongues, and all of them grub about in Johann August Suter’s property as though on their own ground. On the soil of San Francisco, which belongs to him by sealed act of the government, a city grows with the speed of a dream, strangers sell one another his land and soil, and the name New Helvetia, his realm, vanishes behind the magic word: Eldorado, California.
+translation_final: ''
+annotations: []

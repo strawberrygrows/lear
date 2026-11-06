@@ -1,0 +1,15 @@
+id: discovery-of-eldorado-p09
+locus: Die Entdeckung Eldorados, paragraph 9
+section:
+  de: Neu-Helvetien
+  en: New Helvetia
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/
+status: claude-drafted
+source:
+  raw: |
+    1839. Eine Karawane karrt langsam längs der Ufer des Sakramento hinauf. Voran Suter zu Pferd, das Gewehr umgeschnallt, hinter ihm zwei, drei Europäer, dann hundertfünfzig Kanaken in kurzem Hemd, dann dreißig Büffelwagen mit Lebensmitteln, Samen und Munition, fünfzig Pferde, fünfundsiebzig Maulesel, Kühe und Schafe, dann eine kurze Nachhut – das ist die ganze Armee, die sich Neu-Helvetien erobern will.
+  ocr_corrections: []
+translation_draft: |
+  1839. A caravan trundles slowly upstream along the banks of the Sacramento. In front Suter on horseback, rifle slung, behind him two or three Europeans, then a hundred and fifty Kanakas in short shirts, then thirty buffalo-wagons with provisions, seed, and ammunition, fifty horses, seventy-five mules, cows and sheep, then a short rearguard – that is the whole army that means to conquer itself a New Helvetia.
+translation_final: ''
+annotations: []
