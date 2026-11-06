@@ -1,0 +1,28 @@
+id: first-word-across-the-ocean-p32
+locus: Das Erste Wort über den Ozean, paragraph 32
+section:
+  de: Sechs Jahre Schweigen
+  en: Six Years of Silence
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Nun ist alles leicht, was früher unermeßlich schwer gewesen. Am 23. Juli 1865 verläßt das Mammutschiff mit einem neuen Kabel die Themse. Wenn auch der erste Versuch mißlingt, wenn durch einen Riß zwei Tage vor dem Ziel die Legung mißglückt und noch einmal der unersättliche Ozean sechsmalhunderttausend Pfund Sterling schluckt, die Technik ist schon zu sicher ihrer Sache, um sich entmutigen zu lassen. Und als am 13. Juli 1866 zum zweitenmal die »Great Eastern« ausfährt, wird die Reise zum Triumph, klar und deutlich spricht diesmal das Kabel nach Europa hinüber. Wenige Tage später wird das alte, verlorene Kabel gefunden, zwei Stränge verbinden jetzt die Alte und die Neue Welt zu einer gemeinsamen. Das Wunder von gestern ist die Selbstverständlichkeit von heute geworden, und von diesem Augenblick an hat die Erde gleichsam einen einzigen Herzschlag; sich hörend, sich schauend, sich verstehend lebt die Menschheit nun gleichzeitig von einem bis zum andern Ende der Erde, göttlich allgegenwärtig durch ihre eigene schöpferische Kraft. Und herrlich wäre sie dank ihres Sieges über Raum und Zeit nun für alle Zeiten vereint, verwirrte sie nicht immer wieder von neuem der verhängnisvolle Wahn, unablässig diese grandiose Einheit zu zerstören und mit denselben Mitteln, die ihr Macht über die Elemente gegeben, sich selbst zu vernichten.
+  ocr_corrections: []
+translation_draft: |
+  Now everything is easy that before was immeasurably hard. On 23 July 1865 the mammoth ship leaves the Thames with a new cable. Even though the first attempt fails, even though two days from the goal the laying miscarries through a break and the insatiable ocean once more swallows six hundred thousand pounds sterling, engineering is by now too sure of its business to be discouraged. And when on 13 July 1866 the *Great Eastern* sets out for the second time, the voyage becomes a triumph; clear and distinct, this time, the cable speaks across to Europe. A few days later the old, lost cable is found; two strands now bind the Old and the New World into one common world. The miracle of yesterday has become the commonplace of today, and from this moment the earth has, as it were, a single heartbeat; hearing itself, seeing itself, understanding itself, mankind now lives simultaneously from one end of the earth to the other, divinely omnipresent through its own creative power. And it would now be gloriously united for all time thanks to its victory over space and time, were it not confounded again and again by the fatal delusion of ceaselessly destroying this grandiose unity and of annihilating itself with the very means that have given it power over the elements.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: the old, lost cable is found
+  body: The cable recovered and completed in 1866 was the broken cable of 1865, not that of
+    1858. Kept as Zweig wrote it (DECISION-Z05).
+  status: claude-drafted
+- id: 2
+  type: note
+  span: were it not confounded again and again
+  body: The closing conditional (*herrlich wäre sie … verwirrte sie nicht*) is kept as one
+    sentence ending on ‘the elements’. *verwirrte* (‘confounded’) recalls Babel (p10), where
+    the Lord confounded the language of the builders.
+  status: claude-drafted

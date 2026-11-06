@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--HEAD-->
+<title>{{TITLE_EN}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="title">
+    <nav class="crumbs"><a href="index.html">Stefan Zweig in English</a></nav>
+    <p class="eyebrow">From <i>Sternstunden der Menschheit</i></p>
+    <h1>{{TITLE_EN}}</h1>
+    <p class="subtitle" lang="de">{{TITLE_DE}}</p>
+    <p class="dateline">{{DATELINE_EN}}</p>
+    <p class="byline">A new English translation from the German, in {{COUNT}} paragraphs.</p>
+    <div class="controls">
+      <span class="status">{{STATUS}}</span>
+      <button class="toggle" id="toggle-de" type="button" aria-pressed="false">Show the German</button>
+      <button class="toggle" id="toggle-notes" type="button" aria-pressed="true">Note numbers</button>
+    </div>
+  </header>
+</div>
+
+<main class="wrap story">
+{{STORY}}
+</main>
+
+<div class="wrap">
+  <section class="back-matter" aria-labelledby="notes-h">
+    <h2 id="notes-h">Notes</h2>
+    <ol class="notes">
+{{NOTES}}
+    </ol>
+
+    <h2 id="about">About this translation</h2>
+    <p>Zweig tells these miniatures in the present tense, in long chains of commas, and he likes a refrain. The translation tries to keep all three. Each paragraph is a separate file holding the German, the first draft and the editor’s final version, with notes on every decision.</p>
+    <ul class="principles">
+      <li>Zweig’s repetitions, refrains and alliterations are kept, not smoothed away.</li>
+      <li>Sentences and paragraphs break where Zweig breaks them.</li>
+      <li>A dash appears only where Zweig has one: {{DASHES}} in the German, {{DASHES}} in the English.</li>
+      <li>Quotations Zweig gives in English are kept as he gives them; allusions use the English an English reader knows.</li>
+      <li>Names and places are given their standard English forms. Zweig’s history is not corrected; where it departs from the record, a note says so.</li>
+      <li>British spelling, single quotation marks.</li>
+    </ul>
+
+    <h2 id="rights">Text and rights</h2>
+    <p>Stefan Zweig died in February 1942, so his works have been in the public domain since 1 January 2013 in the UK, the EU and other countries where copyright lasts for the author’s life plus 70 years. {{RIGHTS}} The German text here is from the S. Fischer edition of 1951, as transcribed by <a href="{{SOURCE_URL}}">Projekt Gutenberg-DE</a>. The translation is new and is not based on any earlier English version.</p>
+  </section>
+  <footer>
+    <p class="pager">{{PAGER}}</p>
+    <p>{{NOTE_COUNT}} notes. Translation drafted with Claude and revised by a human editor; every change is kept in the project’s history.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var body = document.body;
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function wire(id, cls, key, onWhen) {
+    var btn = document.getElementById(id);
+    function apply(on) {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      body.classList.toggle(cls, onWhen ? on : !on);
+    }
+    var saved = get(key);
+    apply(saved === null ? btn.getAttribute('aria-pressed') === 'true' : saved === '1');
+    btn.addEventListener('click', function () {
+      var on = btn.getAttribute('aria-pressed') !== 'true';
+      apply(on); set(key, on ? '1' : '0');
+    });
+  }
+  wire('toggle-de', 'show-de', 'zweig-show-de', true);
+  wire('toggle-notes', 'hide-notes', 'zweig-notes', false);
+})();
+</script>
+</body>
+</html>

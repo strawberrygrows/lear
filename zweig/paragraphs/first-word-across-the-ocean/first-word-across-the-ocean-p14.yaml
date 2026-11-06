@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p14
+locus: Das Erste Wort über den Ozean, paragraph 14
+section:
+  de: Mißgeschick
+  en: Mischance
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Von den beiden Schiffen ist der »Niagara« die Aufgabe zugefallen, vom Festland aus das Kabel bis in die Mitte des Meeres zu legen. Langsam, vorsichtig steuert die amerikanische Fregatte dahin, wie eine Spinne aus ihrem gewaltigen Leibe den Faden ständig hinter sich zurücklassend. Langsam, regelmäßig rattert an Bord die Auslegemaschine – es ist das alte, allen Seeleuten wohlbekannte Geräusch eines abrollenden Ankertaues, das sich von der Winde niederdreht. Und nach wenigen Stunden achten die Leute an Bord auf dies regelmäßig mahlende Geräusch schon ebensowenig wie auf ihren eigenen Herzschlag.
+  ocr_corrections: []
+translation_draft: |
+  Of the two ships, the task has fallen to the *Niagara* of laying the cable from the mainland to the middle of the sea. Slowly, cautiously, the American frigate steers onward, like a spider continually leaving the thread behind it out of its enormous body. Slowly, regularly, the paying-out machine rattles on board – it is the old sound, familiar to every seaman, of an anchor cable running down off the windlass. And after a few hours the men on board pay no more heed to this regularly grinding noise than to the beating of their own hearts.
+translation_final: ''
+annotations: []

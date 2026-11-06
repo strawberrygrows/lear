@@ -1,0 +1,28 @@
+id: first-word-across-the-ocean-p28
+locus: Das Erste Wort über den Ozean, paragraph 28
+section:
+  de: Das große Crucifige
+  en: The Great *Crucifige*
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Nichts nun verzeihen die Menschen weniger, als in einer ehrlichen Begeisterung ernüchtert zu werden und von einem Manne, von dem sie alles erwartet, sich hinterrücks enttäuscht zu sehen. Kaum daß sich das Gerücht bewahrheitet, der vielgerühmte Telegraph versage, wirft sich die stürmische Welle des Jubels nun im Rückschlag als bösartige Erbitterung dem unschuldig Schuldigen, Cyrus W. Field, entgegen. Er hat eine Stadt, ein Land, eine Welt betrogen; längst habe er von dem Versagen des Telegraphen gewußt, behauptet man in der City, aber eigensüchtig habe er sich umjubeln lassen und inzwischen die Zeit benützt, um die ihm gehörigen Aktien mit ungeheurem Gewinn loszuschlagen. Sogar noch bösartigere Verleumdungen melden sich, darunter die merkwürdigste von allen, die peremptorisch behauptet, der atlantische Telegraph habe überhaupt nie richtig funktioniert; alle Meldungen seien Schwindel und Humbug gewesen und das Telegramm der Königin von England schon vorher abgefaßt und nie durch den Ozeantelegraph übermittelt gewesen. Keine einzige Nachricht, geht das Gerücht, sei die ganze Zeit über wirklich verständlich über das Meer gekommen, und die Direktoren hätten nur aus Vermutungen und abgerissenen Zeichen imaginäre Depeschen zusammengebraut. Ein wirklicher Skandal bricht los. Gerade die gestern am lautesten gejubelt hatten, toben nun am meisten. Eine ganze Stadt, ein ganzes Land schämt sich seiner überhitzten und voreiligen Begeisterung. Cyrus W. Field wird zum Opfer dieses Zorns ausersehen; der gestern noch als Nationalheld und Heros galt, als Bruder Franklins und Nachfahre des Kolumbus, muß sich vor seinen vormaligen Freunden und Verehrern verbergen wie ein Verbrecher. Ein einziger Tag hat alles geschaffen, ein einziger Tag alles zerstört. Unabsehbar ist die Niederlage, verloren das Kapital, vertan das Vertrauen, und wie die sagenhafte Midgardschlange liegt das unnütze Kabel in den unerschaubaren Tiefen des Weltmeeres.
+  ocr_corrections: []
+translation_draft: |
+  Now there is nothing people forgive less than to be sobered in an honest enthusiasm and to see themselves treacherously disappointed by a man from whom they had expected everything. Scarcely has the rumour proved true that the much-vaunted telegraph has failed than the stormy wave of jubilation, recoiling, hurls itself as malignant bitterness against the guiltless culprit, Cyrus W. Field. He has deceived a city, a country, a world; he had known long since of the failure of the telegraph, it is asserted in the city, but selfishly he had let himself be fêted and meanwhile used the time to sell off his own shares at an enormous profit. Even more malignant slanders appear, among them the strangest of all, which asserts peremptorily that the Atlantic telegraph had never worked properly at all; all the reports had been swindle and humbug, and the Queen of England’s telegram composed beforehand and never sent by the ocean telegraph. Not a single message, the rumour runs, had in all that time really come across the sea intelligibly, and the directors had merely brewed up imaginary dispatches out of guesses and broken signals. A real scandal breaks out. Precisely those who yesterday had cheered the loudest now rage the most. A whole city, a whole country is ashamed of its overheated and premature enthusiasm. Cyrus W. Field is chosen as the victim of this anger; he who only yesterday was held a national hero and demigod, the brother of Franklin and the descendant of Columbus, must hide from his former friends and admirers like a criminal. A single day has made everything, a single day has destroyed everything. Immeasurable is the defeat, lost the capital, squandered the confidence, and like the legendary Midgard Serpent the useless cable lies in the unfathomable depths of the ocean.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: the guiltless culprit
+  body: '*dem unschuldig Schuldigen*: Zweig’s oxymoron, kept.'
+  status: claude-drafted
+- id: 2
+  type: quote
+  span: like the legendary Midgard Serpent
+  quote_library_ref: edda-midgard-serpent
+  body: 'Jörmungandr, the serpent of Norse myth that lies coiled round the world at the bottom
+    of the sea, tail in mouth: an exact image for a cable lying round half the globe on the
+    ocean floor.'
+  status: claude-drafted

@@ -1,0 +1,42 @@
+id: first-word-across-the-ocean-p02
+locus: Das Erste Wort über den Ozean, paragraph 2
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Erst das neunzehnte Jahrhundert verändert fundamental Maß und Rhythmus der irdischen Geschwindigkeit. In seinem ersten und zweiten Jahrzehnt rücken die Völker, die Länder rascher aneinander als vordem in Jahrtausenden; durch die Eisenbahn, durch das Dampfboot werden Tagereisen von vordem in einem einzigen Tag, bisher endlose Reisestunden in Viertelstunden und Minuten bewältigt. Aber so triumphal auch von den Zeitgenossen diese neuen Beschleunigungen durch die Eisenbahn und das Dampfboot empfunden werden, diese Erfindungen liegen immerhin noch im Bereich der Faßbarkeit. Denn diese Vehikel verfünffachen, verzehnfachen, verzwanzigfachen doch nur die bisher gekannten Geschwindigkeiten, der äußere Blick und der innere Sinn vermag ihnen noch zu folgen und sich das scheinbare Wunder zu erklären. Völlig unvermutet aber in ihren Auswirkungen erscheinen die ersten Leistungen der Elektrizität, die, ein Herkules schon in der Wiege, alle bisherigen Gesetze umstößt, alle gültigen Maße zertrümmert. Nie werden wir Späteren das Staunen jener Generation über die ersten Leistungen des elektrischen Telegraphen nachzufühlen vermögen, die ungeheure und begeisterte Verblüffung, daß eben derselbe kleine, kaum fühlbare elektrische Funke, der gestern von der Leidener Flasche gerade noch einen Zoll weit bis zum Fingerknöchel hinüberzuknistern vermochte, mit einmal die dämonische Kraft gewonnen hat, Länder, Berge und ganze Erdteile zu überspringen. Daß der noch kaum zu Ende gedachte Gedanke, das noch feucht hingeschriebene Wort in derselben Sekunde schon Tausende Meilen weit empfangen, gelesen, verstanden werden kann und daß der unsichtbare Strom, der zwischen den beiden Polen der winzigen Voltaschen Säule schwingt, ausgespannt zu werden vermag über die ganze Erde von ihrem einen bis zum andern Ende. Daß der Spielzeugapparat der Physikstube, gestern gerade noch fähig, durch Reibung einer Glasscheibe ein paar Papierstückchen an sich zu ziehen, potenziert werden könnte zum Millionenfachen und Milliardenfachen menschlicher Muskelkraft und Geschwindigkeit, Botschaften bringend, Bahnen bewegend, Straßen und Häuser mit Licht erhellend und wie Ariel unsichtbar die Luft durchschwebend. Erst durch diese Entdeckung hat die Relation von Raum und Zeit die entscheidendste Umstellung seit Erschaffung der Welt erfahren.
+  ocr_corrections: []
+translation_draft: |
+  Only the nineteenth century fundamentally alters the measure and rhythm of earthly speed. In its first and second decades nations and countries draw closer to one another more swiftly than formerly in thousands of years; by the railway, by the steamboat, the day’s journeys of former times are accomplished in a single day, hours of travel hitherto endless in quarters of an hour and in minutes. But however triumphantly contemporaries may feel these new accelerations by the railway and the steamboat, these inventions still lie within the bounds of the comprehensible. For these vehicles only increase fivefold, tenfold, twentyfold the speeds hitherto known; the outward eye and the inward sense can still follow them and explain the apparent miracle to themselves. Wholly unforeseen in their effects, however, appear the first achievements of electricity, which, a Hercules already in the cradle, overthrows all previous laws and shatters every accepted measure. We who come later shall never be able to feel again the astonishment of that generation at the first achievements of the electric telegraph, the immense and enthusiastic amazement that the very same small, scarcely perceptible electric spark which yesterday could barely crackle an inch from the Leyden jar to the knuckle should all at once have gained the demonic power to leap over countries, mountains, and whole continents. That the thought scarcely thought to its end, the word still wet upon the page, can in the same second be received, read, and understood thousands of miles away, and that the invisible current which vibrates between the two poles of the tiny voltaic pile can be stretched across the whole earth from one end to the other. That the toy apparatus of the physics room, yesterday barely able to draw a few scraps of paper to itself by the rubbing of a glass disc, could be raised to millions and thousands of millions of times the strength and speed of human muscle, bringing messages, moving trains, lighting streets and houses, and, like Ariel, floating invisibly through the air. Only through this discovery has the relation of space and time undergone the most decisive change since the creation of the world.
+translation_final: ''
+annotations:
+- id: 1
+  type: quote
+  span: a Hercules already in the cradle
+  quote_library_ref: hercules-cradle-serpents
+  body: 'The infant Hercules strangling the two serpents sent by Hera: the classical emblem
+    of prodigious strength shown at birth.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: That the thought scarcely thought to its end
+  body: The two sentences beginning ‘That…’ are grammatically dependent on the ‘amazement’
+    of the sentence before. Zweig sets them off as free-standing exclamations; the fragments
+    are kept rather than joined.
+  status: claude-drafted
+- id: 3
+  type: quote
+  span: like Ariel, floating invisibly through the air
+  quote_library_ref: shakespeare-tempest-ariel
+  body: Ariel, the airy spirit of *The Tempest*, Prospero’s invisible and instantaneous messenger.
+    An allusion only; no line is quoted.
+  status: claude-drafted
+- id: 4
+  type: note
+  span: thousands of millions
+  body: '*Milliardenfachen*. ‘Thousands of millions’ is the British usage of the period for
+    the German *Milliarde*; ‘billions’ would have been ambiguous in 1940s England.'
+  status: claude-drafted

@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p21
+locus: Das Erste Wort über den Ozean, paragraph 21
+section:
+  de: Die dritte Fahrt
+  en: The Third Voyage
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Immer unsicherer sehen sich die Aktionäre an: sollen sie das letzte des eingezahlten Kapitals diesem Narren anvertrauen? Aber da ein starker Wille Zögernde schließlich doch immer mit sich fortreißt, erzwingt Cyrus W. Field die neuerliche Ausfahrt. Am 17. Juli 1858, fünf Wochen nach der zweiten Unglücksfahrt, verläßt die Flotte zum drittenmal den englischen Hafen.
+  ocr_corrections: []
+translation_draft: |
+  Ever more uncertainly the shareholders look at one another: are they to entrust the last of the paid-up capital to this fool? But since a strong will in the end always carries the hesitant along with it, Cyrus W. Field forces through the new departure. On 17 July 1858, five weeks after the second unlucky voyage, the fleet leaves the English harbour for the third time.
+translation_final: ''
+annotations: []

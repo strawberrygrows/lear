@@ -1,0 +1,21 @@
+id: first-word-across-the-ocean-p27
+locus: Das Erste Wort über den Ozean, paragraph 27
+section:
+  de: Das große Crucifige
+  en: The Great *Crucifige*
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Tausende und Millionen Stimmen lärmen und jubeln an diesem Tage. Nur eine einzige und die wichtigste bleibt während dieser Feier merkwürdig stumm – der elektrische Telegraph. Vielleicht ahnt Cyrus W. Field in der Mitte des Jubels schon die fürchterliche Wahrheit, und grauenhaft müßte dies sein für ihn, als einziger zu wissen, daß gerade an diesem Tage das atlantische Kabel aufgehört hat zu funktionieren, daß, nachdem schon in den letzten Tagen nur mehr konfuse und kaum mehr lesbare Zeichen gekommen waren, der Draht endgültig ausgeröchelt hat und seinen letzten, sterbenden Atemzug getan. Noch weiß und noch ahnt von diesem allmählichen Versagen in ganz Amerika niemand als die paar Menschen, die den Empfang der Sendungen in Neufundland kontrollieren, und auch diese zögern noch Tage und Tage angesichts des maßlosen Enthusiasmus, den Jubelnden die bittere Mitteilung zu machen. Bald aber fällt es auf, daß die Nachrichten so spärlich eintreffen. Amerika hatte erwartet, Stunde um Stunde werde jetzt Botschaft über den Ozean blitzen – statt dessen nur ab und zu eine vage und unkontrollierbare Kunde. Es dauert nicht lang, und ein Gerücht flüstert sich herum, man habe im Eifer und der Ungeduld, bessere Übertragungen zu erreichen, zu starke elektrische Ladungen geschickt und damit das ohnehin unzulängliche Kabel verdorben. Noch hofft man die Störung zu beheben. Doch bald ist es nicht mehr zu leugnen, daß die Zeichen immer stammelnder, immer unverständlicher geworden sind. Gerade nach jenem katzenjämmerlichen Festmorgen, am 1. September, kommt kein klarer Ton, keine reine Schwingung mehr über das Meer.
+  ocr_corrections: []
+translation_draft: |
+  Thousands and millions of voices clamour and cheer on this day. Only one, and the most important, remains strangely dumb throughout the celebration – the electric telegraph. Perhaps in the midst of the cheering Cyrus W. Field already suspects the terrible truth, and how horrible it must be for him to be the only one to know that on this very day the Atlantic cable has ceased to work, that after only confused and scarcely legible signals had come through in the last few days, the wire has finally rattled out its life and drawn its last, dying breath. Of this gradual failure no one in all America yet knows or suspects anything except the few men who check the reception of messages in Newfoundland, and even they hesitate for days and days, in the face of the boundless enthusiasm, to give the rejoicing crowds the bitter news. Soon, however, it is noticed that the messages arrive so sparsely. America had expected that now, hour after hour, tidings would flash across the ocean – instead only now and then some vague and unverifiable report. Before long a rumour is whispered about that in their zeal and impatience to obtain better transmission they had sent too strong electric charges and so ruined the cable, inadequate as it was. There is still hope of remedying the fault. But soon it can no longer be denied that the signals have grown ever more stammering, ever more unintelligible. Just after that morning-after of the festival, on 1 September, no clear tone, no pure vibration comes across the sea any more.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: that morning-after of the festival
+  body: '*katzenjämmerlichen Festmorgen*: *Katzenjammer* is the hangover, and Zweig means
+    both the city’s and the cable’s. ‘Morning-after’ keeps the double sense.'
+  status: claude-drafted

@@ -1,0 +1,29 @@
+id: first-word-across-the-ocean-p01
+locus: Das Erste Wort über den Ozean, paragraph 1
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Während all der Tausende und vielleicht Hunderttausende von Jahren, seit das sonderbare Wesen, genannt Mensch, die Erde beschreitet, hatte kein anderes Höchstmaß irdischer Fortbewegung gegolten als der Lauf des Pferdes, das rollende Rad, das geruderte oder segelnde Schiff. Alle die Fülle des technischen Fortschritts innerhalb jenes schmalen, vom Bewußtsein belichteten Raumes, den wir Weltgeschichte nennen, hatte keine merkbare Beschleunigung im Rhythmus der Bewegung gezeitigt. Die Armeen Wallensteins kamen kaum rascher vorwärts als die Legionen Cäsars, die Armeen Napoleons brachen nicht rapider vor als die Horden Dschingis-Khans, die Korvetten Nelsons durchquerten das Meer nur um weniges rascher als die Raubboote der Wikinger und die Handelsschiffe der Phönizier. Ein Lord Byron bewältigt auf seiner Childe-Harold-Fahrt nicht mehr Meilen im Tag als Ovidius auf seinem Wege ins poetische Exil, Goethe reist im achtzehnten Jahrhundert nicht wesentlich bequemer oder geschwinder als der Apostel Paulus zu Anfang des Jahrtausends. Unverändert weit liegen die Länder in Raum und Zeit voneinander geschieden im Zeitalter Napoleons wie unter dem römischen Imperium; noch obsiegt der Widerstand der Materie über den menschlichen Willen.
+  ocr_corrections: []
+translation_draft: |
+  Through all the thousands and perhaps hundreds of thousands of years since that singular creature called man first trod the earth, no greater measure of earthly locomotion had been known than the gallop of the horse, the rolling wheel, the rowed or sailing ship. All the abundance of technical progress within that narrow space lit by consciousness which we call world history had brought about no perceptible acceleration in the rhythm of movement. The armies of Wallenstein advanced scarcely more swiftly than the legions of Caesar, the armies of Napoleon pressed forward no more rapidly than the hordes of Genghis Khan, the corvettes of Nelson crossed the sea only a little faster than the raiding boats of the Vikings and the merchantmen of the Phoenicians. A Lord Byron on his Childe Harold voyage covers no more miles in a day than Ovid on his way into poetic exile, Goethe in the eighteenth century travels no more comfortably or speedily than the Apostle Paul at the beginning of the millennium. The countries lie as far apart from one another in space and time in the age of Napoleon as under the Roman Empire; the resistance of matter still prevails over the human will.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: covers no more miles
+  body: 'Zweig moves from the past (*hatte gegolten*, *kamen*) into his habitual historical
+    present in mid-paragraph, with Byron. The shift is his and is kept: from here the whole
+    story is told in the present.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: Genghis Khan
+  body: Zweig’s *Cäsar*, *Dschingis-Khan*, *Ovidius*, *Magalhães* and *Stevenson* are given
+    in their standard English forms (Caesar, Genghis Khan, Ovid, Magellan, Stephenson), as
+    with the place-names (DECISION-Z03, Z04).
+  status: claude-drafted

@@ -1,0 +1,25 @@
+id: first-word-across-the-ocean-p12
+locus: Das Erste Wort über den Ozean, paragraph 12
+section:
+  de: Der erste Start
+  en: The First Departure
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Endlich ist alles zur Abfahrt bereit, und während bislang die Zweifler die Oberhand behielten, wendet sich nun das öffentliche Interesse ganz Englands leidenschaftlich der Unternehmung zu. Hunderte kleiner Boote und Schiffe umkreisen am 5. August 1857 im kleinen irländischen Hafen von Valentia die Kabelflotte, um den welthistorischen Augenblick mitzuerleben, wie das eine Kabelende von Booten an die Küste geschafft und in der festen Erde Europas verhakt wird. Unwillkürlich gestaltet sich der Abschied zur großen Feierlichkeit. Die Regierung hat Vertreter entsandt, Reden werden gehalten, in einer ergreifenden Ansprache erbittet der Priester den Segen Gottes für das kühne Unterfangen. »O ewiger Gott«, beginnt er, »der du allein die Himmel ausbreitest und den Aufschwall der See beherrschst, du, dem die Winde und die Fluten gehorchen, blicke in Barmherzigkeit nieder auf deine Diener . . . Gebiete mit deinem Gebot jedem Hindernis, beseitige jeden Widerstand, der uns in der Vollendung dieses wichtigen Werkes hemmen könnte.« Und dann winken noch vom Strande und vom Meer Tausende Hände und Hüte. Langsam verdämmert das Land. Einer der kühnsten Träume der Menschheit versucht Wirklichkeit zu werden.
+  ocr_corrections: []
+translation_draft: |
+  At last all is ready for departure, and whereas hitherto the doubters had held the upper hand, the public interest of all England now turns passionately to the undertaking. On 5 August 1857 hundreds of little boats and ships circle the cable fleet in the little Irish harbour of Valentia, to share in the moment of world history when one end of the cable is carried ashore by boats and made fast in the firm earth of Europe. Of itself the farewell takes on the form of a great solemnity. The government has sent representatives, speeches are made, in a moving address the priest asks God’s blessing on the bold undertaking. ‘O Eternal God,’ he begins, ‘who alone spreadest out the heavens, and rulest the raging of the sea; thou whom the winds and the waves obey, look down in mercy upon thy servants . . . Lay thy command upon every hindrance, remove every obstacle that might hold us back from the accomplishment of this important work.’ And then from the shore and from the sea thousands of hands and hats wave. Slowly the land fades into dusk. One of the boldest dreams of mankind is trying to become reality.
+translation_final: ''
+annotations:
+- id: 1
+  type: query
+  span: ‘O Eternal God,’ he begins
+  body: 'No English original of this prayer has been traced. It was spoken in English at Valentia
+    in August 1857 and should survive in contemporary reports (e.g. *The Times*, or Field’s
+    own history of the cable). Until it is found, Zweig’s German is translated fresh in the
+    language of the Authorised Version, whose phrases it echoes: Job 9:8 (‘which alone spreadeth
+    out the heavens’), Psalm 89:9 (‘thou rulest the raging of the sea’), Matthew 8:27 (‘even
+    the winds and the sea obey him’). Please check.'
+  status: claude-drafted

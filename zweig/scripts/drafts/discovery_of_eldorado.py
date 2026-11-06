@@ -5,35 +5,29 @@ Used ONCE by scripts/make_paragraphs.py to create the per-paragraph YAML files.
 After that, the YAML files are canonical and `translation_draft` in them is immutable;
 edit `translation_final` in the YAML, never this file.
 """
+from drafting import Draft, note, quote, query  # noqa: F401
 
-TITLE_EN = "The Discovery of Eldorado"
-DATELINE_EN = "J. A. Suter, California. January 1848"
-
-# German heading -> English heading
-SECTIONS = {
-    "Der Europamüde": "Weary of Europe",
-    "Der Marsch nach Kalifornien": "The March to California",
-    "Neu-Helvetien": "New Helvetia",
-    "Der verhängnisvolle Spatenstich": "The Fateful Stroke of the Spade",
-    "Der Rush": "The Rush",
-    "Der Prozeß": "The Lawsuit",
-    "Das Ende": "The End",
-}
-
-# One entry per paragraph, in order. Each: (draft, annotations, ocr_corrections)
-P = []
-
-def para(draft, annotations=None, corrections=None):
-    P.append((draft.strip(), annotations or [], corrections or []))
-
-def note(span, body):
-    return {"type": "note", "span": span, "body": body.strip()}
-
-def quote(span, ref, body):
-    return {"type": "quote", "span": span, "quote_library_ref": ref, "body": body.strip()}
-
-def query(span, body):
-    return {"type": "query", "span": span, "body": body.strip()}
+D = Draft(
+    slug="discovery-of-eldorado",
+    source_file="die-entdeckung-eldorados.txt",
+    source_url="https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/9/",
+    title_en="The Discovery of Eldorado",
+    dateline_en="J. A. Suter, California. January 1848",
+    order=1,
+    first_published="1927, in the first edition of Sternstunden der Menschheit (Insel-Bücherei 165, Leipzig)",
+    blurb="A Swiss bankrupt founds a kingdom in the Sacramento valley, finds gold on his land, and is ruined by it twice.",
+    rights="This chapter was first published in 1927 in the Insel-Bücherei edition of *Sternstunden der Menschheit*, which also puts it in the public domain in the United States.",
+    sections={
+        "Der Europamüde": "Weary of Europe",
+        "Der Marsch nach Kalifornien": "The March to California",
+        "Neu-Helvetien": "New Helvetia",
+        "Der verhängnisvolle Spatenstich": "The Fateful Stroke of the Spade",
+        "Der Rush": "The Rush",
+        "Der Prozeß": "The Lawsuit",
+        "Das Ende": "The End",
+    },
+)
+para = D.para
 
 # ── Der Europamüde ───────────────────────────────────────────────────────────
 
@@ -222,7 +216,7 @@ No one has yet claimed Suter’s inheritance, no descendant has entered his clai
           "Zweig’s acknowledgement of his source: Cendrars’s novel *L’Or* (1925), translated into English in 1926 as *Sutter’s Gold*. Zweig’s chapter is largely a condensation of it, including its departures from history."),
 ])
 
-QUOTE_LIBRARY = [
+D.library = [
     {
         "id": "bible-exodus-3-8",
         "type": "allusion",

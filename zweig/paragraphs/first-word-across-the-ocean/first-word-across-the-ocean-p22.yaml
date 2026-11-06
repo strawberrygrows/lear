@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p22
+locus: Das Erste Wort über den Ozean, paragraph 22
+section:
+  de: Die dritte Fahrt
+  en: The Third Voyage
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Und nun bestätigt sich abermals die alte Erfahrung, daß die entscheidenden Dinge fast immer im geheimen gelingen. Diesmal geht die Abfahrt völlig unbeachtet vor sich; keine Boote, keine Barken umkreisen glückwünschend die Schiffe, keine Menge versammelt sich am Strand, kein festliches Abschiedsdiner wird gegeben, keine Reden gehalten, kein Priester fleht den Beistand Gottes herab. Wie zu einem piratischen Unternehmen, scheu und schweigsam fahren die Schiffe aus. Aber freundlich erwartet sie die See. Genau am vereinbarten Tage, am 28. Juli, elf Tage nach der Abfahrt von Queenstown, können die »Agamemnon« und die »Niagara« an der vereinbarten Stelle in der Mitte des großen Ozeans die große Arbeit beginnen.
+  ocr_corrections: []
+translation_draft: |
+  And now the old experience is confirmed once more, that the decisive things almost always succeed in secret. This time the departure takes place wholly unnoticed; no boats, no barques circle the ships with good wishes, no crowd gathers on the shore, no festive farewell dinner is given, no speeches are made, no priest calls down the aid of God. As though bound on a piratical enterprise, shyly and silently, the ships put out. But the sea awaits them kindly. Precisely on the appointed day, 28 July, eleven days after leaving Queenstown, the *Agamemnon* and the *Niagara* are able to begin the great work at the appointed place in the middle of the great ocean.
+translation_final: ''
+annotations: []

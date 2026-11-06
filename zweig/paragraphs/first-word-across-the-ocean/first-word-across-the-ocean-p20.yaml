@@ -1,0 +1,20 @@
+id: first-word-across-the-ocean-p20
+locus: Das Erste Wort über den Ozean, paragraph 20
+section:
+  de: Die dritte Fahrt
+  en: The Third Voyage
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Mit blassen Gesichtern erwarten, schon von der Unglücksnachricht verständigt, die Aktionäre in London ihren Führer und Verführer Cyrus W. Field. Die Hälfte des Aktienkapitals ist auf diesen beiden Fahrten vertan und nichts bewiesen, nichts erreicht; man versteht, daß die meisten nun sagten: Genug! Der Vorsitzende rät, man solle retten, was zu retten sei. Er stimme dafür, den Rest des unbenutzten Kabels von den Schiffen zu holen und notfalls auch mit Verlust zu verkaufen, dann aber einen Strich unter diesen wüsten Plan der Ozeanüberspannung zu machen. Der Vizepräsident schließt sich ihm an und sendet schriftlich seine Demission, um darzutun, daß er mit diesem absurden Unternehmen weiter nichts mehr zu tun haben wolle. Aber die Zähigkeit und der Idealismus Cyrus W. Fields sind nicht zu erschüttern. Nichts sei verloren, erklärt er. Das Kabel selbst habe glänzend die Probe bestanden und genug noch an Bord, um den Versuch zu erneuern, die Flotte sei versammelt, die Mannschaften angeheuert. Gerade das ungewöhnliche Unwetter der letzten Fahrt lasse jetzt auf eine Periode schöner, windstiller Tage hoffen. Nur Mut, noch einmal Mut! Jetzt oder nie sei Gelegenheit, auch das Letzte zu wagen.
+  ocr_corrections: []
+translation_draft: |
+  With pale faces, already informed of the bad news, the shareholders in London await their leader and misleader, Cyrus W. Field. Half the share capital has been squandered on these two voyages and nothing proved, nothing achieved; one can understand that most of them now said: Enough! The chairman advises that they should save what could be saved. He would vote for taking the rest of the unused cable off the ships and selling it, at a loss if need be, but then drawing a line under this wild plan of spanning the ocean. The vice-chairman supports him and sends in his resignation in writing, to make it plain that he wishes to have nothing further to do with this absurd undertaking. But the tenacity and idealism of Cyrus W. Field are not to be shaken. Nothing is lost, he declares. The cable itself has stood the test brilliantly, and there is enough still on board to renew the attempt; the fleet is assembled, the crews engaged. The very unusual storm of the last voyage now gives hope of a spell of fine, windless days. Only courage, courage once more! Now or never is the chance to venture the last.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: leader and misleader
+  body: '*Führer und Verführer*: the rhyme on the simple and prefixed noun is reproduced.'
+  status: claude-drafted

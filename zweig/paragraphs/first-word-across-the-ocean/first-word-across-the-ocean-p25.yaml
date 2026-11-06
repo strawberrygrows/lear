@@ -1,0 +1,29 @@
+id: first-word-across-the-ocean-p25
+locus: Das Erste Wort über den Ozean, paragraph 25
+section:
+  de: Das große Hosianna
+  en: The Great Hosanna
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Zu spät freilich, als daß die Zeitungen die offizielle Mitteilung bringen könnten, kommt die ersehnte Nachricht; nur angeschlagen kann sie werden an den Telegraphenämtern und Redaktionen, und sofort stauen sich ungeheure Massen. Zerschunden und mit zerrissenen Kleidern müssen sich die Newspaper Boys durch das Getümmel durchschlagen. In den Theatern, in den Restaurants wird die Botschaft verkündet. Tausende, die noch nicht fassen können, daß der Telegraph dem schnellsten Schiff um Tage vorauseilt, stürmen zu dem Hafen von Brooklyn, um das Heldenschiff dieses friedlichen Sieges, die »Niagara«, zu begrüßen. Am nächsten Tage dann, am 17. August, jubeln die Zeitungen mit faustdicken Überschriften: »The cable in perfect working order«, »Everybody crazy with joy«, »Tremendous Sensation throughout the city«, »Now's the time for an universal jubilee«. Triumph ohnegleichen: Seit Anfang alles Denkens auf Erden hat ein Gedanke mit seiner eigenen Geschwindigkeit über das Weltmeer sich geschwungen. Und schon donnern von der Battery hundert Kanonenschüsse, um anzukündigen, daß der Präsident der Vereinigten Staaten der Königin geantwortet habe. Jetzt wagt niemand mehr zu zweifeln; abends strahlen Neuyork und alle andern Städte in Zehntausenden von Lichtern und Fackeln. Jedes Fenster ist beleuchtet, und es stört kaum die Freude, daß dabei die Kuppel der City Hall in Brand gerät. Denn schon der nächste Tag bringt ein neuerliches Fest. Die »Niagara« ist eingetroffen, Cyrus W. Field, der große Held, ist da! Im Triumph wird der Rest des Kabels durch die Stadt geführt und die Mannschaft bewirtet. Tag für Tag wiederholen sich jetzt in jeder Stadt vom Pazifischen Ozean bis zum Golf von Mexiko die Manifestationen, als feierte Amerika zum zweitenmal das Fest seiner Entdeckung.
+  ocr_corrections: []
+translation_draft: |
+  The longed-for news comes too late, of course, for the newspapers to print the official text; it can only be posted up at the telegraph offices and newspaper offices, and immense crowds at once mass before them. Bruised, their clothes torn, the newspaper boys have to fight their way through the throng. In the theatres, in the restaurants the message is proclaimed. Thousands who cannot yet grasp that the telegraph outruns the fastest ship by days storm down to the harbour at Brooklyn to greet the heroic ship of this peaceful victory, the *Niagara*. The next day, 17 August, the newspapers rejoice in headlines as thick as a fist: ‘The cable in perfect working order’, ‘Everybody crazy with joy’, ‘Tremendous Sensation throughout the city’, ‘Now’s the time for an universal jubilee’. Triumph without equal: since the beginning of all thought on earth, a thought has swung across the ocean at its own speed. And already a hundred guns thunder from the Battery to announce that the President of the United States has answered the Queen. Now no one any longer dares to doubt; in the evening New York and all the other cities blaze with tens of thousands of lights and torches. Every window is illuminated, and it scarcely spoils the joy that the dome of the City Hall catches fire in the process. For the very next day brings a new festival. The *Niagara* has arrived; Cyrus W. Field, the great hero, is here! In triumph the remainder of the cable is carried through the city and the crew are feasted. Day after day now, in every city from the Pacific Ocean to the Gulf of Mexico, the demonstrations are repeated, as though America were celebrating for the second time the festival of its discovery.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: The longed-for news comes too late
+  body: 'Zweig holds the subject to the end (*Zu spät freilich … kommt die ersehnte Nachricht*).
+    Reproduced in English the inversion sounds like costume prose, so the sentence is recast
+    in normal order: the one deliberate departure from the periodic-sentence rule in this
+    piece.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: ‘Now’s the time for an universal jubilee’
+  body: The headlines are in English in Zweig and are kept exactly as he gives them, including
+    ‘an universal’ and the capitals.
+  status: claude-drafted

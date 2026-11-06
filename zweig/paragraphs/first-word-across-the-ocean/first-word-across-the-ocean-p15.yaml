@@ -1,0 +1,21 @@
+id: first-word-across-the-ocean-p15
+locus: Das Erste Wort über den Ozean, paragraph 15
+section:
+  de: Mißgeschick
+  en: Mischance
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Weiter, weiter hinaus in die See, ständig, ständig das Kabel hinab hinter dem Kiel. Gar nicht abenteuerlich scheint dieses Abenteuer. Nur in einer besonderen Kammer sitzen und horchen die Elektriker, ständig Zeichen mit dem irischen Festlande tauschend. Und wunderbar: obwohl man längst die Küste nicht mehr erblickt, funktioniert die Übertragung auf dem Unterwasser-Kabel genau so deutlich, als ob man von einer europäischen Stadt zur andern sich verständigte. Schon sind die seichten Wasser verlassen, schon das sogenannte Tiefseeplateau, das hinter Irland sich erhebt, teilweise überquert, und noch immer läuft wie Sand aus der Sanduhr regelmäßig die metallene Schnur hinter dem Kiel herab, gleichzeitig Botschaft gebend und Botschaft empfangend.
+  ocr_corrections: []
+translation_draft: |
+  On, on, farther out to sea, constantly, constantly the cable going down behind the keel. Not in the least adventurous does this adventure seem. Only in a special cabin the electricians sit and listen, constantly exchanging signals with the Irish mainland. And wonderful to tell: although the coast has long since passed from sight, transmission over the submarine cable works as clearly as if one were communicating from one European city to another. Already the shallow waters are left behind, already the so-called deep-sea plateau that rises beyond Ireland is partly crossed, and still the metal cord runs down behind the keel as regularly as sand from the hour-glass, at once giving and receiving messages.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: Not in the least adventurous does this adventure seem
+  body: '*Gar nicht abenteuerlich scheint dieses Abenteuer*: the inversion is kept to preserve
+    the play of *abenteuerlich* and *Abenteuer*.'
+  status: claude-drafted

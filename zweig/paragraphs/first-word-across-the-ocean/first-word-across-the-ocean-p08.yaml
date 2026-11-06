@@ -1,0 +1,28 @@
+id: first-word-across-the-ocean-p08
+locus: Das Erste Wort über den Ozean, paragraph 8
+section:
+  de: Die Vorbereitung
+  en: The Preparations
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Mit unwahrscheinlicher Energie macht sich Cyrus W. Field ans Werk. Er setzt sich mit allen Fachleuten in Verbindung, bestürmt die Regierungen um die Konzessionen, führt in beiden Weltteilen eine Kampagne, um das nötige Geld aufzubringen, und so stark ist die Stoßkraft, die von diesem völlig unbekannten Manne ausgeht, so passionierend seine innere Überzeugung, so gewaltig der Glaube an die Elektrizität als neue Wunderkraft, daß das Grundkapital von dreihundertfünfzigtausend Pfund in England innerhalb weniger Tage voll gezeichnet wird. Es genügt, in Liverpool, in Manchester und London die reichsten Kaufleute zur Gründung der Telegraph Construction and Maintenance Company zusammenzurufen, und das Geld strömt ein. Aber auch die Namen Thackerays und der Lady Byron, die ohne jeden geschäftlichen Nebenzweck und nur aus moralischem Enthusiasmus das Werk fördern wollen, findet man unter den Zeichnern; nichts veranschaulicht so sehr den Optimismus für alles Technische und Maschinelle, der im Zeitalter Stevensons, Brunels und der andern großen Ingenieure England beseelte, als daß ein einziger Anruf genügt, um einen so enormen Betrag für ein völlig phantastisches Unternehmen à fonds perdu bereitzustellen.
+  ocr_corrections: []
+translation_draft: |
+  With improbable energy Cyrus W. Field sets to work. He gets in touch with all the experts, besieges the governments for the concessions, conducts a campaign on both continents to raise the necessary money, and so strong is the driving force that goes out from this wholly unknown man, so compelling his inner conviction, so mighty the faith in electricity as a new miraculous power, that the founding capital of three hundred and fifty thousand pounds is fully subscribed in England within a few days. It is enough to call together the richest merchants of Liverpool, Manchester, and London to found the Telegraph Construction and Maintenance Company, and the money flows in. But the names of Thackeray and of Lady Byron, who wish to further the work with no thought of business and purely from moral enthusiasm, are also to be found among the subscribers; nothing so illustrates the optimism about everything technical and mechanical that animated England in the age of Stephenson, Brunel, and the other great engineers as that a single appeal suffices to make so enormous a sum available, *à fonds perdu*, for a wholly fantastic enterprise.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: Telegraph Construction and Maintenance Company
+  body: Zweig’s name for the company. The company of 1856 was the Atlantic Telegraph Company;
+    the Telegraph Construction and Maintenance Company was formed only in 1864 and made the
+    cable of 1865–6. Kept as written (DECISION-Z05).
+  status: claude-drafted
+- id: 2
+  type: note
+  span: '*à fonds perdu*'
+  body: Zweig’s French (‘without hope of return’), kept and italicised under the rule for
+    foreign fragments.
+  status: claude-drafted

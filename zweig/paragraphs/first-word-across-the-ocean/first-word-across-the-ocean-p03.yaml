@@ -1,0 +1,22 @@
+id: first-word-across-the-ocean-p03
+locus: Das Erste Wort über den Ozean, paragraph 3
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Dieses weltbedeutsame Jahr 1837, da zum erstenmal der Telegraph das bisher isolierte menschliche Erleben gleichzeitig macht, wird selten in unseren Schulbüchern auch nur vermerkt, die es leider noch immer für wichtiger halten, von Kriegen und Siegen einzelner Feldherren und Nationen zu erzählen statt von den wahrhaften, weil gemeinsamen Triumphen der Menschheit. Und doch ist kein Datum der neueren Geschichte an psychologischer Weitwirkung dieser Umstellung des Zeitwertes zu vergleichen. Die Welt ist verändert, seit es möglich ist, in Paris gleichzeitig zu wissen, was in Amsterdam, Moskau und Neapel und Lissabon in derselben Minute geschieht. Nur ein letzter Schritt ist noch zu tun, dann sind auch die andern Weltteile einbezogen in jenen großartigen Zusammenhang und ein gemeinsames Bewußtsein der ganzen Menschheit geschaffen.
+  ocr_corrections: []
+translation_draft: |
+  This year of world significance, 1837, when for the first time the telegraph makes simultaneous what had hitherto been isolated human experience, is seldom so much as mentioned in our school-books, which unhappily still think it more important to tell of the wars and victories of individual generals and nations than of the true triumphs of mankind, true because shared. And yet no date in modern history can be compared, in the range of its psychological effect, with this change in the value of time. The world is changed since it became possible to know in Paris, at the same moment, what is happening in Amsterdam, Moscow and Naples and Lisbon in that same minute. Only one last step remains to be taken, and then the other continents too will be drawn into that magnificent connection, and a common consciousness of all mankind created.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: true because shared
+  body: '*den wahrhaften, weil gemeinsamen Triumphen*: Zweig’s compressed antithesis between
+    national and common history, the pacifist thread that returns in the last sentence of
+    the piece. Kept as a pointed afterthought rather than smoothed.'
+  status: claude-drafted

@@ -1,0 +1,29 @@
+id: first-word-across-the-ocean-p31
+locus: Das Erste Wort über den Ozean, paragraph 31
+section:
+  de: Sechs Jahre Schweigen
+  en: Six Years of Silence
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Und plötzlich ist der Mann da, und siehe, es ist der alte, derselbe, mit derselben Gläubigkeit und demselben Vertrauen, Cyrus W. Field, auferstanden aus der schweigenden Verbannung und hämischer Verachtung. Zum dreißigsten Male hat er den Ozean überquert und erscheint wieder in London; es gelingt ihm, die alten Konzessionen mit einem neuen Kapital von sechsmalhunderttausend Pfund zu versehen. Und nun ist auch endlich das langgeträumte Riesenschiff zur Stelle, das die ungeheure Fracht allein in sich aufnehmen kann, die berühmte »Great Eastern« mit ihren zweiundzwanzigtausend Tonnen und vier Schornsteinen, die Isambar Brunel gebaut. Und Wunder über Wunder: sie liegt in diesem Jahre, 1865, brach, weil gleichfalls zu kühn vorausgeplant ihrer Zeit; innerhalb zweier Tage kann sie gekauft und für die Expedition ausgerüstet werden.
+  ocr_corrections: []
+translation_draft: |
+  And suddenly the man is there, and behold, it is the old one, the same, with the same faith and the same confidence, Cyrus W. Field, risen again from silent banishment and spiteful contempt. For the thirtieth time he has crossed the ocean, and he appears again in London; he succeeds in furnishing the old concessions with a new capital of six hundred thousand pounds. And now at last the long-dreamed-of giant ship is at hand that can take the enormous freight into itself alone, the famous *Great Eastern*, with her twenty-two thousand tons and four funnels, built by Isambard Brunel. And wonder upon wonder: in this year, 1865, she lies idle, because she too was planned too boldly ahead of her time; within two days she can be bought and fitted out for the expedition.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: risen again
+  body: '*auferstanden*. With the section titles ‘The Great Hosanna’ and ‘The Great *Crucifige*’
+    (‘Crucify him!’, John 19:6 in the Vulgate), Zweig lays the shape of the Passion over Field’s
+    story: Palm Sunday, Good Friday, Resurrection. *Crucifige* is kept in Latin as a foreign
+    fragment; ‘risen’ is chosen for its Easter sense.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: Isambard Brunel
+  body: Zweig writes *Isambar*. Corrected silently (DECISION-Z03). The *Great Eastern* in
+    fact had five funnels; Zweig’s four is kept (DECISION-Z05).
+  status: claude-drafted

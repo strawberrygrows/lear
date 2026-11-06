@@ -1,0 +1,22 @@
+id: first-word-across-the-ocean-p29
+locus: Das Erste Wort über den Ozean, paragraph 29
+section:
+  de: Sechs Jahre Schweigen
+  en: Six Years of Silence
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Sechs Jahre liegt das vergessene Kabel nutzlos im Weltmeer, sechs Jahre herrscht wieder das alte, kalte Schweigen zwischen den beiden Kontinenten, die eine Weltstunde lang Puls mit Puls zueinander gepocht. Die einander nahe gewesen einen Atemzug, ein paar hundert Worte lang, Amerika und Europa, sie sind wieder wie seit Jahrtausenden durch unüberwindliche Ferne getrennt. Der kühnste Plan des neunzehnten Jahrhunderts, gestern beinahe schon eine Wirklichkeit, ist wieder eine Legende, ein Mythos geworden. Selbstverständlich denkt niemand daran, das halb gelungene Werk zu erneuern; die furchtbare Niederlage hat alle Kräfte gelähmt, alle Begeisterung erstickt. In Amerika lenkt der Bürgerkrieg zwischen Nord- und Südamerika jedes Interesse ab, in England tagen ab und zu noch Komitees, aber sie brauchen zwei Jahre, um die dürre Behauptung mühsam festzustellen, daß prinzipiell ein Unterseekabel möglich wäre. Aber von diesem akademischen Gutachten bis zur wirklichen Tat ist ein Weg, den niemand zu beschreiten denkt; sechs Jahre ruht jede Arbeit so vollkommen wie das vergessene Kabel auf dem Grunde des Meeres.
+  ocr_corrections: []
+translation_draft: |
+  For six years the forgotten cable lies useless in the ocean, for six years the old, cold silence reigns again between the two continents which for one hour of world history had beaten pulse to pulse. America and Europe, which had been close for the space of a breath, of a few hundred words, are again divided, as for thousands of years, by an insurmountable distance. The boldest plan of the nineteenth century, yesterday all but a reality, has become once more a legend, a myth. Naturally no one thinks of renewing the half-successful work; the terrible defeat has paralysed all energies, stifled all enthusiasm. In America the Civil War between the North and the South diverts all interest, in England committees still sit now and then, but they need two years to establish laboriously the bare assertion that a submarine cable would be possible in principle. But from this academic opinion to the actual deed is a road that no one thinks of treading; for six years all work rests as completely as the forgotten cable on the floor of the sea.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: the Civil War between the North and the South
+  body: Zweig writes *zwischen Nord- und Südamerika*, ‘between North and South America’, a
+    plain slip. Rendered as he must have meant it, on the same footing as the silent correction
+    of misspelt names (DECISION-Z03).
+  status: claude-drafted

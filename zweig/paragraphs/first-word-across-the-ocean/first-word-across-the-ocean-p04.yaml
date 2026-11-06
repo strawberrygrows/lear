@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p04
+locus: Das Erste Wort über den Ozean, paragraph 4
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Aber noch widerstrebt die Natur dieser letzten Vereinigung, noch stemmt sie ein Hindernis entgegen, noch bleiben zwei Jahrzehnte lang alle jene Länder abgeschaltet, die durch das Meer voneinander geschieden sind. Denn während an den Telegraphenstangen dank der isolierenden Porzellanglocken der Funke ungehemmt weiterspringt, saugt das Wasser den elektrischen Strom an sich. Eine Leitung durch das Meer ist unmöglich, als noch nicht ein Mittel erfunden ist, um die kupfernen und eisernen Drähte im nassen Element vollkommen zu isolieren.
+  ocr_corrections: []
+translation_draft: |
+  But Nature still resists this final union, still sets an obstacle in its way, still for two decades all those countries that are divided from one another by the sea remain cut off. For while on the telegraph poles, thanks to the insulating porcelain bells, the spark leaps onward unhindered, water draws the electric current into itself. A line through the sea is impossible so long as no means has been invented of insulating the copper and iron wires completely in the wet element.
+translation_final: ''
+annotations: []

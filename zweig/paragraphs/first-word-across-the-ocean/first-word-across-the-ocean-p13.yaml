@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p13
+locus: Das Erste Wort über den Ozean, paragraph 13
+section:
+  de: Mißgeschick
+  en: Mischance
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Ursprünglich war geplant worden, die beiden großen Schiffe, die »Agamemnon« und die »Niagara«, deren jedes eine Hälfte des Kabels in sich trägt, sollten gemeinsam bis zu einem vorausberechneten Punkt in der Mitte des Ozeans fahren und dort erst die Vernietung der beiden Hälften stattfinden. Dann hätte das eine Schiff nach Westen gegen Neufundland zu steuern, das andere nach Osten gegen Irland. Aber zu verwegen schien es, gleich das ganze kostbare Kabel an diesen ersten Versuch zu wagen; so zog man vor, vom Festland aus die erste Strecke zu legen, solange man noch nicht gewiß war, ob eine telegraphische Untersee-Übertragung auf solche Distanzen überhaupt noch richtig funktionierte.
+  ocr_corrections: []
+translation_draft: |
+  Originally it had been planned that the two great ships, the *Agamemnon* and the *Niagara*, each of which carries one half of the cable, should sail together to a point calculated in advance in the middle of the ocean, and that only there should the two halves be joined. Then the one ship was to steer west towards Newfoundland, the other east towards Ireland. But it seemed too rash to hazard the whole precious cable on this first attempt at once; and so it was thought better to lay the first stretch from the mainland, so long as it was not yet certain whether submarine telegraphic transmission over such distances would work properly at all.
+translation_final: ''
+annotations: []

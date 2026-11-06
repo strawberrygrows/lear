@@ -45,3 +45,15 @@ These follow the Antal Szerb project's rules (`strawberrygrows/antal-szerb`: CLA
 **Context:** Zweig (1927) writes *Rothäute*, *Kanaken*, *Farbigen*, *Eingeborenen*.
 **Ruling:** Render in period-appropriate English without sharpening or softening beyond the original: 'Red Indians', 'Kanakas', 'coloured men', 'natives'. Noted on first occurrence. The editor may revise.
 **Scope:** All Zweig texts.
+
+### DECISION-Z08: Ships' names
+**Date:** 2026-11-06
+**Context:** Zweig puts ships' names in quotation marks (»Agamemnon«, »Niagara«, »Great Eastern«).
+**Ruling:** Italicise ships' names, as English convention requires (*Agamemnon*). No quotation marks.
+**Scope:** All Zweig texts.
+
+### DECISION-Z09: English quoted by Zweig
+**Date:** 2026-11-06
+**Context:** Zweig often quotes English sources in English and then gives his own German translation of the same words (*The Times*, Morse), and uses English words in his German (*Rush*, *Newspaper Boys*, headlines).
+**Ruling:** Keep the English exactly as Zweig gives it, quirks included ('an universal jubilee'). Omit Zweig's German gloss where it only repeats the English, with a note. Where Zweig quotes an English-language source in German only (the Valentia prayer), look for the original; if it is not found, translate fresh and raise a `query`.
+**Scope:** All Zweig texts.

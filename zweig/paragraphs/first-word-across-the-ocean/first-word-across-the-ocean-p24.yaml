@@ -1,0 +1,34 @@
+id: first-word-across-the-ocean-p24
+locus: Das Erste Wort über den Ozean, paragraph 24
+section:
+  de: Das große Hosianna
+  en: The Great Hosanna
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Gerade weil dieser Blitz der Freude aus völlig heiterem Himmel herabfährt, zündet er so ungeheuer. Fast zur gleichen Stunde erfahren in den ersten Augusttagen der alte und der neue Kontinent die Botschaft des gelungenen Werkes; die Wirkung ist eine unbeschreibliche. In England leitartikelt die sonst so bedächtige Times: »Since the discovery of Columbus, nothing has been done in any degree comparable to the vast enlargement which has thus been given to the sphere of human activity.« »Seit der Entdeckung des Kolumbus ist nichts geschehen, was in irgendeiner Weise vergleichbar wäre dieser gewaltigen Erweiterung der Sphäre menschlicher Tätigkeit.« Und die City ist in hellster Erregung. Aber schattenhaft und scheu scheint diese stolze Freude Englands, verglichen mit der orkanischen Begeisterung Amerikas, kaum daß dort die Nachricht übermittelt wird. Sofort stocken die Geschäfte, die Straßen sind überflutet mit fragenden, lärmenden, diskutierenden Menschen. Über Nacht ist ein völlig unbekannter Mann, Cyrus W. Field, zum Nationalhelden eines ganzen Volkes geworden. Franklin und Kolumbus wird er emphatisch zur Seite gestellt, die ganze Stadt und hinter ihr hundert andere beben und dröhnen von Erwartung, den Mann zu sehen, der »die Vermählung des jungen Amerika und der Alten Welt« durch seine Entschlossenheit vollzogen. Aber noch hat die Begeisterung nicht den höchsten Grad erreicht, denn nichts als die dürre Meldung ist ja vorläufig eingetroffen, daß das Kabel gelegt sei. Aber kann es auch sprechen? Ist die Tat, die eigentliche, gelungen? Grandioses Schauspiel – eine ganze Stadt, ein ganzes Land wartet und lauscht auf ein einziges, auf das erste Wort über den Ozean. Man weiß, die englische Königin wird allen voran ihre Botschaft, ihren Glückwunsch sagen, jede Stunde erwartet man sie ungeduldiger. Aber es vergehen noch Tage und Tage, weil durch einen unglücklichen Zufall gerade das Kabel nach Neufundland gestört ist, und es dauert bis zum 16. August, bis die Botschaft der Königin Viktoria in den Abendstunden in Neuyork eintrifft.
+  ocr_corrections: []
+translation_draft: |
+  Precisely because this flash of joy comes down out of a perfectly clear sky, it kindles so tremendously. Almost in the same hour, in the first days of August, the old and the new continent learn the news of the work accomplished; the effect is indescribable. In England the usually so deliberate *Times* writes in a leading article: ‘Since the discovery of Columbus, nothing has been done in any degree comparable to the vast enlargement which has thus been given to the sphere of human activity.’ And the City is in the liveliest excitement. But shadowy and shy this proud joy of England seems, compared with the hurricane of enthusiasm in America, as soon as the news is transmitted there. At once business comes to a standstill, the streets are flooded with people asking, clamouring, debating. Overnight a wholly unknown man, Cyrus W. Field, has become the national hero of an entire people. He is emphatically set beside Franklin and Columbus; the whole city, and behind it a hundred others, quakes and resounds with the eagerness to see the man who by his resolution has consummated ‘the marriage of young America and the Old World’. But the enthusiasm has not yet reached its highest pitch, for so far nothing has arrived but the bare report that the cable is laid. But can it also speak? Has the deed, the real deed, succeeded? A grandiose spectacle – a whole city, a whole country waits and listens for a single word, for the first word across the ocean. It is known that the Queen of England will be the first of all to send her message, her congratulations; every hour it is awaited more impatiently. But days and days go by, because by an unlucky chance it is just the cable to Newfoundland that is out of order, and it is not until 16 August that Queen Victoria’s message reaches New York, in the evening hours.
+translation_final: ''
+annotations:
+- id: 1
+  type: quote
+  span: ‘Since the discovery of Columbus
+  quote_library_ref: times-1858-columbus
+  body: Zweig quotes *The Times* in English and then translates it into German. The English
+    is given once, as Zweig gives it; the German repetition is omitted (DECISION-Z09).
+  status: claude-drafted
+- id: 2
+  type: note
+  span: ‘the marriage of young America and the Old World’
+  body: Zweig quotes this phrase in German, presumably from the American press of August 1858.
+    No English original has been traced, so it is translated fresh.
+  status: claude-drafted
+- id: 3
+  type: note
+  span: for the first word across the ocean
+  body: The title phrase (*das erste Wort über den Ozean*) arrives here, two-thirds of the
+    way through; the English title is chosen so that the two coincide.
+  status: claude-drafted

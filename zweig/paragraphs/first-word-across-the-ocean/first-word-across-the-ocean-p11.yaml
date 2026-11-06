@@ -1,0 +1,22 @@
+id: first-word-across-the-ocean-p11
+locus: Das Erste Wort über den Ozean, paragraph 11
+section:
+  de: Der erste Start
+  en: The First Departure
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Ein Jahr lang sausen die Maschinen, unablässig spult sich wie ein dünner, fließender Faden der Draht aus den Fabriken in das Innere der beiden Schiffe, und endlich, nach tausend und tausend Umdrehungen, ist je eine Hälfte des Kabels in je einem der Schiffe zur Spule zusammengerollt. Konstruiert und schon aufgestellt sind auch die neuen, schwerfälligen Maschinen, die, mit Bremsen und Rücklauf versehen, in einem Zug nun eine Woche, zwei Wochen, drei Wochen lang ununterbrochen das Kabel hinabsenken sollen in die Tiefe des Weltmeeres. Die besten Elektriker und Techniker, darunter Morse selbst, sind an Bord versammelt, um dauernd mit ihren Apparaten während der ganzen Auslegung zu kontrollieren, ob der elektrische Strom nicht ins Stocken gerät, Reporter und Zeichner haben sich der Flotte zugesellt, um mit Wort und Schrift diese aufregendste Ausfahrt seit Kolumbus und Magalhães zu schildern.
+  ocr_corrections: []
+translation_draft: |
+  For a year the machines hum, the wire unceasingly winds itself like a thin, flowing thread out of the factories into the bellies of the two ships, and at last, after thousands upon thousands of revolutions, one half of the cable lies coiled in each ship. Built, too, and already installed are the new, ponderous machines which, fitted with brakes and reversing gear, are to lower the cable into the depths of the ocean without a break for a week, two weeks, three weeks on end. The best electricians and engineers, Morse himself among them, are assembled on board, to check constantly with their instruments throughout the laying whether the electric current falters; reporters and draughtsmen have joined the fleet to describe with word and pen this most exciting voyage since Columbus and Magellan.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: with word and pen
+  body: '*mit Wort und Schrift*, literally ‘with word and writing’, a doublet that sits oddly
+    with the draughtsmen. ‘Word and pen’ keeps the pairing without inventing Zweig’s probable
+    *Wort und Bild*.'
+  status: claude-drafted

@@ -49,3 +49,91 @@ quotes:
     Not quoted.'
   used_in:
   - discovery-of-eldorado-p24
+- id: hercules-cradle-serpents
+  type: allusion
+  author: Classical myth
+  work: The infant Hercules and the serpents
+  locus: Pindar, *Nemean* I; Theocritus, *Idyll* 24
+  original_language: grc
+  original: (the infant Hercules strangles two serpents)
+  zweig_rendering: ein Herkules schon in der Wiege
+  english_used: a Hercules already in the cradle
+  english_provenance: Fresh translation of Zweig; allusion only
+  used_in:
+  - first-word-across-the-ocean-p02
+- id: shakespeare-tempest-ariel
+  type: allusion
+  author: William Shakespeare
+  work: The Tempest
+  locus: passim
+  original_language: en
+  original: (Ariel, Prospero’s spirit of the air)
+  zweig_rendering: wie Ariel unsichtbar die Luft durchschwebend
+  english_used: like Ariel, floating invisibly through the air
+  english_provenance: Fresh translation of Zweig; allusion only
+  used_in:
+  - first-word-across-the-ocean-p02
+- id: morse-great-feat
+  type: quotation
+  author: Samuel F. B. Morse
+  work: (attributed remark on the Atlantic cable)
+  locus: untraced
+  original_language: en
+  original: the great feat of the Century
+  zweig_rendering: »the great feat of the Century«, die ruhmreichste Tat des Jahrhunderts
+  english_used: the great feat of the Century
+  english_provenance: As quoted in English by Zweig; original source not traced
+  used_in:
+  - first-word-across-the-ocean-p06
+- id: bible-genesis-11-babel
+  type: allusion
+  author: Bible
+  work: Genesis
+  locus: 11:1–9
+  original_language: de
+  original: (the Tower of Babel)
+  zweig_rendering: Seit dem Turmbau von Babel
+  english_used: Since the building of the Tower of Babel
+  english_provenance: Standard English name of the episode (Authorised Version)
+  used_in:
+  - first-word-across-the-ocean-p10
+  - first-word-across-the-ocean-p32
+- id: valentia-prayer-1857
+  type: quotation
+  author: Unnamed clergyman at Valentia
+  work: Prayer at the departure of the cable fleet
+  locus: 5 August 1857
+  original_language: en
+  original: (English original not yet traced)
+  zweig_rendering: O ewiger Gott, der du allein die Himmel ausbreitest …
+  english_used: O Eternal God, who alone spreadest out the heavens …
+  english_provenance: Fresh translation in Authorised Version idiom (Job 9:8, Psalm 89:9,
+    Matthew 8:27); QUERY open
+  used_in:
+  - first-word-across-the-ocean-p12
+- id: times-1858-columbus
+  type: quotation
+  author: The Times (leading article)
+  work: The Times, London
+  locus: August 1858
+  original_language: en
+  original: Since the discovery of Columbus, nothing has been done in any degree comparable
+    to the vast enlargement which has thus been given to the sphere of human activity.
+  zweig_rendering: (quoted in English, then translated into German)
+  english_used: Since the discovery of Columbus, nothing has been done in any degree comparable
+    to the vast enlargement which has thus been given to the sphere of human activity.
+  english_provenance: As quoted in English by Zweig; date of the leader to be verified
+  used_in:
+  - first-word-across-the-ocean-p24
+- id: edda-midgard-serpent
+  type: allusion
+  author: Snorri Sturluson
+  work: Prose Edda (Gylfaginning)
+  locus: ch. 34
+  original_language: non
+  original: (Jörmungandr, the World Serpent, lying in the ocean round the earth)
+  zweig_rendering: wie die sagenhafte Midgardschlange
+  english_used: like the legendary Midgard Serpent
+  english_provenance: Standard English name
+  used_in:
+  - first-word-across-the-ocean-p28

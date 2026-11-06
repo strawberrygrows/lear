@@ -1,0 +1,29 @@
+id: first-word-across-the-ocean-p06
+locus: Das Erste Wort über den Ozean, paragraph 6
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Ein so ungeheurer Erfolg innerhalb so weniger Jahre – denn was bedeutet ein Jahrzehnt anderes als einen Wimpernschlag in der Geschichte der Menschheit? – muß selbstverständlich maßlosen Mut in jener Generation erwecken. Alles gelingt, was man versucht, und alles traumhaft geschwind. Ein paar Jahre nur, und England ist seinerseits wieder mit Irland, Dänemark mit Schweden, Korsika mit dem Festland telegraphisch verbunden, und schon tastet man aus, um Ägypten und damit Indien dem Netz anzuschließen. Ein Erdteil aber, und zwar gerade der wichtigste, scheint zu dauerndem Ausschluß von dieser weltumspannenden Kette verurteilt: Amerika. Denn wie den Atlantischen Ozean oder den Pazifischen, die beide in ihrer endlosen Breite keine Zwischenstationen erlauben, mit einem einzigen Drahte durchspannen? In jenen Kinderjahren der Elektrizität sind noch alle Faktoren unbekannt. Noch ist die Tiefe des Meeres nicht ausgemessen, noch kennt man nur ungenau die geologische Struktur des Ozeans, noch ist völlig unerprobt, ob ein in solche Tiefe gelegter Draht den Druck so unendlich getürmter Wassermassen ertragen könnte. Und selbst wenn es technisch möglich wäre, ein derart endloses Kabel sicher in solche Tiefen hinabzubetten, wo ist ein Schiff von solcher Größe, daß es die Eisen- und Kupferlast von zweitausend Meilen Draht in sich aufzunehmen vermöchte? Wo die Dynamos von solcher Kraft, daß sie einen elektrischen Strom ungebrochen eine Distanz hinüberzuschicken vermöchten, die mit dem Dampfboot zu durchfahren man noch mindestens zwei bis drei Wochen benötigt? Alle Voraussetzungen fehlen. Noch ist unbekannt, ob nicht in der Tiefe des Weltmeeres magnetische Ströme kreisen, die den elektrischen Strom ablenken könnten, noch besitzt man keine zureichende Isolation, keine richtigen Meßapparate, noch kennt man nur die Anfangsgesetze der Elektrizität, die gerade die Augen aufgetan aus ihrem hundertjährigen Schlaf von Unbewußtheit. »Unmöglich! Absurd!« winken darum die Gelehrten heftig ab, sowie man den Plan der Ozeanüberspannung nur erwähnt. »Später vielleicht«, meinen die mutigsten unter den Technikern. Selbst Morse, dem Manne, dem der Telegraph bisher seine größte Vollendung verdankt, erscheint der Plan als unberechenbares Wagnis. Aber prophetisch fügt er bei, im Falle des Gelingens würde die Legung des transatlantischen Kabels »the great feat of the Century«, die ruhmreichste Tat des Jahrhunderts bedeuten.
+  ocr_corrections: []
+translation_draft: |
+  So immense a success within so few years – for what is a decade but the blink of an eye in the history of mankind? – must naturally awaken a boundless courage in that generation. Everything that is attempted succeeds, and everything with dreamlike swiftness. Only a few years, and England in its turn is joined by telegraph to Ireland, Denmark to Sweden, Corsica to the mainland, and already men are feeling their way towards bringing Egypt, and with it India, into the network. One continent, however, and the most important of all, seems condemned to permanent exclusion from this chain that is to span the world: America. For how is one to span the Atlantic Ocean or the Pacific, neither of which in its endless breadth allows of any intermediate station, with a single wire? In those childhood years of electricity all the factors are still unknown. The depth of the sea is not yet measured, the geological structure of the ocean is not yet more than vaguely known, it is still wholly untried whether a wire laid at such a depth could bear the pressure of such infinitely towering masses of water. And even were it technically possible to bed so endless a cable securely in such depths, where is there a ship of such size that it could take into itself the iron and copper burden of two thousand miles of wire? Where are the dynamos of such power that they could send an electric current unbroken across a distance which a steamer still needs at least two or three weeks to traverse? Every precondition is lacking. It is not yet known whether magnetic currents may not circle in the depths of the ocean that could deflect the electric current, there is as yet no adequate insulation, no proper measuring apparatus, as yet only the first laws are known of electricity, which has only just opened its eyes from its hundred years’ sleep of unconsciousness. ‘Impossible! Absurd!’ the learned therefore cry, vehemently waving it away, as soon as the plan of spanning the ocean is so much as mentioned. ‘Later, perhaps,’ say the boldest among the engineers. Even to Morse, the man to whom the telegraph owes its greatest perfection so far, the plan seems an incalculable hazard. But he adds prophetically that, should it succeed, the laying of the transatlantic cable would be ‘the great feat of the Century’.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: dynamos
+  body: 'An anachronism of Zweig’s: the cables of the 1850s were worked by batteries and induction
+    coils. Kept as written (DECISION-Z05).'
+  status: claude-drafted
+- id: 2
+  type: quote
+  span: ‘the great feat of the Century’
+  quote_library_ref: morse-great-feat
+  body: Zweig quotes Morse in English and follows it with his own German gloss (*die ruhmreichste
+    Tat des Jahrhunderts*). In English the gloss would merely repeat the quotation, so it
+    is omitted (DECISION-Z09). Zweig’s capital C is kept.
+  status: claude-drafted

@@ -1,0 +1,21 @@
+id: first-word-across-the-ocean-p17
+locus: Das Erste Wort über den Ozean, paragraph 17
+section:
+  de: Noch einmal Mißgeschick
+  en: Mischance Again
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Cyrus Field, der einzig Unerschütterliche, Held und Kaufmann zugleich, macht Bilanz. Was ist verloren? Dreihundert Meilen Kabel, etwa hunderttausend Pfund des Aktienkapitals und, was ihn vielleicht noch mehr bedrückt, ein ganzes, ein unersetzliches Jahr. Denn nur im Sommer kann die Expedition auf günstiges Wetter hoffen, und diesmal ist die Jahreszeit schon zu weit vorgeschritten. Auf dem andern Blatt steht ein kleiner Gewinn. Man hat ein gutes Stück praktischer Erfahrung bei diesem ersten Versuch gewonnen. Das Kabel selbst, das sich als tauglich erwiesen, kann aufgewickelt werden und für die nächste Expedition verstaut. Geändert müssen nur die Auslegemaschinen werden, die den verhängnisvollen Bruch verschuldet haben. So vergeht mit Warten und Vorarbeiten wieder ein Jahr. Erst am 10. Juni 1858 können, mit neuem Mut und mit dem alten Kabel befrachtet, dieselben Schiffe wieder ausfahren. Und da die elektrische Zeichenübertragung bei der ersten Reise klaglos funktioniert hat, ist man zum alten Plane zurückgekehrt, die Kabellegung von der Mitte des Weltmeeres aus nach beiden Seiten zu beginnen. Die ersten Tage dieser neuen Reise vergehen bedeutungslos. Erst am siebenten Tag soll ja an der vorher berechneten Stelle die Kabellegung und damit die eigentliche Arbeit beginnen. Bishin ist oder scheint alles eine Spazierfahrt. Die Maschinen stehen unbeschäftigt, die Matrosen können noch rasten und sich des freundlichen Wetters erfreuen, wolkenlos ist der Himmel und still, vielleicht allzu still, die See.
+  ocr_corrections: []
+translation_draft: |
+  Cyrus Field, the one man unshaken, hero and merchant at once, draws up the balance. What has been lost? Three hundred miles of cable, some hundred thousand pounds of the share capital and, what perhaps weighs on him still more, a whole, an irreplaceable year. For only in summer can the expedition hope for favourable weather, and this time the season is already too far advanced. On the other side of the ledger stands a small gain. A good deal of practical experience has been won in this first attempt. The cable itself, which has proved serviceable, can be wound up and stowed for the next expedition. Only the paying-out machines, which were to blame for the fatal break, have to be altered. So another year passes in waiting and preparation. Not until 10 June 1858 can the same ships put out again, with fresh courage and laden with the old cable. And since the electrical transmission of signals worked without fault on the first voyage, they have gone back to the old plan of beginning the laying from the middle of the ocean towards both sides. The first days of this new voyage pass without event. Only on the seventh day, after all, is the laying, and with it the real work, to begin at the point calculated in advance. Until then everything is, or seems, a pleasure cruise. The machines stand idle, the sailors can still rest and enjoy the friendly weather, the sky is cloudless and the sea still, perhaps all too still.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: On the other side of the ledger
+  body: '*Auf dem andern Blatt*, literally ‘on the other page’. The book-keeping image follows
+    from ‘draws up the balance’ (*macht Bilanz*) and from ‘hero and merchant at once’.'
+  status: claude-drafted

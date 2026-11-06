@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p30
+locus: Das Erste Wort über den Ozean, paragraph 30
+section:
+  de: Sechs Jahre Schweigen
+  en: Six Years of Silence
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Aber sechs Jahre, wenn auch innerhalb des riesigen Raumes der Geschichte nur ein flüchtiger Augenblick, bedeuten in einer so jungen Wissenschaft wie der Elektrizität ein Jahrtausend. Jedes Jahr, jeder Monat zeitigt auf diesem Gebiete neue Entdeckungen. Immer kräftiger, immer präziser werden die Dynamos, immer vielfältiger ihre Anwendung, immer genauer die Apparate. Schon umspannt das Telegraphennetz den inneren Raum aller Kontinente, schon ist das Mittelmeer durchquert, schon Afrika und Europa verbunden; so verliert von Jahr zu Jahr der Plan, den Atlantischen Ozean zu durchspannen, unmerklich mehr und mehr von dem Phantastischen, das ihm so lange angehaftet. Unabwendbar muß die Stunde kommen, die den Versuch erneut; es fehlt nur der Mann, der den alten Plan mit neuer Energie durchströmt.
+  ocr_corrections: []
+translation_draft: |
+  But six years, though only a fleeting moment within the vast space of history, mean a thousand years in so young a science as electricity. Every year, every month brings new discoveries in this field. Ever more powerful, ever more precise become the dynamos, ever more manifold their application, ever more exact the instruments. Already the telegraph network spans the interior of every continent, already the Mediterranean is crossed, already Africa and Europe are joined; and so from year to year the plan of spanning the Atlantic Ocean imperceptibly loses more and more of the fantastic that had clung to it so long. Inevitably the hour must come that renews the attempt; all that is lacking is the man to pour new energy into the old plan.
+translation_final: ''
+annotations: []

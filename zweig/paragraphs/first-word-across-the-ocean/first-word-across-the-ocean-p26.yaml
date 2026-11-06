@@ -1,0 +1,28 @@
+id: first-word-across-the-ocean-p26
+locus: Das Erste Wort über den Ozean, paragraph 26
+section:
+  de: Das große Hosianna
+  en: The Great Hosanna
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Aber noch nicht genug und genug! Der eigentliche Triumphzug soll noch grandioser sein, der großartigste, den der neue Weltteil jemals gesehen. Zwei Wochen dauern die Vorbereitungen, dann aber, am 31. August, feiert eine ganze Stadt einen einzigen Menschen, Cyrus W. Field, wie seit den Zeiten der Kaiser und Cäsaren kaum ein Sieger von seinem Volke gefeiert wurde. Ein Festzug wird an diesem herrlichen Herbsttag gerüstet, der so lang ist, daß er sechs Stunden braucht, um von einem Ende der Stadt bis zum andern zu gelangen. Die Regimenter ziehen voran mit Bannern und Fahnen durch die beflaggten Straßen, die Harmoniegesellschaften, die Liedertafeln, die Sängerbünde, die Feuerwehr, die Schulen, die Veteranen folgen in endlosem Zuge. Alles, was marschieren kann, marschiert, jeder, der singen kann, singt, jeder, der jubeln kann, jubelt. Im vierspännigen Wagen, wie ein antiker Triumphator, wird Cyrus W. Field, in einem andern der Kommandant der »Niagara«, in einem dritten der Präsident der Vereinigten Staaten dahingeführt; die Bürgermeister, die Beamten, die Professoren hintendrein. Ununterbrochen folgen sich Ansprachen, Bankette, Fackelzüge, die Kirchenglocken läuten, die Kanonen donnern, neuerdings und neuerdings umrauscht der Jubel den neuen Kolumbus, den Vereiniger der beiden Welten, den Besieger des Raums, den Mann, der in dieser Stunde der ruhmreichste und vergöttertste Mann Amerikas geworden ist, Cyrus W. Field.
+  ocr_corrections: []
+translation_draft: |
+  But still it is not enough, not nearly enough! The true triumphal procession is to be grander still, the most magnificent the new continent has ever seen. The preparations take two weeks, but then, on 31 August, a whole city celebrates a single man, Cyrus W. Field, as scarcely any victor has been celebrated by his people since the days of the emperors and the Caesars. On this glorious autumn day a procession is made ready so long that it needs six hours to pass from one end of the city to the other. The regiments march ahead with banners and flags through the beflagged streets, the musical societies, the glee clubs, the choral unions, the fire brigades, the schools, the veterans follow in an endless train. Everyone who can march marches, everyone who can sing sings, everyone who can cheer cheers. In a carriage and four, like a triumphant general of antiquity, Cyrus W. Field is driven along, in another the commander of the *Niagara*, in a third the President of the United States; the mayors, the officials, the professors behind. Speeches, banquets, torchlight processions follow one another without a pause, the church bells ring, the cannon thunder, again and again the cheering surges round the new Columbus, the uniter of the two worlds, the conqueror of space, the man who in this hour has become the most famous and most idolised man in America, Cyrus W. Field.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: But still it is not enough, not nearly enough!
+  body: '*Aber noch nicht genug und genug!* An idiomatic intensifying doubling, rendered by
+    repetition rather than literally.'
+  status: claude-drafted
+- id: 2
+  type: note
+  span: the glee clubs
+  body: '*Liedertafeln* and *Sängerbünde*: the German male-voice choirs, which were in fact
+    numerous in New York in 1858. Given their English equivalents rather than kept in German,
+    since they are ordinary German nouns in Zweig, not foreign fragments.'
+  status: claude-drafted

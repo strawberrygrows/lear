@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p16
+locus: Das Erste Wort über den Ozean, paragraph 16
+section:
+  de: Mißgeschick
+  en: Mischance
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Schon sind dreihundertfünfunddreißig Meilen gelegt, mehr also als die zehnfache Distanz von Dover nach Calais, schon sind fünf Tage, fünf Nächte erster Unsicherheit überstanden, schon bettet sich am sechsten Abend, am 11. August, Cyrus W. Field nach vielstündiger Arbeit und Aufregung zu berechtigter Ruhe. Da plötzlich – was ist geschehen? – stoppt das ratternde Geräusch. Und wie ein Schlafender auffährt im fahrenden Zuge, wenn die Lokomotive unerwarteterweise stoppt, wie der Müller aufschreckt im Bette, wenn das Mühlrad plötzlich stehenbleibt, so sind im Nu alle auf dem Schiff wach und stürzen auf Deck. Der erste Blick auf die Maschine zeigt: der Auslauf ist leer. Das Kabel ist plötzlich der Winde entschlüpft; unmöglich war es, das losgerissene Ende noch rechtzeitig aufzufangen, und noch unmöglicher ist es jetzt, das verlorene Ende in der Tiefe zu finden und wieder heraufzuholen. Das Entsetzliche ist geschehen. Ein kleiner technischer Fehler hat die Arbeit von Jahren vernichtet. Als Besiegte kehren die so verwegen Ausgefahrenen nach England zurück, wo das plötzliche Verstummen aller Zeichen und Signale auf schlimme Kunde schon vorbereitet hat.
+  ocr_corrections: []
+translation_draft: |
+  Already three hundred and thirty-five miles have been laid, more, that is, than ten times the distance from Dover to Calais, already five days, five nights of first uncertainty have been survived, already on the sixth evening, 11 August, Cyrus W. Field, after many hours of work and excitement, takes to his bed for a well-earned rest. Then suddenly – what has happened? – the rattling noise stops. And as a sleeper starts up in a moving train when the engine unexpectedly halts, as the miller starts awake in his bed when the mill-wheel suddenly stands still, so in an instant everyone on the ship is awake and rushes on deck. The first glance at the machine shows: the paying-out gear is empty. The cable has suddenly slipped from the winch; it was impossible to catch the torn end in time, and still more impossible is it now to find the lost end in the depths and haul it up again. The dreadful thing has happened. A small technical fault has destroyed the work of years. As vanquished men those who set out so boldly return to England, where the sudden silence of all signs and signals has already prepared people for bad news.
+translation_final: ''
+annotations: []

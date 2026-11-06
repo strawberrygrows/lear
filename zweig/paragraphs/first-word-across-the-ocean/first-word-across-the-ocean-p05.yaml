@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p05
+locus: Das Erste Wort über den Ozean, paragraph 5
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Glücklicherweise reicht nun in den Zeiten des Fortschritts eine Erfindung der anderen hilfreich die Hand. Wenige Jahre nach der Einführung des Landtelegraphen wird das Guttapercha entdeckt als der geeignete Stoff, elektrische Leitungen im Wasser zu isolieren; nun kann man beginnen, das wichtigste Land jenseits des Kontinents, England, an das europäische Telegraphennetz anzuschließen. Ein Ingenieur, namens Brett, legt an der gleichen Stelle, wo Blériot in spätern Tagen als erster den Kanal mit einem Flugzeug überfliegen wird, das erste Kabel. Ein tölpischer Zwischenfall vereitelt noch das sofortige Gelingen, denn ein Fischer in Boulogne, der meint, einen besonders fetten Aal gefunden zu haben, reißt das schon gelegte Kabel heraus. Aber am 13. November 1851 gelingt der zweite Versuch. Damit ist England angeschlossen und dadurch Europa erst wahrhaft Europa, ein Wesen, das mit einem einzigen Gehirn, einem einzigen Herzen gleichzeitig alles Geschehen der Zeit erlebt.
+  ocr_corrections: []
+translation_draft: |
+  Happily, in times of progress one invention lends another a helping hand. A few years after the introduction of the land telegraph, gutta-percha is discovered to be the proper substance for insulating electric lines in water; and now a beginning can be made with joining the most important country beyond the Continent, England, to the European telegraph network. An engineer by the name of Brett lays the first cable at the very spot where Blériot, in later days, will be the first to fly across the Channel in an aeroplane. A clumsy mishap still prevents immediate success, for a fisherman at Boulogne, who thinks he has found a particularly fat eel, tears up the cable already laid. But on 13 November 1851 the second attempt succeeds. With this England is joined, and thereby Europe for the first time truly Europe, a being that lives through all the events of the age simultaneously with a single brain, a single heart.
+translation_final: ''
+annotations: []

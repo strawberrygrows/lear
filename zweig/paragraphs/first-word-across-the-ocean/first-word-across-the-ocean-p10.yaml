@@ -1,0 +1,23 @@
+id: first-word-across-the-ocean-p10
+locus: Das Erste Wort über den Ozean, paragraph 10
+section:
+  de: Die Vorbereitung
+  en: The Preparations
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Aber man wagt's! Tag und Nacht spinnen jetzt die Fabriken, der dämonische Wille dieses einen Menschen treibt alle Räder vorwärts. Ganze Bergwerke von Eisen und Kupfer werden verbraucht für diese eine Schnur, ganze Wälder von Gummibäumen müssen bluten, um die Guttaperchahülle zu schaffen auf so riesige Distanz. Und nichts veranschaulicht sinnlicher die enormen Proportionen der Unternehmung, als daß dreihundertsiebenundsechzigtausend Meilen einzelnen Drahtes in dieses eine Kabel versponnen werden, dreizehnmal soviel, als genügte, die ganze Erde zu umspannen, und genug, um in einer Linie die Erde mit dem Mond zu verbinden. Seit dem Turmbau von Babel hat die Menschheit im technischen Sinne nichts Grandioseres gewagt.
+  ocr_corrections: []
+translation_draft: |
+  But they venture it! Day and night now the factories spin, the demonic will of this one man drives every wheel onward. Whole mines of iron and copper are consumed for this one cord, whole forests of rubber trees must bleed to make the gutta-percha sheath over so vast a distance. And nothing illustrates more palpably the enormous proportions of the undertaking than that three hundred and sixty-seven thousand miles of single wire are spun into this one cable, thirteen times as much as would suffice to girdle the whole earth, and enough to join the earth to the moon in a single line. Since the building of the Tower of Babel mankind, in the technical sense, has dared nothing more grandiose.
+translation_final: ''
+annotations:
+- id: 1
+  type: quote
+  span: Since the building of the Tower of Babel
+  quote_library_ref: bible-genesis-11-babel
+  body: Genesis 11:1–9. Zweig invokes Babel without its moral, as the first great collective
+    work of human hands; the irony of the comparison (Babel ends in the confusion of tongues)
+    anticipates the last sentence of the piece.
+  status: claude-drafted

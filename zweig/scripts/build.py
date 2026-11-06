@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Build the static reading page from paragraphs/<slug>/*.yaml.
+"""Build the static site from paragraphs/<slug>/*.yaml.
 
-    python3 scripts/build.py            -> site/index.html (full document)
-    python3 scripts/build.py --fragment OUT.html
-                                        -> same page without <!doctype>/<html>/<head>
-                                           wrapper (for an Artifact preview)
+    python3 scripts/build.py
+        -> site/index.html (contents) and site/<slug>.html (one per story)
 
-Uses translation_final where the editor has filled it in, otherwise
-translation_draft (marked as a draft on the page).
+    python3 scripts/build.py --preview DIR
+        -> the same pages in DIR, with index.html stripped of its
+           <!doctype>/<html>/<head> wrapper (for an Artifact preview)
+
+Each story page uses translation_final where the editor has filled it in,
+otherwise translation_draft (marked as a draft on the page).
 """
 import html
 import re
@@ -17,9 +19,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-SLUG = "discovery-of-eldorado"
-PARA_DIR = ROOT / "paragraphs" / SLUG
-TEMPLATE = ROOT / "scripts" / "template.html"
+SCRIPTS = ROOT / "scripts"
 
 
 def inline_md(text):
@@ -28,18 +28,36 @@ def inline_md(text):
     return re.sub(r"\*([^*\n]+)\*", r"<em>\1</em>", t)
 
 
-def load():
-    meta = yaml.safe_load((PARA_DIR / f"{SLUG}-meta.yaml").read_text(encoding="utf-8"))
-    paras = [yaml.safe_load(p.read_text(encoding="utf-8"))
-             for p in sorted(PARA_DIR.glob(f"{SLUG}-p*.yaml"))]
-    return meta, paras
+def plain(text):
+    return re.sub(r"\*([^*\n]+)\*", r"\1", text)
+
+
+def fill(template, values):
+    for key, val in values.items():
+        template = template.replace("{{" + key + "}}", val)
+    left = re.findall(r"\{\{[A-Z_]+\}\}", template)
+    if left:
+        sys.exit(f"unfilled placeholders: {left}")
+    return template
+
+
+def load_stories():
+    stories = []
+    for d in sorted(p for p in (ROOT / "paragraphs").iterdir() if p.is_dir()):
+        meta_path = d / f"{d.name}-meta.yaml"
+        if not meta_path.exists():
+            continue
+        meta = yaml.safe_load(meta_path.read_text(encoding="utf-8"))
+        paras = [yaml.safe_load(p.read_text(encoding="utf-8"))
+                 for p in sorted(d.glob(f"{d.name}-p*.yaml"))]
+        stories.append((meta, paras))
+    return sorted(stories, key=lambda s: s[0]["order"])
 
 
 def render_text(text, anns, start_n):
     """Render paragraph text with note markers after each annotation span."""
     out = inline_md(text.strip())
-    notes = []
-    n = start_n
+    notes, n = [], start_n
     for a in anns:
         if a.get("type") == "query":
             continue  # queries are for the editor, not the reader
@@ -53,11 +71,9 @@ def render_text(text, anns, start_n):
     return out, notes, n
 
 
-def build_body(meta, paras):
+def build_story(meta, paras):
     parts, endnotes = [], []
-    n = 0
-    any_draft = False
-    current = None
+    n, any_draft, current, dashes = 0, False, None, 0
     for i, p in enumerate(paras, 1):
         sec = p["section"]
         if sec["de"] != current:
@@ -66,13 +82,14 @@ def build_body(meta, paras):
             current = sec["de"]
             parts.append(
                 f'<section class="part">'
-                f'<h2 class="part-head"><span class="en">{html.escape(sec["en"])}</span>'
+                f'<h2 class="part-head"><span class="en">{inline_md(sec["en"])}</span>'
                 f'<span class="de" lang="de">{html.escape(sec["de"])}</span></h2>')
         final = (p.get("translation_final") or "").strip()
         text = final or p["translation_draft"]
         any_draft = any_draft or not final
+        dashes += p["source"]["raw"].count("–")
         body, notes, n = render_text(text, p.get("annotations") or [], n)
-        endnotes.extend((num, a, i) for num, a in notes)
+        endnotes.extend(notes)
         de = html.escape(p["source"]["raw"].strip(), quote=False)
         parts.append(
             f'<div class="pair" id="p{i:02d}">'
@@ -83,47 +100,85 @@ def build_body(meta, paras):
     parts.append("</section>")
 
     notes_html = []
-    for num, a, pi in endnotes:
+    for num, a in endnotes:
         kind = "Allusion" if a["type"] == "quote" else "Note"
         notes_html.append(
             f'<li id="note-{num}"><span class="kind">{kind}</span> '
             f'<span class="span">{inline_md(a["span"])}</span>. '
             f'{inline_md(a["body"].strip())} '
             f'<a class="back" href="#nref-{num}" aria-label="Back to the text">↩</a></li>')
-    return "\n".join(parts), "\n".join(notes_html), any_draft, len(paras), n
+    return {
+        "STORY": "\n".join(parts),
+        "NOTES": "\n".join(notes_html),
+        "STATUS": ("Draft translation, awaiting editorial review" if any_draft
+                   else "Edited translation"),
+        "COUNT": str(len(paras)),
+        "NOTE_COUNT": str(n),
+        "DASHES": str(dashes),
+        "_draft": any_draft,
+    }
+
+
+def pager(stories, idx):
+    links = []
+    if idx > 0:
+        m = stories[idx - 1][0]
+        links.append(f'<a href="{m["slug"]}.html">← {html.escape(m["titleEn"])}</a>')
+    links.append('<a href="index.html">Contents</a>')
+    if idx < len(stories) - 1:
+        m = stories[idx + 1][0]
+        links.append(f'<a href="{m["slug"]}.html">{html.escape(m["titleEn"])} →</a>')
+    return " ".join(links)
+
+
+def strip_wrapper(page):
+    frag = re.sub(r"(?s)^.*?<!--HEAD-->", "", page)
+    for tag in ("</head>", "<body>", "</body>", "</html>"):
+        frag = frag.replace(tag, "")
+    return frag.strip() + "\n"
 
 
 def main():
-    meta, paras = load()
-    story, notes, any_draft, count, n_notes = build_body(meta, paras)
-    page = TEMPLATE.read_text(encoding="utf-8")
-    status = ("Draft translation, awaiting editorial review" if any_draft
-              else "Edited translation")
-    for key, val in {
-        "{{STORY}}": story,
-        "{{NOTES}}": notes,
-        "{{STATUS}}": status,
-        "{{TITLE_EN}}": html.escape(meta["titleEn"]),
-        "{{TITLE_DE}}": html.escape(meta["titleDe"]),
-        "{{DATELINE_EN}}": html.escape(meta["datelineEn"]),
-        "{{SOURCE_URL}}": html.escape(meta["source_url"]),
-        "{{COUNT}}": str(count),
-        "{{NOTE_COUNT}}": str(n_notes),
-    }.items():
-        page = page.replace(key, val)
+    css = (SCRIPTS / "style.css").read_text(encoding="utf-8")
+    story_t = (SCRIPTS / "story.html").read_text(encoding="utf-8")
+    index_t = (SCRIPTS / "index.html").read_text(encoding="utf-8")
+    stories = load_stories()
 
-    if "--fragment" in sys.argv:
-        out = Path(sys.argv[sys.argv.index("--fragment") + 1])
-        frag = re.sub(r"(?s)^.*?<!--HEAD-->", "", page)
-        frag = frag.replace("</head>", "").replace("<body>", "")
-        frag = frag.replace("</body>", "").replace("</html>", "")
-        out.write_text(frag.strip() + "\n", encoding="utf-8")
-        print("wrote", out)
-    else:
-        out = ROOT / "site" / "index.html"
-        out.parent.mkdir(exist_ok=True)
-        out.write_text(page, encoding="utf-8")
-        print("wrote", out.relative_to(ROOT))
+    preview = "--preview" in sys.argv
+    out_dir = Path(sys.argv[sys.argv.index("--preview") + 1]) if preview else ROOT / "site"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    contents = []
+    for idx, (meta, paras) in enumerate(stories):
+        v = build_story(meta, paras)
+        is_draft = v.pop("_draft")
+        v.update({
+            "CSS": css,
+            "TITLE_EN": html.escape(meta["titleEn"]),
+            "TITLE_DE": html.escape(meta["titleDe"]),
+            "DATELINE_EN": html.escape(meta["datelineEn"]),
+            "DESCRIPTION": html.escape(f"Stefan Zweig, ‘{meta['titleDe']}’: {plain(meta['blurb'])}"),
+            "RIGHTS": inline_md(meta["rights"]),
+            "SOURCE_URL": html.escape(meta["source_url"]),
+            "PAGER": pager(stories, idx),
+        })
+        (out_dir / f"{meta['slug']}.html").write_text(fill(story_t, v), encoding="utf-8")
+        print("wrote", f"{meta['slug']}.html")
+        state = "draft" if is_draft else "edited"
+        contents.append(
+            f'<li><span class="num">{idx + 1}</span><div>'
+            f'<h2><a href="{meta["slug"]}.html">{html.escape(meta["titleEn"])}</a></h2>'
+            f'<p class="de" lang="de">{html.escape(meta["titleDe"])}</p>'
+            f'<p class="line">{html.escape(meta["datelineEn"])}</p>'
+            f'<p class="blurb">{inline_md(meta["blurb"])}</p>'
+            f'<p class="meta">{len(paras)} paragraphs · {state}</p>'
+            f'</div></li>')
+
+    index = fill(index_t, {"CSS": css, "CONTENTS": "\n".join(contents)})
+    if preview:
+        index = strip_wrapper(index)
+    (out_dir / "index.html").write_text(index, encoding="utf-8")
+    print("wrote index.html")
 
 
 if __name__ == "__main__":

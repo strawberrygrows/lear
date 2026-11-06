@@ -1,0 +1,15 @@
+id: first-word-across-the-ocean-p19
+locus: Das Erste Wort über den Ozean, paragraph 19
+section:
+  de: Noch einmal Mißgeschick
+  en: Mischance Again
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Aber jetzt zeigt sich erst, wie sehr die kostbare und empfindliche Fracht der tausendfach verschlungenen Drähte durch das fortwährende Schleudern gelitten hat. An einigen Stellen haben sich die Stränge verwirrt, die Guttaperchahülle ist zerrieben oder zerrissen. Mit wenig Vertrauen unternimmt man einige Versuche, das Kabel trotzdem auszulegen, doch sie zeitigen nur einen Verlust von etwa zweihundert Meilen Kabel, die nutzlos im Meer verschwinden. Zum zweitenmal heißt es die Flagge streichen und ruhmlos heimkehren statt im Triumph.
+  ocr_corrections: []
+translation_draft: |
+  But only now does it appear how badly the precious and delicate freight of wires, a thousandfold entwined, has suffered from the incessant pitching. In some places the strands have become tangled, the gutta-percha sheath is chafed or torn. With little confidence a few attempts are made to lay the cable nevertheless, but they produce only the loss of some two hundred miles of cable, which vanish uselessly in the sea. For the second time the flag must be struck, and they return home without glory instead of in triumph.
+translation_final: ''
+annotations: []

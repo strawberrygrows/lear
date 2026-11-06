@@ -1,0 +1,29 @@
+id: first-word-across-the-ocean-p07
+locus: Das Erste Wort über den Ozean, paragraph 7
+section:
+  de: Der neue Rhythmus
+  en: The New Rhythm
+source_url: https://projekt-gutenberg.org/authors/stefan-zweig/books/sternstunden-der-menschheit/chapter/11/
+status: claude-drafted
+source:
+  raw: |
+    Damit ein Wunder oder ein Wunderbares sich vollende, ist immer die erste Vorbedingung der Glaube eines einzelnen an dieses Wunder. Der naive Mut eines Unbelehrbaren vermag gerade dort, wo die Gelehrten zögern, den schöpferischen Anstoß zu geben, und wie meist, bringt auch hier ein simpler Zufall die grandiose Unternehmung in Schwung. Ein englischer Ingenieur, namens Gisborne, der im Jahre 1854 ein Kabel von Neuyork nach dem östlichsten Punkte Amerikas, Neufundland, legen will, damit die Nachrichten von den Schiffen um ein paar Tage früher übernommen werden können, muß mitten im Werke innehalten, weil seine finanziellen Mittel erschöpft sind. So reist er nach Neuyork, um dort Finanzleute zu finden. Dort stößt er durch blanken Zufall, diesen Vater so vieler ruhmreicher Dinge, auf einen jungen Menschen, Cyrus W. Field, einen Pastorssohn, dem in geschäftlichen Unternehmungen so viel und so rasch geglückt ist, daß er sich bereits in jungen Jahren mit einem großen Vermögen ins Privatleben zurückziehen konnte. Diesen Unbeschäftigten, der zu jung und zu energisch ist für dauernde Untätigkeit, sucht Gisborne für die Fertigstellung des Kabels von Neuyork nach Neufundland zu gewinnen. Nun ist Cyrus W. Field – fast sagte man: glücklicherweise! – kein Techniker, kein Fachmann. Er versteht nichts von Elektrizität, er hat nie ein Kabel gesehen. Aber dem Pastorssohn wohnt eine leidenschaftliche Gläubigkeit im Blute, dem Amerikaner der energische Wagemut. Und wo der Fachingenieur Gisborne nur auf das unmittelbare Ziel blickt, Neuyork an Neufundland anzuschließen, sieht der junge, begeisterungsfähige Mensch sofort weiter. Warum nicht gleich dann Neufundland durch ein Unterseekabel mit Irland verbinden? Und mit einer Energie, die entschlossen ist, jedes Hindernis zu überwinden – einunddreißigmal ist jener Mann in diesen Jahren hin und zurück über das Weltmeer zwischen den beiden Erdteilen gefahren –, macht sich Cyrus W. Field sofort ans Werk, ehern entschlossen, von diesem Augenblick an alles, was er in sich und um sich hat, für diese Tat einzusetzen. Damit ist schon jene entscheidende Zündung vollzogen, dank deren ein Gedanke explosive Kraft in der Wirklichkeit gewinnt. Die neue, die wunderwirkende elektrische Kraft hat sich dem andern stärksten dynamischen Element des Lebens verbunden: dem menschlichen Willen. Ein Mann hat seine Lebensaufgabe und eine Aufgabe ihren Mann gefunden.
+  ocr_corrections: []
+translation_draft: |
+  For a miracle, or anything miraculous, to be accomplished, the first precondition is always one man’s faith in that miracle. The naive courage of one who will not be taught can give the creative impulse precisely where the learned hesitate, and, as so often, here too a simple accident sets the grandiose undertaking in motion. An English engineer by the name of Gisborne, who in the year 1854 means to lay a cable from New York to the easternmost point of America, Newfoundland, so that news from the ships can be taken up a few days earlier, has to stop in the middle of the work because his funds are exhausted. So he travels to New York to find financiers there. There, by pure chance, that father of so many glorious things, he comes upon a young man, Cyrus W. Field, a clergyman’s son, who has had such great and such rapid success in business that he has already been able to retire into private life with a large fortune while still young. This idle man, too young and too energetic for lasting inactivity, Gisborne seeks to win for the completion of the cable from New York to Newfoundland. Now Cyrus W. Field – one is almost tempted to say: fortunately! – is no engineer, no expert. He understands nothing of electricity, he has never seen a cable. But the clergyman’s son has a passionate faith in his blood, the American an energetic daring. And where the professional engineer Gisborne looks only to the immediate goal of joining New York to Newfoundland, the young man, so quick to enthusiasm, at once sees farther. Why not then go straight on and join Newfoundland to Ireland by a submarine cable? And with an energy resolved to overcome every obstacle – thirty-one times in these years that man crossed the ocean and back between the two continents – Cyrus W. Field sets to work at once, iron-willed in his resolve to stake from this moment everything he has within him and about him on this deed. With this the decisive ignition has taken place by which an idea gains explosive force in reality. The new, the wonder-working electric force has allied itself with the other strongest dynamic element of life: the human will. A man has found his life’s task, and a task its man.
+translation_final: ''
+annotations:
+- id: 1
+  type: note
+  span: This idle man, too young and too energetic for lasting inactivity, Gisborne seeks
+    to win
+  body: Zweig fronts the object (*Diesen Unbeschäftigten … sucht Gisborne … zu gewinnen*).
+    The inversion is kept, as English of the period allows it and it keeps Field at the head
+    of the sentence.
+  status: claude-drafted
+- id: 2
+  type: note
+  span: thirty-one times
+  body: '*einunddreißigmal*. Later (p31) Zweig has Field cross ‘for the thirtieth time’. The
+    inconsistency is his and is kept.'
+  status: claude-drafted
