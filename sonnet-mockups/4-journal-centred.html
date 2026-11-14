@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonnet Competition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdfcf9;--ink:#1a1a1a;--muted:#7b776f;--line:#e2ded5;--accent:#7a2e2e;--field:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131312;--ink:#ecE8e0;--muted:#97928a;--line:#2d2b28;--accent:#d98c8c;--field:#1a1a19}}
+:root[data-theme="dark"]{--bg:#131312;--ink:#ece8e0;--muted:#97928a;--line:#2d2b28;--accent:#d98c8c;--field:#1a1a19}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"EB Garamond",Georgia,serif;font-size:19px;line-height:1.6}
+.wrap{max-width:620px;margin:0 auto;padding:48px 16px 90px;text-align:center}
+.sc{font-variant:small-caps;letter-spacing:.14em;text-transform:lowercase;color:var(--muted);font-size:17px}
+h1{font-weight:400;font-size:clamp(46px,10vw,84px);line-height:1;margin:clamp(56px,12vw,120px) 0 10px}
+h1 i{color:var(--accent)}
+.lede{font-style:italic;color:var(--muted);margin:0 0 clamp(48px,10vw,96px)}
+.orn{color:var(--accent);letter-spacing:.6em;margin:56px 0 40px;font-size:15px}
+.cd{font-size:clamp(22px,4.4vw,30px);margin:6px 0}
+.cd b{font-weight:400;font-variant-numeric:oldstyle-nums}
+.cd span{color:var(--muted);font-style:italic;margin:0 .4em 0 .15em}
+ol{list-style:none;padding:0;margin:0;counter-reset:r}
+ol li{counter-increment:r;margin:0 0 18px}
+ol li::before{content:counter(r,lower-roman) ".";display:block;font-size:15px;color:var(--accent);font-style:italic}
+form{text-align:left;margin-top:8px}
+label{display:block;text-align:center;font-variant:small-caps;letter-spacing:.14em;text-transform:lowercase;color:var(--muted);font-size:16px;margin:0 0 4px}
+label i{font-variant:normal;letter-spacing:0;text-transform:none}
+.f{margin:0 0 26px}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:6px 0;text-align:center;border-radius:0}
+textarea{text-align:left;border:1px solid var(--line);background:var(--field);padding:26px 28px;min-height:480px;resize:vertical;line-height:1.6}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+.btn{text-align:center}
+button{background:none;color:var(--ink);border:1px solid var(--ink);padding:12px 40px;font:inherit;font-variant:small-caps;letter-spacing:.18em;text-transform:lowercase;cursor:pointer}
+button:hover{background:var(--ink);color:var(--bg)}
+.result{margin-top:22px;text-align:center;font-style:italic}
+.result.bad{color:var(--accent)}
+footer{margin-top:70px;color:var(--muted);font-size:16px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="sc">Rachel Edwards presents</div>
+  <h1>A Sonnet<br>on <i>Bargains</i></h1>
+  <p class="lede">The sonnet competition, in the old tradition, returns for winter 2026.</p>
+
+  <div class="sc">entries close in</div>
+  <p class="cd"><b data-cd="d">–</b><span>days</span><b data-cd="h">–</b><span>hours</span><b data-cd="m">–</b><span>minutes</span></p>
+  <div class="sc" style="font-size:15px">monday 28 december · 11.59pm uk time</div>
+
+  <div class="orn">· · ·</div>
+
+  <div class="sc" style="margin-bottom:22px">the rules</div>
+  <ol>
+    <li>Exactly fourteen lines. Blank lines between stanzas are not counted.</li>
+    <li>On the theme of <i>bargains</i>, read however you like.</li>
+    <li>Your own work. Every entry is checked, and AI-generated verse is rejected.</li>
+    <li>One entry per person.</li>
+  </ol>
+
+  <div class="orn">· · ·</div>
+
+  <form>
+    <div class="f"><label for="n">name</label><input id="n" required></div>
+    <div class="f"><label for="x">x handle</label><input id="x" placeholder="@" required></div>
+    <div class="f"><label for="e">email <i>(kept private)</i></label><input id="e" type="email" required></div>
+    <div class="f"><label for="t">title <i>(optional)</i></label><input id="t"></div>
+    <div class="f"><label for="s">your sonnet</label><textarea id="s" required></textarea></div>
+    <div class="btn"><button type="submit">submit</button></div>
+    <div data-result hidden></div>
+  </form>
+
+  <footer>Bonne chance · <a href="https://x.com/underthenettle">@underthenettle</a></footer>
+</div>
+<script>// Deadline: 23:59 UK time, Monday 28 December 2026 (GMT in winter)
+(function(){
+  var deadline = Date.UTC(2026, 11, 28, 23, 59, 0);
+  function tick(){
+    var ms = deadline - Date.now();
+    document.querySelectorAll('[data-cd]').forEach(function(el){
+      var k = el.getAttribute('data-cd');
+      if (ms <= 0) { el.textContent = '0'; return; }
+      var v = {d: Math.floor(ms/864e5), h: Math.floor(ms/36e5)%24, m: Math.floor(ms/6e4)%60, s: Math.floor(ms/1e3)%60}[k];
+      el.textContent = (k === 'd') ? v : String(v).padStart(2,'0');
+    });
+    if (ms <= 0) document.querySelectorAll('[data-closed]').forEach(function(el){ el.hidden = false; });
+  }
+  tick(); setInterval(tick, 1000);
+  document.querySelectorAll('form').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var out = f.querySelector('[data-result]');
+      var lines = f.querySelector('textarea').value.split('\n').filter(function(l){ return l.trim(); }).length;
+      out.hidden = false;
+      out.className = 'result ' + (lines === 14 ? 'ok' : 'bad');
+      out.textContent = lines === 14
+        ? 'Mockup only: 14 lines, so this would now go to Pangram for the AI check.'
+        : 'Your entry has ' + lines + ' line' + (lines === 1 ? '' : 's') + '. A sonnet needs exactly 14. Blank lines between stanzas are fine.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

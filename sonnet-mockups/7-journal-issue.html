@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonnet Competition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Spectral+SC:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f4ec;--ink:#1d2433;--muted:#6f7380;--line:#d6d1c4;--accent:#1d2433;--hi:#b8862b;--field:#fffdf8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141c;--ink:#e6e3da;--muted:#8d93a1;--line:#283040;--accent:#e6e3da;--hi:#d9ad5b;--field:#151a24}}
+:root[data-theme="dark"]{--bg:#10141c;--ink:#e6e3da;--muted:#8d93a1;--line:#283040;--accent:#e6e3da;--hi:#d9ad5b;--field:#151a24}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Spectral,Georgia,serif;font-size:18px;line-height:1.65;font-weight:300}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 90px}
+.sc{font-family:"Spectral SC",serif;letter-spacing:.12em;font-size:15px}
+.mast{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:10px;gap:12px;flex-wrap:wrap}
+.mast .name{font-family:"Spectral SC",serif;font-size:22px;letter-spacing:.08em}
+.mast .no{font-style:italic;color:var(--muted)}
+.cover{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,44px);align-items:end;padding:clamp(48px,10vw,110px) 0 clamp(36px,7vw,70px);border-bottom:1px solid var(--line)}
+.big14{font-weight:300;font-size:clamp(120px,26vw,260px);line-height:.78;color:var(--hi);letter-spacing:-.04em}
+.cover h1{font-weight:300;font-size:clamp(34px,6vw,58px);line-height:1.05;margin:0 0 12px}
+.cover h1 i{font-weight:400}
+.cover p{margin:0;color:var(--muted);font-style:italic}
+@media (max-width:560px){.cover{grid-template-columns:1fr}}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);padding:36px 0;border-bottom:1px solid var(--line)}
+@media (max-width:680px){.cols{grid-template-columns:1fr}}
+h2{font-family:"Spectral SC",serif;font-weight:400;letter-spacing:.12em;font-size:15px;margin:0 0 14px;color:var(--hi)}
+.cd{display:flex;gap:26px}
+.cd b{display:block;font-weight:300;font-size:56px;line-height:1;font-variant-numeric:oldstyle-nums tabular-nums}
+.cd span{font-style:italic;color:var(--muted);font-size:15px}
+.rules{margin:0;padding:0 0 0 1.2em}
+.rules li{margin-bottom:8px}
+.rules li::marker{color:var(--hi);font-style:italic}
+.formsec{padding-top:40px}
+.formsec h2{font-size:15px}
+.lead{font-size:28px;font-weight:300;margin:0 0 26px;line-height:1.25}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media (max-width:560px){.two{grid-template-columns:1fr;gap:0}}
+.f{margin-bottom:24px}
+label{display:block;font-family:"Spectral SC",serif;letter-spacing:.1em;font-size:14px;color:var(--muted);margin-bottom:2px}
+label i{font-family:Spectral,serif;letter-spacing:0}
+input{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:6px 0;border-radius:0}
+.paper{position:relative;background:var(--field);border:1px solid var(--line)}
+.gutter{position:absolute;left:0;top:0;bottom:0;width:46px;border-right:1px solid var(--line);padding:22px 0;text-align:right;font-style:italic;font-size:14px;color:var(--hi);line-height:32px;overflow:hidden;pointer-events:none}
+.gutter span{display:block;padding-right:10px}
+textarea{display:block;width:100%;font:inherit;font-size:19px;color:var(--ink);background:transparent;border:0;padding:22px 22px 22px 62px;min-height:516px;line-height:32px;resize:vertical}
+input:focus,textarea:focus{outline:none}
+.paper:focus-within{border-color:var(--hi)}
+input:focus{border-color:var(--hi)}
+button{margin-top:24px;background:var(--ink);color:var(--bg);border:0;padding:14px 36px;font-family:"Spectral SC",serif;letter-spacing:.14em;font-size:16px;cursor:pointer}
+button:hover{background:var(--hi);color:#1d2433}
+.result{margin-top:18px;font-style:italic;border-left:2px solid var(--hi);padding-left:14px}
+.result.bad{color:#b5452d;border-color:#b5452d}
+footer{margin-top:60px;border-top:1px solid var(--ink);padding-top:10px;display:flex;justify-content:space-between;font-style:italic;color:var(--muted);font-size:15px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mast"><span class="name">under the nettle</span><span class="no">Sonnet Competition · Winter 2026</span></div>
+
+  <section class="cover">
+    <div class="big14">14</div>
+    <div>
+      <h1>lines on the theme of <i>bargains</i></h1>
+      <p>Rachel Edwards revives the sonnet competition, in the old tradition.</p>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2>Closing</h2>
+      <div class="cd">
+        <div><b data-cd="d">–</b><span>days</span></div>
+        <div><b data-cd="h">–</b><span>hours</span></div>
+        <div><b data-cd="m">–</b><span>minutes</span></div>
+      </div>
+      <p style="margin:12px 0 0;color:var(--muted);font-style:italic">Monday 28 December, 11.59pm UK time</p>
+    </div>
+    <div>
+      <h2>Rules</h2>
+      <ol class="rules">
+        <li>Exactly fourteen lines. Stanza breaks aren’t counted.</li>
+        <li>The theme is <i>bargains</i>.</li>
+        <li>Your own work. AI-generated entries are automatically rejected.</li>
+        <li>One sonnet per person.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="formsec">
+    <h2>Entry</h2>
+    <p class="lead">Send me your fourteen lines.</p>
+    <form>
+      <div class="two">
+        <div class="f"><label for="n">Name</label><input id="n" required></div>
+        <div class="f"><label for="x">X handle</label><input id="x" placeholder="@" required></div>
+        <div class="f"><label for="e">Email <i>(private)</i></label><input id="e" type="email" required></div>
+        <div class="f"><label for="t">Title <i>(optional)</i></label><input id="t"></div>
+      </div>
+      <label for="s">Sonnet</label>
+      <div class="paper">
+        <div class="gutter" aria-hidden="true"><span>i</span><span>ii</span><span>iii</span><span>iv</span><span>v</span><span>vi</span><span>vii</span><span>viii</span><span>ix</span><span>x</span><span>xi</span><span>xii</span><span>xiii</span><span>xiv</span></div>
+        <textarea id="s" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+      <div data-result hidden></div>
+    </form>
+  </section>
+  <footer><span>Bonne chance</span><a href="https://x.com/underthenettle">@underthenettle</a></footer>
+</div>
+<script>// Deadline: 23:59 UK time, Monday 28 December 2026 (GMT in winter)
+(function(){
+  var deadline = Date.UTC(2026, 11, 28, 23, 59, 0);
+  function tick(){
+    var ms = deadline - Date.now();
+    document.querySelectorAll('[data-cd]').forEach(function(el){
+      var k = el.getAttribute('data-cd');
+      if (ms <= 0) { el.textContent = '0'; return; }
+      var v = {d: Math.floor(ms/864e5), h: Math.floor(ms/36e5)%24, m: Math.floor(ms/6e4)%60, s: Math.floor(ms/1e3)%60}[k];
+      el.textContent = (k === 'd') ? v : String(v).padStart(2,'0');
+    });
+    if (ms <= 0) document.querySelectorAll('[data-closed]').forEach(function(el){ el.hidden = false; });
+  }
+  tick(); setInterval(tick, 1000);
+  document.querySelectorAll('form').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var out = f.querySelector('[data-result]');
+      var lines = f.querySelector('textarea').value.split('\n').filter(function(l){ return l.trim(); }).length;
+      out.hidden = false;
+      out.className = 'result ' + (lines === 14 ? 'ok' : 'bad');
+      out.textContent = lines === 14
+        ? 'Mockup only: 14 lines, so this would now go to Pangram for the AI check.'
+        : 'Your entry has ' + lines + ' line' + (lines === 1 ? '' : 's') + '. A sonnet needs exactly 14. Blank lines between stanzas are fine.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
