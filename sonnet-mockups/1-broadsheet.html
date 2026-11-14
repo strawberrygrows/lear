@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonnet Competition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f2e8d3;--paper2:#e9dcc0;--ink:#2a2118;--muted:#6b5a45;--red:#8e2318;--rule:#2a2118;--field:#fbf6ea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1b1814;--paper2:#25201a;--ink:#ebe0c8;--muted:#b3a487;--red:#e07a5f;--rule:#ebe0c8;--field:#14120f}}
+:root[data-theme="dark"]{--paper:#1b1814;--paper2:#25201a;--ink:#ebe0c8;--muted:#b3a487;--red:#e07a5f;--rule:#ebe0c8;--field:#14120f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Libre Caslon Text",Georgia,serif;line-height:1.6;
+  background-image:radial-gradient(ellipse at top,transparent 60%,var(--paper2) 100%)}
+.sheet{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+.rule2{border:0;border-top:3px double var(--rule);margin:0}
+.rule1{border:0;border-top:1px solid var(--rule);margin:6px 0 0}
+.masthead{text-align:center;padding:18px 0 14px}
+.kicker{font-family:"IM Fell English SC",serif;letter-spacing:.18em;font-size:14px;color:var(--muted);margin:0}
+h1{font-family:"IM Fell English SC",serif;font-weight:400;font-size:clamp(40px,9vw,76px);line-height:1;margin:10px 0 6px;letter-spacing:.02em}
+.sub{font-family:"IM Fell English",serif;font-style:italic;font-size:19px;margin:0;color:var(--muted)}
+.bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:"IM Fell English SC",serif;font-size:14px;letter-spacing:.08em;padding:6px 0}
+.theme{text-align:center;padding:30px 0 22px}
+.theme p{margin:0;font-family:"IM Fell English",serif;font-style:italic;font-size:18px}
+.theme .word{font-family:"IM Fell English SC",serif;font-style:normal;font-size:clamp(46px,12vw,92px);color:var(--red);line-height:1.05;letter-spacing:.06em;margin:4px 0}
+.fleuron{text-align:center;font-size:26px;color:var(--red);margin:18px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:640px){.cols{grid-template-columns:1fr}}
+h2{font-family:"IM Fell English SC",serif;font-weight:400;font-size:22px;letter-spacing:.08em;margin:0 0 8px;border-bottom:1px solid var(--rule);padding-bottom:4px}
+.dropcap::first-letter{font-family:"IM Fell English",serif;float:left;font-size:58px;line-height:.85;padding:6px 8px 0 0;color:var(--red)}
+ol{margin:0;padding-left:22px}
+li{margin:0 0 6px}
+.countdown{display:flex;justify-content:center;gap:6px;margin:6px 0 0}
+.countdown div{border:1px solid var(--rule);padding:8px 10px;min-width:72px;text-align:center;background:var(--field)}
+.countdown b{display:block;font-family:"IM Fell English",serif;font-weight:400;font-size:34px;line-height:1}
+.countdown span{font-family:"IM Fell English SC",serif;font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.notice{text-align:center;font-style:italic;margin:10px 0 0;color:var(--muted)}
+form{border:3px double var(--rule);padding:22px 20px;margin-top:8px;background:var(--field)}
+label{display:block;font-family:"IM Fell English SC",serif;letter-spacing:.08em;font-size:15px;margin:14px 0 4px}
+label:first-of-type{margin-top:0}
+.opt{font-family:"Libre Caslon Text",serif;font-style:italic;letter-spacing:0;color:var(--muted);font-size:13px}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);padding:6px 2px;border-radius:0}
+textarea{border:1px solid var(--rule);padding:12px;min-height:400px;font-family:"IM Fell English",serif;font-size:18px;line-height:1.55;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--red);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.row{grid-template-columns:1fr}}
+button{margin-top:20px;width:100%;background:var(--ink);color:var(--paper);border:0;padding:14px;font-family:"IM Fell English SC",serif;font-size:19px;letter-spacing:.14em;cursor:pointer}
+button:hover{background:var(--red)}
+.result{margin-top:16px;padding:12px 14px;border:1px solid var(--rule);font-style:italic}
+.result.bad{border-color:var(--red);color:var(--red)}
+footer{text-align:center;margin-top:36px;font-family:"IM Fell English",serif;font-style:italic;color:var(--muted)}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <hr class="rule2">
+  <div class="bar"><span>Est. in the Old Tradition</span><span>Price: One Sonnet</span><span>Winter 2026</span></div>
+  <hr class="rule1">
+  <header class="masthead">
+    <p class="kicker">Rachel Edwards respectfully announces</p>
+    <h1>The Sonnet Competition</h1>
+    <p class="sub">After a long silence, the old contest returns</p>
+  </header>
+  <hr class="rule2">
+
+  <section class="theme">
+    <p>This year’s theme</p>
+    <div class="word">Bargains</div>
+    <p>Fourteen lines. One entry each.</p>
+  </section>
+
+  <h2 style="text-align:center;border:0">Entries close in</h2>
+  <div class="countdown">
+    <div><b data-cd="d">–</b><span>Days</span></div>
+    <div><b data-cd="h">–</b><span>Hours</span></div>
+    <div><b data-cd="m">–</b><span>Minutes</span></div>
+    <div><b data-cd="s">–</b><span>Seconds</span></div>
+  </div>
+  <p class="notice">at 11.59 in the evening (UK time), Monday the 28th of December</p>
+
+  <div class="fleuron">❦</div>
+
+  <div class="cols">
+    <section>
+      <h2>To the Entrant</h2>
+      <p class="dropcap">Make whatever bargain you like with the form, whether Petrarchan, Shakespearean, Spenserian or something new of your own, so long as it runs to fourteen lines and turns on the theme. The best sonnets will be read, praised, and announced on X.</p>
+    </section>
+    <section>
+      <h2>The Rules</h2>
+      <ol>
+        <li>Exactly <strong>fourteen lines</strong>. Blank lines between stanzas are not counted.</li>
+        <li>The sonnet must take up the theme of <em>bargains</em>.</li>
+        <li>It must be <strong>your own work</strong>. Every entry is checked, and AI-written verse is turned away.</li>
+        <li><strong>One entry</strong> per person.</li>
+        <li>Entries close at 11.59pm UK time on Monday 28 December.</li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="fleuron">❦</div>
+
+  <h2>The Entry Form</h2>
+  <form>
+    <div class="row">
+      <div><label for="n">Your name</label><input id="n" required></div>
+      <div><label for="x">X handle</label><input id="x" placeholder="@" required></div>
+    </div>
+    <label for="e">Email <span class="opt">(for the judges only, never published)</span></label><input id="e" type="email" required>
+    <label for="t">Title <span class="opt">(optional)</span></label><input id="t">
+    <label for="s">Your sonnet</label>
+    <textarea id="s" required placeholder="Fourteen lines, one per line…"></textarea>
+    <button type="submit">Submit my sonnet</button>
+    <div data-result hidden></div>
+  </form>
+
+  <footer>Hosted by Rachel Edwards · <a href="https://x.com/underthenettle">@underthenettle</a> · Bonne chance!</footer>
+</div>
+<script>// Deadline: 23:59 UK time, Monday 28 December 2026 (GMT in winter)
+(function(){
+  var deadline = Date.UTC(2026, 11, 28, 23, 59, 0);
+  function tick(){
+    var ms = deadline - Date.now();
+    document.querySelectorAll('[data-cd]').forEach(function(el){
+      var k = el.getAttribute('data-cd');
+      if (ms <= 0) { el.textContent = '0'; return; }
+      var v = {d: Math.floor(ms/864e5), h: Math.floor(ms/36e5)%24, m: Math.floor(ms/6e4)%60, s: Math.floor(ms/1e3)%60}[k];
+      el.textContent = (k === 'd') ? v : String(v).padStart(2,'0');
+    });
+    if (ms <= 0) document.querySelectorAll('[data-closed]').forEach(function(el){ el.hidden = false; });
+  }
+  tick(); setInterval(tick, 1000);
+  document.querySelectorAll('form').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var out = f.querySelector('[data-result]');
+      var lines = f.querySelector('textarea').value.split('\n').filter(function(l){ return l.trim(); }).length;
+      out.hidden = false;
+      out.className = 'result ' + (lines === 14 ? 'ok' : 'bad');
+      out.textContent = lines === 14
+        ? 'Mockup only: 14 lines, so this would now go to Pangram for the AI check.'
+        : 'Your entry has ' + lines + ' line' + (lines === 1 ? '' : 's') + '. A sonnet needs exactly 14. Blank lines between stanzas are fine.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

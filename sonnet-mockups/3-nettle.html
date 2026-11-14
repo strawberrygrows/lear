@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonnet Competition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1e6;--card:#fffdf6;--ink:#1f2a1f;--muted:#5e6b5a;--leaf:#3d6b3f;--leaf2:#9cbf8a;--line:#d8d6c4;--warn:#a1452b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111813;--card:#18211a;--ink:#e6ecdf;--muted:#9fae99;--leaf:#8fc58a;--leaf2:#3f6a42;--line:#2b3a2d;--warn:#ef9a7a}}
+:root[data-theme="dark"]{--bg:#111813;--card:#18211a;--ink:#e6ecdf;--muted:#9fae99;--leaf:#8fc58a;--leaf2:#3f6a42;--line:#2b3a2d;--warn:#ef9a7a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;line-height:1.6;font-size:16px}
+.wrap{max-width:820px;margin:0 auto;padding:28px 16px 72px;position:relative}
+.sprig{position:absolute;top:0;right:0;width:min(260px,44vw);opacity:.9;pointer-events:none}
+.sprig path{fill:none;stroke:var(--leaf);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.sprig .vein{stroke-width:.8;opacity:.6}
+.sprig .fill{fill:var(--leaf2);opacity:.35;stroke:none}
+header{padding:48px 0 30px;max-width:520px;position:relative}
+.from{font-style:italic;color:var(--muted);margin:0}
+h1{font-family:Fraunces,serif;font-weight:300;font-size:clamp(44px,9vw,78px);line-height:1;margin:12px 0 16px;letter-spacing:-.01em}
+h1 em{font-weight:400;color:var(--leaf)}
+.pill{display:inline-block;border:1px solid var(--leaf);color:var(--leaf);border-radius:999px;padding:4px 14px;font-size:14px;letter-spacing:.04em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px clamp(18px,4vw,34px);margin:18px 0}
+h2{font-family:Fraunces,serif;font-weight:500;font-size:24px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+h2 svg{width:22px;height:22px;flex:none}
+h2 svg path{fill:var(--leaf2);stroke:var(--leaf);stroke-width:1.2}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cd div{background:var(--bg);border-radius:12px;padding:14px 6px;text-align:center}
+.cd b{display:block;font-family:Fraunces,serif;font-weight:300;font-size:clamp(30px,7vw,46px);line-height:1;color:var(--leaf);font-variant-numeric:tabular-nums}
+.cd span{font-size:13px;color:var(--muted)}
+.when{margin:14px 0 0;color:var(--muted);font-style:italic}
+.rules{list-style:none;margin:0;padding:0}
+.rules li{position:relative;padding:0 0 12px 30px}
+.rules li::before{content:"";position:absolute;left:4px;top:7px;width:12px;height:12px;border-radius:0 60% 0 60%;background:var(--leaf2);border:1px solid var(--leaf);transform:rotate(-10deg)}
+label{display:block;font-weight:600;font-size:15px;margin:0 0 6px}
+label span{font-weight:400;font-style:italic;color:var(--muted)}
+.f{margin-bottom:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.two{grid-template-columns:1fr;gap:0}}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+textarea{min-height:420px;font-family:Fraunces,serif;font-weight:300;font-size:19px;line-height:1.6;resize:vertical;padding:18px}
+input:focus,textarea:focus{outline:2px solid var(--leaf);outline-offset:1px;border-color:transparent}
+button{width:100%;background:var(--leaf);color:var(--card);border:0;border-radius:999px;padding:15px;font-family:Fraunces,serif;font-size:19px;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+.result{margin-top:16px;border-radius:12px;padding:12px 16px;background:var(--bg);border-left:4px solid var(--leaf)}
+.result.bad{border-color:var(--warn);color:var(--warn)}
+footer{text-align:center;color:var(--muted);font-style:italic;margin-top:30px}
+footer a{color:var(--leaf)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="sprig" viewBox="0 0 260 300" aria-hidden="true">
+    <path d="M200 290 C 190 220, 170 150, 150 20"/>
+    <path class="fill" d="M178 170 C 120 160, 90 120, 96 80 C 140 92, 170 120, 178 170 Z"/>
+    <path d="M178 170 C 120 160, 90 120, 96 80 C 140 92, 170 120, 178 170 Z M178 170 l-8-6 m-14-4 l-4-8 m-16-6 l-6-6 m-12-12 l-8-2"/>
+    <path class="vein" d="M178 170 C 150 140, 120 110, 96 80"/>
+    <path class="fill" d="M164 110 C 210 96, 236 60, 228 24 C 190 40, 168 70, 164 110 Z"/>
+    <path d="M164 110 C 210 96, 236 60, 228 24 C 190 40, 168 70, 164 110 Z M190 96 l6-6 m12-12 l6-4 m10-16 l8-4"/>
+    <path class="vein" d="M164 110 C 190 80, 210 50, 228 24"/>
+    <path class="fill" d="M190 240 C 236 232, 254 196, 248 168 C 214 180, 194 206, 190 240 Z"/>
+    <path d="M190 240 C 236 232, 254 196, 248 168 C 214 180, 194 206, 190 240 Z"/>
+    <path class="vein" d="M190 240 C 212 214, 232 190, 248 168"/>
+  </svg>
+
+  <header>
+    <p class="from">Rachel Edwards, from under the nettle</p>
+    <h1>A sonnet competition on <em>bargains</em></h1>
+    <span class="pill">🪶 In the old tradition</span>
+  </header>
+
+  <section class="card">
+    <h2><svg viewBox="0 0 24 24"><path d="M4 20 C 4 10, 10 4, 20 4 C 20 14, 14 20, 4 20 Z"/></svg>Time left to enter</h2>
+    <div class="cd">
+      <div><b data-cd="d">–</b><span>days</span></div>
+      <div><b data-cd="h">–</b><span>hours</span></div>
+      <div><b data-cd="m">–</b><span>mins</span></div>
+      <div><b data-cd="s">–</b><span>secs</span></div>
+    </div>
+    <p class="when">Entries close at 11.59pm UK time, Monday 28 December.</p>
+  </section>
+
+  <section class="card">
+    <h2><svg viewBox="0 0 24 24"><path d="M4 20 C 4 10, 10 4, 20 4 C 20 14, 14 20, 4 20 Z"/></svg>The rules</h2>
+    <ul class="rules">
+      <li><strong>Fourteen lines exactly.</strong> Stanza breaks are fine; blank lines aren’t counted.</li>
+      <li>The theme is <em>bargains</em>, taken however you like.</li>
+      <li><strong>Written by you.</strong> Entries are checked automatically, and AI-generated sonnets are turned away.</li>
+      <li>One sonnet per person.</li>
+      <li>Any sonnet form is welcome, and so is a little rule-breaking within it.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><svg viewBox="0 0 24 24"><path d="M4 20 C 4 10, 10 4, 20 4 C 20 14, 14 20, 4 20 Z"/></svg>Send your sonnet</h2>
+    <form>
+      <div class="two">
+        <div class="f"><label for="n">Name</label><input id="n" required></div>
+        <div class="f"><label for="x">X handle</label><input id="x" placeholder="@" required></div>
+      </div>
+      <div class="f"><label for="e">Email <span>(private, so I can reach the winners)</span></label><input id="e" type="email" required></div>
+      <div class="f"><label for="t">Title <span>(optional)</span></label><input id="t"></div>
+      <div class="f"><label for="s">Your sonnet</label><textarea id="s" required placeholder="Fourteen lines…"></textarea></div>
+      <button type="submit">Submit 🪶</button>
+      <div data-result hidden></div>
+    </form>
+  </section>
+
+  <footer>Bonne chance! · <a href="https://x.com/underthenettle">@underthenettle</a></footer>
+</div>
+<script>// Deadline: 23:59 UK time, Monday 28 December 2026 (GMT in winter)
+(function(){
+  var deadline = Date.UTC(2026, 11, 28, 23, 59, 0);
+  function tick(){
+    var ms = deadline - Date.now();
+    document.querySelectorAll('[data-cd]').forEach(function(el){
+      var k = el.getAttribute('data-cd');
+      if (ms <= 0) { el.textContent = '0'; return; }
+      var v = {d: Math.floor(ms/864e5), h: Math.floor(ms/36e5)%24, m: Math.floor(ms/6e4)%60, s: Math.floor(ms/1e3)%60}[k];
+      el.textContent = (k === 'd') ? v : String(v).padStart(2,'0');
+    });
+    if (ms <= 0) document.querySelectorAll('[data-closed]').forEach(function(el){ el.hidden = false; });
+  }
+  tick(); setInterval(tick, 1000);
+  document.querySelectorAll('form').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var out = f.querySelector('[data-result]');
+      var lines = f.querySelector('textarea').value.split('\n').filter(function(l){ return l.trim(); }).length;
+      out.hidden = false;
+      out.className = 'result ' + (lines === 14 ? 'ok' : 'bad');
+      out.textContent = lines === 14
+        ? 'Mockup only: 14 lines, so this would now go to Pangram for the AI check.'
+        : 'Your entry has ' + lines + ' line' + (lines === 1 ? '' : 's') + '. A sonnet needs exactly 14. Blank lines between stanzas are fine.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
